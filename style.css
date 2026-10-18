@@ -334,3 +334,4 @@ footer { margin-top: clamp(80px, 11vw, 150px); border-top: 1px solid var(--line)
   .reveal { opacity: 1; transform: none; filter: none; }
   .track { animation: none; }
 }
+@media (max-width: 1040px) { .ex-grid > div:last-child { order: -1; } }
