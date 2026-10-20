@@ -4,7 +4,7 @@
 
   /* ===== Configuration ===== */
   // Paste the App Store link here when the app is live: the "Télécharger" buttons then appear.
-  const APP_STORE_URL = '';
+  const APP_STORE_URL = 'https://apps.apple.com/us/app/liquid-weather/id6807434223';
 
   const lang = (document.documentElement.lang || 'fr').slice(0, 2) === 'en' ? 'en' : 'fr';
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
