@@ -5,6 +5,8 @@ from string import Template
 
 BASE = "https://christopherjacquescj.github.io/liquid-weather-site/"
 MAIL = "supportliquidweatherapp@gmail.com"
+APP_STORE = "https://apps.apple.com/us/app/liquid-weather/id6807434223"
+BMC = "https://buymeacoffee.com/liquidweatherapp"
 OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "out")
 
 # ---------- icons (stroke style) ----------
@@ -21,6 +23,8 @@ ICON = {
     "pin": ic('<path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.800 12 21 12 21z"/><circle cx="12" cy="9.500" r="2.500"/>'),
     "mail": ic('<rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/>'),
     "arrow": ic('<path d="M5 12h14M13 6l6 6-6 6"/>'),
+    "apple": ic('<path d="M16.5 3c.1 1.2-.4 2.4-1.1 3.2-.8.9-1.9 1.5-3 1.4-.1-1.2.4-2.4 1.1-3.1.8-.9 2-1.4 3-1.5zM20 17.2c-.5 1.2-.8 1.7-1.5 2.7-1 1.4-2.3 3.1-4 3.1-1.5 0-1.9-1-3.9-1s-2.5 1-4 1c-1.7 0-2.9-1.6-3.9-3C.9 16.200.6 11.700 2.100 9.300 3.200 7.600 5 6.600 6.700 6.600c1.700 0 2.800 1 4.200 1 1.400 0 2.200-1 4.200-1 1.500 0 3.100.8 4.200 2.200-3.700 2-3.100 7.300.7 8.400z"/>'),
+    "cup": ic('<path d="M4 8h13v5a6 6 0 0 1-6 6H10a6 6 0 0 1-6-6z"/><path d="M17 10h1.5a2.5 2.5 0 0 1 0 5H17"/><path d="M8 2.5v2M12 2.5v2"/>'),
     "link": ic('<path d="M10 14a4 4 0 0 0 5.700 0l3-3a4 4 0 0 0-5.700-5.700l-1 1"/><path d="M14 10a4 4 0 0 0-5.700 0l-3 3a4 4 0 0 0 5.700 5.700l1-1"/>'),
 }
 
@@ -40,7 +44,7 @@ FR = dict(
     eyebrow="Météo pour iPhone, iPad et Apple Watch",
     h1='Voyez le <span class="grad">ciel</span> venir.',
     lead="Liquid Weather fusionne les meilleurs modèles météo du monde — AROME, ICON, ARPEGE, GFS, ECMWF — dans une interface en verre liquide, fluide et d’une précision rare.",
-    cta1="Découvrir", cta2="Nous contacter", soon="Application iOS gratuite", dl="Télécharger sur l’App Store",
+    cta1="Découvrir", cta2="Nous contacter", soon="Application iOS gratuite", dl="Télécharger sur l’App Store", coffee="Offrez-moi un café",
     stats=[("7", "langues"), ("0", "publicité"), ("0", "abonnement"), ("10 j", "heure par heure")],
     phone=dict(place="Ma position", cond="Éclaircies", sub="Ressenti 17° · Rafales 31 km/h", next="Prochaines heures", day="Température · 24 h", now="Maint.", h=["14 h", "15 h", "16 h", "17 h"]),
     chips=[("☀", "UV 6", "Élevé"), ("➚", "Vent 18 km/h", "Nord-ouest"), ("◎", "AROME HD · 0,01°", "Modèle le plus fin"), ("☂", "Averse à 16 h", "jusqu’à 2,8 mm/h")],
@@ -105,7 +109,7 @@ EN = dict(
     eyebrow="Weather for iPhone, iPad and Apple Watch",
     h1='See the <span class="grad">sky</span> coming.',
     lead="Liquid Weather fuses the world’s best weather models — AROME, ICON, ARPEGE, GFS, ECMWF — into a fluid liquid-glass interface of rare precision.",
-    cta1="Discover", cta2="Get in touch", soon="Free iOS app", dl="Download on the App Store",
+    cta1="Discover", cta2="Get in touch", soon="Free iOS app", dl="Download on the App Store", coffee="Buy me a coffee",
     stats=[("7", "languages"), ("0", "ads"), ("0", "subscriptions"), ("10 d", "hour by hour")],
     phone=dict(place="My location", cond="Partly sunny", sub="Feels like 17° · Gusts 31 km/h", next="Next hours", day="Temperature · 24 h", now="Now", h=["2 PM", "3 PM", "4 PM", "5 PM"]),
     chips=[("☀", "UV 6", "High"), ("➚", "Wind 18 km/h", "North-west"), ("◎", "AROME HD · 0.01°", "Finest model"), ("☂", "Shower at 4 PM", "up to 2.8 mm/h")],
@@ -233,7 +237,9 @@ def footer(L, name):
 <li><a href="{mine["index"]}">{n["home"]}</a></li>
 <li><a href="{mine["privacy"]}">{n["privacy"]}</a></li>
 <li><a href="{mine["support"]}">{n["support"]}</a></li>
-<li><a href="{other[name]}" lang="{L["hreflang_other"]}">{n["other"]}</a></li></ul></div>
+<li><a href="{other[name]}" lang="{L["hreflang_other"]}">{n["other"]}</a></li>
+<li><a href="{APP_STORE}" target="_blank" rel="noopener">App Store</a></li>
+<li><a href="{BMC}" target="_blank" rel="noopener">{L["coffee"]} ☕</a></li></ul></div>
 <div><h5>{L["foot_contact"]}</h5><ul>
 <li><a href="mailto:{MAIL}">{MAIL}</a></li>
 <li><a href="{BASE}">{L["site"]} · christopherjacquescj.github.io/liquid-weather-site</a></li></ul></div>
@@ -291,7 +297,7 @@ def index(L):
 <div class="cta reveal" style="--d:.2s">
 <a class="btn" href="#features">{L["cta1"]}{ICON["arrow"]}</a>
 <a class="btn ghost" href="{mine["support"]}">{L["cta2"]}</a>
-<a class="btn" data-appstore hidden>{L["dl"]}</a>
+<a class="btn" href="{APP_STORE}" target="_blank" rel="noopener" data-appstore>{ICON["apple"]}{L["dl"]}</a>
 <span class="pill" data-soon><span class="dot"></span>{L["soon"]}</span>
 </div>
 <div class="stats reveal" style="--d:.28s">{stats}</div>
@@ -392,7 +398,7 @@ def index(L):
 <div class="glass final reveal">
 <img class="icon" src="assets/icon.png" width="96" height="96" alt="Liquid Weather">
 <h2>{T(L["fin_h2"])}</h2><p>{T(L["fin_p"])}</p>
-<div class="cta"><a class="btn" href="mailto:{MAIL}?subject={subject}">{ICON["mail"]}{L["fin_mail"]}</a><a class="btn ghost" href="{mine["privacy"]}">{L["fin_priv"]}</a><a class="btn" data-appstore hidden>{L["dl"]}</a></div>
+<div class="cta"><a class="btn" href="mailto:{MAIL}?subject={subject}">{ICON["mail"]}{L["fin_mail"]}</a><a class="btn ghost" href="{mine["privacy"]}">{L["fin_priv"]}</a><a class="btn" href="{APP_STORE}" target="_blank" rel="noopener" data-appstore>{ICON["apple"]}{L["dl"]}</a><a class="btn ghost" href="{BMC}" target="_blank" rel="noopener">{ICON["cup"]}{L["coffee"]}</a></div>
 </div></div></section>
 </main>
 ''' + footer(L, "index")
@@ -437,7 +443,7 @@ def support(L):
 <div class="glass contact-card reveal" style="--d:.12s">
 <p class="eyebrow" style="margin:0">{S["mail_label"]}</p>
 <div class="big"><a href="mailto:{MAIL}?subject={subj}">{MAIL}</a></div>
-<div class="cta" style="margin:8px 0 0"><a class="btn" href="mailto:{MAIL}?subject={subj}">{ICON["mail"]}{S["mail_btn"]}</a><a class="btn ghost" href="{BASE}">{ICON["link"]}{S["site_btn"]}</a></div>
+<div class="cta" style="margin:8px 0 0"><a class="btn" href="mailto:{MAIL}?subject={subj}">{ICON["mail"]}{S["mail_btn"]}</a><a class="btn ghost" href="{BASE}">{ICON["link"]}{S["site_btn"]}</a><a class="btn ghost" href="{BMC}" target="_blank" rel="noopener">{ICON["cup"]}{L["coffee"]}</a></div>
 <p class="muted">{BASE.replace("https://", "")}</p>
 </div>
 <div class="glass contact-card reveal" style="--d:.2s">
