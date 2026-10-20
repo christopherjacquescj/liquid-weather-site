@@ -224,7 +224,8 @@ def header(L, name):
 <a href="{mine["privacy"]}"{cur("privacy")}>{n["privacy"]}</a>
 <a href="{mine["support"]}"{cur("support")}>{n["support"]}</a>
 <a class="lang" href="{other[name]}" lang="{L["hreflang_other"]}" hreflang="{L["hreflang_other"]}">{n["other"]}</a>
-</nav></div></header>'''
+</nav>
+<a class="btn nav-dl" href="{APP_STORE}" target="_blank" rel="noopener" aria-label="{L["dl"]}">{ICON["apple"]}<span>App Store</span></a></div></header>'''
 
 def footer(L, name):
     mine, other = page_urls(L, name)

@@ -335,3 +335,20 @@ footer { margin-top: clamp(80px, 11vw, 150px); border-top: 1px solid var(--line)
   .track { animation: none; }
 }
 @media (max-width: 1040px) { .ex-grid > div:last-child { order: -1; } }
+
+/* App Store button in the top bar */
+.btn.nav-dl { padding: 10px 18px; font-size: 14px; gap: 8px; flex-shrink: 0; box-shadow: 0 8px 26px -8px rgba(76, 160, 255, .8), inset 0 1px 0 rgba(255, 255, 255, .7); }
+.btn.nav-dl svg { width: 17px; height: 17px; fill: currentColor; stroke: none; }
+@media (max-width: 760px) {
+  .btn.nav-dl { margin-left: auto; padding: 10px 15px; }
+  .burger { order: 3; }
+  .brand { white-space: nowrap; }
+}
+@media (max-width: 420px) {
+  .bar { gap: 10px; }
+  header.nav .brand { font-size: 16px; gap: 9px; }
+  header.nav .brand img { width: 34px; height: 34px; }
+  .btn.nav-dl { padding: 9px 12px; font-size: 13px; gap: 6px; }
+  .burger { width: 40px; height: 40px; }
+}
+@media (max-width: 400px) { header.nav .brand { font-size: 0; gap: 0; } }
