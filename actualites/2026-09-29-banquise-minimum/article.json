@@ -1,0 +1,134 @@
+{
+  "id": "2026-09-29-banquise-minimum",
+  "cover": {
+    "credit": "NASA Scientific Visualization Studio",
+    "license": "pd"
+  },
+  "body": {
+    "fr": [
+      "Selon le Centre américain de données sur la neige et la glace (NSIDC), l'étendue de la banquise arctique a atteint son minimum de l'année le 12 septembre 2026, à 4,60 millions de km² : c'est la dixième plus basse en près de 48 ans d'observations par satellite, à égalité avec 2008, 2010 et 2025.",
+      "## Un été frais et agité",
+      "L'été a été frais et tempétueux sur l'océan Arctique, et la glace est restée en lambeaux jusqu'au pôle. L'étendue a suivi les niveaux de 2012, l'année du record, jusqu'en août.",
+      "[[figure:fig1]]",
+      "## Un hiver record dans le mauvais sens",
+      "Le maximum hivernal du 15 mars 2026, à 14,278 millions de km², est le plus bas jamais enregistré.",
+      "## Le fond de l'histoire",
+      "Les vingt dernières années sont les vingt plus bas minimums de toute la série satellitaire. Depuis 2007, la tendance du minimum d'été est proche de zéro : cela ne signifie pas un retour de la glace, le niveau est simplement resté très bas.",
+      "[[figure:fig2]]",
+      "## Une valeur provisoire",
+      "Le NSIDC précise que ce chiffre est préliminaire : le vent peut encore compacter la glace et faire baisser un peu l'étendue. Depuis le minimum, la banquise se reforme rapidement, avec environ 5,3 millions de km² relevés fin septembre."
+    ],
+    "en": [
+      "According to the US National Snow and Ice Data Center (NSIDC), Arctic sea ice extent reached its yearly minimum on 12 September 2026, at 4.60 million km²: the tenth lowest in nearly 48 years of satellite observations, tied with 2008, 2010 and 2025.",
+      "## A cool, stormy summer",
+      "The summer was cool and stormy over the Arctic Ocean, and the ice stayed loose all the way to the pole. Extent tracked 2012 levels, the record year, until August.",
+      "[[figure:fig1]]",
+      "## A record winter, the wrong way",
+      "The winter maximum on 15 March 2026, at 14.278 million km², is the lowest ever recorded.",
+      "## The bigger picture",
+      "The last twenty years are the twenty lowest minimums of the whole satellite record. Since 2007 the trend of the summer minimum has been near zero: that does not mean the ice is coming back, the level has simply stayed very low.",
+      "[[figure:fig2]]",
+      "## A provisional value",
+      "NSIDC stresses that this number is preliminary: winds can still compact the ice and lower the extent a little. Since the minimum the ice has been re-forming quickly, with about 5.3 million km² at the end of September."
+    ],
+    "es": [
+      "Según el Centro Nacional de Datos de Nieve y Hielo de EE. UU. (NSIDC), la extensión de la banquisa ártica alcanzó su mínimo anual el 12 de septiembre de 2026, con 4,60 millones de km²: es la décima más baja en casi 48 años de observaciones por satélite, igualada con 2008, 2010 y 2025.",
+      "## Un verano fresco y agitado",
+      "El verano fue fresco y tormentoso sobre el océano Ártico, y el hielo permaneció hecho jirones hasta el polo. La extensión siguió los niveles de 2012, el año récord, hasta agosto.",
+      "[[figure:fig1]]",
+      "## Un invierno récord en el mal sentido",
+      "El máximo invernal del 15 de marzo de 2026, con 14,278 millones de km², es el más bajo jamás registrado.",
+      "## El fondo de la historia",
+      "Los últimos veinte años son los veinte mínimos más bajos de toda la serie por satélite. Desde 2007, la tendencia del mínimo de verano es cercana a cero: no significa que el hielo vuelva, el nivel simplemente se ha mantenido muy bajo.",
+      "[[figure:fig2]]",
+      "## Un valor provisional",
+      "El NSIDC precisa que esta cifra es preliminar: el viento todavía puede compactar el hielo y hacer bajar un poco la extensión. Desde el mínimo, la banquisa se reforma rápidamente, con unos 5,3 millones de km² a finales de septiembre."
+    ],
+    "de": [
+      "Laut dem US-amerikanischen Nationalen Schnee- und Eisdatenzentrum (NSIDC) erreichte die Ausdehnung des arktischen Meereises ihr Jahresminimum am 12. September 2026 mit 4,60 Millionen km²: die zehnttiefste in fast 48 Jahren Satellitenbeobachtung, gleichauf mit 2008, 2010 und 2025.",
+      "## Ein kühler, unruhiger Sommer",
+      "Der Sommer war kühl und stürmisch über dem Arktischen Ozean, und das Eis blieb bis zum Pol in Fetzen. Die Ausdehnung folgte bis August den Werten von 2012, dem Rekordjahr.",
+      "[[figure:fig1]]",
+      "## Ein Winter der Rekorde im falschen Sinn",
+      "Das Wintermaximum vom 15. März 2026 mit 14,278 Millionen km² ist das niedrigste je gemessene.",
+      "## Der Kern der Sache",
+      "Die letzten zwanzig Jahre sind die zwanzig tiefsten Minima der gesamten Satellitenreihe. Seit 2007 liegt der Trend des Sommerminimums nahe null: Das bedeutet keine Rückkehr des Eises, das Niveau ist einfach sehr niedrig geblieben.",
+      "[[figure:fig2]]",
+      "## Ein vorläufiger Wert",
+      "Das NSIDC weist darauf hin, dass diese Zahl vorläufig ist: Der Wind kann das Eis noch verdichten und die Ausdehnung etwas senken. Seit dem Minimum bildet sich das Eis schnell neu, mit etwa 5,3 Millionen km² Ende September."
+    ],
+    "it": [
+      "Secondo il Centro nazionale statunitense dei dati su neve e ghiaccio (NSIDC), l'estensione della banchisa artica ha raggiunto il minimo annuale il 12 settembre 2026, con 4,60 milioni di km²: è la decima più bassa in quasi 48 anni di osservazioni satellitari, a pari merito con 2008, 2010 e 2025.",
+      "## Un'estate fresca e agitata",
+      "L'estate è stata fresca e tempestosa sull'oceano Artico e il ghiaccio è rimasto a brandelli fino al polo. L'estensione ha seguito i livelli del 2012, l'anno record, fino ad agosto.",
+      "[[figure:fig1]]",
+      "## Un inverno record nel senso sbagliato",
+      "Il massimo invernale del 15 marzo 2026, con 14,278 milioni di km², è il più basso mai registrato.",
+      "## Il fondo della storia",
+      "Gli ultimi vent'anni sono i venti minimi più bassi dell'intera serie satellitare. Dal 2007 la tendenza del minimo estivo è vicina a zero: non significa un ritorno del ghiaccio, il livello è semplicemente rimasto molto basso.",
+      "[[figure:fig2]]",
+      "## Un valore provvisorio",
+      "Il NSIDC precisa che questa cifra è preliminare: il vento può ancora compattare il ghiaccio e far scendere un po' l'estensione. Dal minimo la banchisa si riforma rapidamente, con circa 5,3 milioni di km² a fine settembre."
+    ],
+    "pt": [
+      "Segundo o Centro Nacional de Dados de Neve e Gelo dos EUA (NSIDC), a extensão da banquisa ártica atingiu o seu mínimo anual a 12 de setembro de 2026, com 4,60 milhões de km²: é a décima mais baixa em quase 48 anos de observações por satélite, igualada com 2008, 2010 e 2025.",
+      "## Um verão fresco e agitado",
+      "O verão foi fresco e tempestuoso sobre o oceano Ártico, e o gelo permaneceu em farrapos até ao polo. A extensão seguiu os níveis de 2012, o ano recorde, até agosto.",
+      "[[figure:fig1]]",
+      "## Um inverno recorde no mau sentido",
+      "O máximo de inverno de 15 de março de 2026, com 14,278 milhões de km², é o mais baixo alguma vez registado.",
+      "## O fundo da história",
+      "Os últimos vinte anos são os vinte mínimos mais baixos de toda a série por satélite. Desde 2007, a tendência do mínimo de verão é próxima de zero: não significa um regresso do gelo, o nível apenas se manteve muito baixo.",
+      "[[figure:fig2]]",
+      "## Um valor provisório",
+      "O NSIDC esclarece que este número é preliminar: o vento ainda pode compactar o gelo e fazer baixar um pouco a extensão. Desde o mínimo, a banquisa volta a formar-se depressa, com cerca de 5,3 milhões de km² no fim de setembro."
+    ],
+    "ar": [
+      "بحسب المركز الوطني الأمريكي لبيانات الثلج والجليد (NSIDC)، بلغت مساحة الجليد البحري في القطب الشمالي حدّها الأدنى السنوي في 12 سبتمبر 2026 عند 4,60 ملايين كم²، وهو العاشر الأدنى في نحو 48 عاماً من الرصد بالأقمار الصناعية، بالتساوي مع 2008 و2010 و2025.",
+      "## صيف بارد ومضطرب",
+      "كان الصيف بارداً وعاصفاً فوق المحيط المتجمد الشمالي، وبقي الجليد ممزقاً حتى القطب. وتبعت المساحة مستويات 2012، عام الرقم القياسي، حتى أغسطس.",
+      "[[figure:fig1]]",
+      "## شتاء قياسي بالمعنى السيئ",
+      "الحدّ الأقصى الشتوي في 15 مارس 2026، عند 14,278 مليون كم²، هو الأدنى المسجَّل على الإطلاق.",
+      "## جوهر القصة",
+      "السنوات العشرون الأخيرة هي أدنى عشرين حدّاً أدنى في السلسلة الساتلية كلها. ومنذ 2007 يقترب اتجاه الحدّ الأدنى الصيفي من الصفر: لا يعني ذلك عودة الجليد، بل بقاء المستوى منخفضاً جداً.",
+      "[[figure:fig2]]",
+      "## قيمة مؤقتة",
+      "يوضح المركز أن هذا الرقم أولي: قد تضغط الرياح الجليد وتخفض المساحة قليلاً. ومنذ الحد الأدنى يتشكل الجليد بسرعة، بنحو 5,3 ملايين كم² في نهاية سبتمبر."
+    ]
+  },
+  "figures": {
+    "fig1": {
+      "file": "images/fig1.jpg",
+      "credit": "NASA",
+      "license": "pd",
+      "caption": {
+        "fr": "L'Arctique vu par satellite en septembre 2012, l'année du record de faiblesse de la banquise : la glace n'occupe plus qu'une partie de l'océan (image d'archive).",
+        "en": "The Arctic seen by satellite in September 2012, the year of the record-low sea ice: the ice now covers only part of the ocean (archive image).",
+        "es": "El Ártico visto por satélite en septiembre de 2012, el año del récord mínimo de la banquisa: el hielo ocupa ya solo una parte del océano (imagen de archivo).",
+        "de": "Die Arktis im September 2012 aus dem All, im Jahr des Rekordtiefs beim Meereis: Das Eis bedeckt nur noch einen Teil des Ozeans (Archivbild).",
+        "it": "L'Artico visto dal satellite a settembre 2012, l'anno del record minimo della banchisa: il ghiaccio occupa ormai solo una parte dell'oceano (immagine d'archivio).",
+        "pt": "O Ártico visto por satélite em setembro de 2012, o ano do recorde mínimo da banquisa: o gelo ocupa agora apenas uma parte do oceano (imagem de arquivo).",
+        "ar": "القطب الشمالي كما يراه القمر الصناعي في سبتمبر 2012، عام الرقم القياسي لانحسار الجليد: لم يعد الجليد يغطي سوى جزء من المحيط (صورة أرشيفية)."
+      }
+    },
+    "fig2": {
+      "file": "images/fig2.jpg",
+      "credit": "NASA Scientific Visualization Studio",
+      "license": "pd",
+      "caption": {
+        "fr": "Le minimum de 2024, le 11 septembre : 4,28 millions de km², contre 4,60 en 2026 (visualisation NASA, archive).",
+        "en": "The 2024 minimum, on 11 September: 4.28 million km², against 4.60 in 2026 (NASA visualisation, archive).",
+        "es": "El mínimo de 2024, el 11 de septiembre: 4,28 millones de km², frente a 4,60 en 2026 (visualización de la NASA, archivo).",
+        "de": "Das Minimum 2024 am 11. September: 4,28 Millionen km², gegenüber 4,60 im Jahr 2026 (NASA-Visualisierung, Archiv).",
+        "it": "Il minimo del 2024, l'11 settembre: 4,28 milioni di km², contro 4,60 nel 2026 (visualizzazione NASA, archivio).",
+        "pt": "O mínimo de 2024, a 11 de setembro: 4,28 milhões de km², contra 4,60 em 2026 (visualização da NASA, arquivo).",
+        "ar": "الحدّ الأدنى لعام 2024 في 11 سبتمبر: 4,28 ملايين كم² مقابل 4,60 في 2026 (تصوير ناسا، أرشيف)."
+      }
+    }
+  },
+  "source": {
+    "name": "NSIDC",
+    "url": "https://nsidc.org/news-analyses/news-stories/arctic-sea-ice-has-reached-minimum-extent-2026-antarctic-sea-ice-maximum-most-likely-reached-well"
+  }
+}

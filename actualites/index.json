@@ -1,0 +1,170 @@
+{
+  "version": 2,
+  "articles": [
+    {
+      "id": "2026-10-23-tempete-austen",
+      "date": "2026-10-23T18:00:00+02:00",
+      "folder": "2026-10-23-tempete-austen",
+      "cover": "images/cover.jpg",
+      "category": {
+        "fr": "Vigilance",
+        "en": "Alert",
+        "es": "Alerta",
+        "de": "Warnung",
+        "it": "Allerta",
+        "pt": "Alerta",
+        "ar": "تحذير"
+      },
+      "title": {
+        "fr": "Tempête Austen : 23 départements en vigilance orange vent",
+        "en": "Storm Austen: 23 départements on orange wind alert",
+        "es": "Tormenta Austen: 23 departamentos en alerta naranja por viento",
+        "de": "Sturm Austen: 23 Départements in orangener Windwarnung",
+        "it": "Tempesta Austen: 23 dipartimenti in allerta arancione per vento",
+        "pt": "Tempestade Austen: 23 departamentos em alerta laranja por vento",
+        "ar": "العاصفة أوستن: 23 مقاطعة في الإنذار البرتقالي بسبب الرياح"
+      },
+      "summary": {
+        "fr": "Des rafales jusqu'à 140 km/h sur la côte de la Manche. Ce qui s'est passé, pourquoi c'était sérieux et les bons réflexes.",
+        "en": "Gusts up to 140 km/h on the Channel coast. What happened, why it mattered, and what to do.",
+        "es": "Ráfagas de hasta 140 km/h en la costa del Canal de la Mancha. Qué pasó, por qué era serio y los buenos reflejos.",
+        "de": "Böen bis 140 km/h an der Kanalküste. Was geschah, warum es ernst war und wie man sich richtig verhält.",
+        "it": "Raffiche fino a 140 km/h sulla costa della Manica. Cosa è successo, perché era serio e i comportamenti giusti.",
+        "pt": "Rajadas de até 140 km/h na costa do Canal da Mancha. O que aconteceu, por que era sério e os bons reflexos.",
+        "ar": "هبّات رياح بلغت 140 كم/س على ساحل بحر المانش. ما الذي حدث، ولماذا كان الأمر جدّياً، وما التصرفات السليمة."
+      }
+    },
+    {
+      "id": "2026-10-22-el-nino-fort",
+      "date": "2026-10-22T09:00:00+02:00",
+      "folder": "2026-10-22-el-nino-fort",
+      "cover": "images/cover.jpg",
+      "category": {
+        "fr": "Climat",
+        "en": "Climate",
+        "es": "Clima",
+        "de": "Klima",
+        "it": "Clima",
+        "pt": "Clima",
+        "ar": "المناخ"
+      },
+      "title": {
+        "fr": "El Niño s'intensifie : la NOAA table sur un épisode fort à très fort jusqu'au début 2027",
+        "en": "El Niño is strengthening: NOAA expects a strong to very strong event into early 2027",
+        "es": "El Niño se intensifica: la NOAA prevé un episodio fuerte a muy fuerte hasta principios de 2027",
+        "de": "El Niño verstärkt sich: Die NOAA rechnet mit einem starken bis sehr starken Ereignis bis Anfang 2027",
+        "it": "El Niño si intensifica: la NOAA prevede un episodio forte o molto forte fino all'inizio del 2027",
+        "pt": "El Niño intensifica-se: a NOAA prevê um episódio forte a muito forte até ao início de 2027",
+        "ar": "ظاهرة النينيو تشتد: «نوا» تتوقع حدثاً قوياً إلى قوي جداً حتى مطلع 2027"
+      },
+      "summary": {
+        "fr": "Le Pacifique équatorial continue de se réchauffer. Ce que dit le dernier diagnostic, ce que cela change dans le monde, et ce qui reste incertain.",
+        "en": "The equatorial Pacific keeps warming. What the latest diagnosis says, what it changes around the world, and what remains uncertain.",
+        "es": "El Pacífico ecuatorial sigue calentándose. Lo que dice el último diagnóstico, lo que cambia en el mundo y lo que sigue siendo incierto.",
+        "de": "Der äquatoriale Pazifik erwärmt sich weiter. Was die jüngste Diagnose sagt, was sich weltweit ändert und was unsicher bleibt.",
+        "it": "Il Pacifico equatoriale continua a riscaldarsi. Cosa dice l'ultima diagnosi, cosa cambia nel mondo e cosa resta incerto.",
+        "pt": "O Pacífico equatorial continua a aquecer. O que diz o último diagnóstico, o que muda no mundo e o que continua incerto.",
+        "ar": "المحيط الهادئ الاستوائي يواصل الاحتباس. ماذا يقول آخر تشخيص، وماذا يتغيّر في العالم، وما الذي ما زال غير مؤكد."
+      }
+    },
+    {
+      "id": "2026-10-19-saison-cyclonique",
+      "date": "2026-10-19T09:00:00+02:00",
+      "folder": "2026-10-19-saison-cyclonique",
+      "cover": "images/cover.jpg",
+      "category": {
+        "fr": "Cyclones",
+        "en": "Cyclones",
+        "es": "Ciclones",
+        "de": "Zyklone",
+        "it": "Cicloni",
+        "pt": "Ciclones",
+        "ar": "الأعاصير"
+      },
+      "title": {
+        "fr": "Saison cyclonique 2026 : un Atlantique d'un calme historique, puis Isaias",
+        "en": "2026 hurricane season: a historically quiet Atlantic, then Isaias",
+        "es": "Temporada ciclónica 2026: un Atlántico de calma histórica, y luego Isaias",
+        "de": "Hurrikansaison 2026: ein historisch ruhiger Atlantik, dann Isaias",
+        "it": "Stagione ciclonica 2026: un Atlantico di calma storica, poi Isaias",
+        "pt": "Temporada de ciclones 2026: um Atlântico de calma histórica e depois Isaias",
+        "ar": "موسم الأعاصير 2026: أطلسي هادئ على نحو تاريخي ثم إيزايا"
+      },
+      "summary": {
+        "fr": "Aucun ouragan avant octobre : un record de lenteur. Retour sur une saison que le très fort El Niño a freinée, et qui n'est pas finie.",
+        "en": "No hurricane before October: a record for lateness. A look back at a season held back by a very strong El Niño, and not over yet.",
+        "es": "Ningún huracán antes de octubre: un récord de lentitud. Repaso de una temporada que el muy fuerte El Niño ha frenado y que no ha terminado.",
+        "de": "Kein Hurrikan vor Oktober: ein Rekord an Trägheit. Rückblick auf eine Saison, die das sehr starke El Niño gebremst hat und die noch nicht vorbei ist.",
+        "it": "Nessun uragano prima di ottobre: un record di lentezza. Un riepilogo di una stagione frenata dal fortissimo El Niño e non ancora finita.",
+        "pt": "Nenhum furacão antes de outubro: um recorde de lentidão. Retrato de uma temporada travada pelo El Niño muito forte e que ainda não acabou.",
+        "ar": "لا إعصار قبل أكتوبر: رقم قياسي في البطء. نظرة على موسم كبحته ظاهرة النينيو القوية جداً ولم ينتهِ بعد."
+      }
+    },
+    {
+      "id": "2026-10-15-hiver-el-nino",
+      "date": "2026-10-15T20:00:00+02:00",
+      "folder": "2026-10-15-hiver-el-nino",
+      "cover": "images/cover.jpg",
+      "category": {
+        "fr": "Saisons",
+        "en": "Seasons",
+        "es": "Estaciones",
+        "de": "Jahreszeiten",
+        "it": "Stagioni",
+        "pt": "Estações",
+        "ar": "الفصول"
+      },
+      "title": {
+        "fr": "Hiver 2026-27 : ce que laisse prévoir un El Niño historique",
+        "en": "Winter 2026-27: what a historic El Niño suggests",
+        "es": "Invierno 2026-27: lo que anuncia un El Niño histórico",
+        "de": "Winter 2026/27: was ein historisches El Niño erwarten lässt",
+        "it": "Inverno 2026-27: cosa lascia prevedere un El Niño storico",
+        "pt": "Inverno 2026-27: o que antecipa um El Niño histórico",
+        "ar": "شتاء 2026-27: ما تنذر به ظاهرة نينيو تاريخية"
+      },
+      "summary": {
+        "fr": "Les perspectives de la NOAA du 15 octobre : plus de pluie dans le Sud américain, un Nord plus doux. Et en Europe ?",
+        "en": "NOAA's 15 October outlook: more rain in the US South, a milder North. And in Europe?",
+        "es": "Las perspectivas de la NOAA del 15 de octubre: más lluvia en el sur de EE. UU., un norte más suave. ¿Y en Europa?",
+        "de": "Die NOAA-Aussichten vom 15. Oktober: mehr Regen im Süden der USA, ein milderer Norden. Und in Europa?",
+        "it": "Le prospettive della NOAA del 15 ottobre: più pioggia nel Sud degli USA, un Nord più mite. E in Europa?",
+        "pt": "As perspetivas da NOAA de 15 de outubro: mais chuva no sul dos EUA, um norte mais ameno. E na Europa?",
+        "ar": "توقعات «نوا» في 15 أكتوبر: مطر أكثر في جنوب الولايات المتحدة وشمال أدفأ. وماذا عن أوروبا؟"
+      }
+    },
+    {
+      "id": "2026-09-29-banquise-minimum",
+      "date": "2026-09-29T09:00:00+02:00",
+      "folder": "2026-09-29-banquise-minimum",
+      "cover": "images/cover.jpg",
+      "category": {
+        "fr": "Climat",
+        "en": "Climate",
+        "es": "Clima",
+        "de": "Klima",
+        "it": "Clima",
+        "pt": "Clima",
+        "ar": "المناخ"
+      },
+      "title": {
+        "fr": "Banquise arctique : le minimum 2026 est le 10e plus bas jamais mesuré",
+        "en": "Arctic sea ice: the 2026 minimum is the 10th lowest ever measured",
+        "es": "Banquisa ártica: el mínimo de 2026 es el 10.º más bajo jamás medido",
+        "de": "Arktisches Meereis: Das Minimum 2026 ist das 10.-niedrigste je gemessene",
+        "it": "Banchisa artica: il minimo del 2026 è il 10° più basso mai misurato",
+        "pt": "Banquisa ártica: o mínimo de 2026 é o 10.º mais baixo alguma vez medido",
+        "ar": "الجليد البحري في القطب الشمالي: حدّ 2026 الأدنى هو العاشر الأدنى على الإطلاق"
+      },
+      "summary": {
+        "fr": "4,60 millions de km² le 12 septembre. Un été frais et agité, mais un maximum hivernal qui avait battu un record de faiblesse.",
+        "en": "4.60 million km² on 12 September. A cool, stormy summer, but a winter maximum that set a record low.",
+        "es": "4,60 millones de km² el 12 de septiembre. Un verano fresco y agitado, pero un máximo invernal que había batido un récord de debilidad.",
+        "de": "4,60 Millionen km² am 12. September. Ein kühler, unruhiger Sommer, aber ein Wintermaximum, das einen Schwächerekord aufgestellt hatte.",
+        "it": "4,60 milioni di km² il 12 settembre. Un'estate fresca e agitata, ma un massimo invernale che aveva battuto un record di debolezza.",
+        "pt": "4,60 milhões de km² a 12 de setembro. Um verão fresco e agitado, mas um máximo de inverno que tinha batido um recorde de fraqueza.",
+        "ar": "4,60 ملايين كم² في 12 سبتمبر. صيف بارد ومضطرب، لكن الحدّ الأقصى الشتوي كان قد سجّل رقماً قياسياً في الضعف."
+      }
+    }
+  ]
+}
