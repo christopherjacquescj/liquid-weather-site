@@ -1,0 +1,155 @@
+{
+  "id": "2026-10-25-episodes-mediterraneens-automne",
+  "cover": {
+    "credit": "NASA/ISS Expedition 56",
+    "license": "pd"
+  },
+  "body": {
+    "fr": [
+      "De septembre à novembre, le pourtour méditerranéen connaît ses épisodes pluvieux les plus intenses de l'année : en quelques heures, il peut tomber sur les Cévennes, le Roussillon, la Côte d'Azur, la Ligurie ou la côte espagnole l'équivalent de trois à six mois de précipitations.",
+      "## Les trois ingrédients de la « poudrière » d'automne",
+      "Tout part d'un contraste thermique majeur. À la fin d'octobre, la mer Méditerranée conserve encore la chaleur accumulée tout l'été (souvent entre 20 et 23 °C), alors que les premières gouttes froides d'altitude (DANA) plongent depuis l'Atlantique Nord vers la péninsule Ibérique ou le golfe du Lion.",
+      "Sur le flanc avant de la dépression, un vent marin chaud et saturé d'humidité (marin ou sirocco) est aspiré vers les côtes. En percutant brutalement les premiers reliefs — Cévennes, Alpes du Sud, Pyrénées orientales ou Apennins —, cet air est forcé de s'élever : il se refroidit, se condense et déclenche des orages stationnaires régénérants.",
+      "[[figure:fig1]]",
+      "## Pourquoi la Méditerranée plus chaude amplifie le risque",
+      "• Selon la loi physique de Clausius-Clapeyron, une atmosphère plus chaude d'un degré peut contenir environ 7 % de vapeur d'eau supplémentaire.",
+      "• Une mer présentant une anomalie de +2 à +3 °C fournit à la fois plus d'eau précipitable et davantage d'énergie convective (CAPE) pour alimenter les courants ascendants des orages.",
+      "• Lorsque le système orageux adopte une structure en « V » sur l'imagerie satellite, de nouvelles cellules naissent sans cesse au même endroit et déversent des lames d'eau dépassant parfois 200 à 400 mm en 24 heures.",
+      "[[figure:fig2]]",
+      "## Les réflexes essentiels en vigilance pluie-inondation",
+      "• Ne jamais s'engager, à pied ou en voiture, sur une route immergée : 30 centimètres d'eau en mouvement suffisent à emporter un véhicule.",
+      "• Éviter les sous-sols, parkings souterrains et berges de cours d'eau susceptibles de réagir en crue éclair.",
+      "• Suivre l'évolution des cumuls horaires et des vigilances officielles directement dans l'onglet Risques et les cartes radar de Liquid Weather."
+    ],
+    "en": [
+      "From September to November, the Mediterranean basin experiences its most extreme rainfall events of the year: in just a few hours, parts of southern France, Catalonia, Liguria or eastern Spain can receive three to six months' worth of rain.",
+      "## The three ingredients of the autumn 'powder keg'",
+      "Everything starts with a sharp thermal contrast. In late October, the Mediterranean Sea still holds the heat built up over the summer (often 20 to 23 °C), while the first upper-level cold lows (cut-off lows or DANAs) plunge south from the North Atlantic towards Iberia or the Gulf of Lion.",
+      "Ahead of the low, warm onshore winds saturated with moisture are drawn towards the coast. When this air slams into coastal mountain ranges — the Cévennes, Southern Alps, Pyrenees or Apennines — it is forced sharply upwards, triggering stationary, self-regenerating thunderstorms.",
+      "[[figure:fig1]]",
+      "## Why a warmer Mediterranean amplifies the risk",
+      "• By the Clausius-Clapeyron relation, air holds about 7% more water vapour for every 1 °C of warming.",
+      "• A sea surface 2 to 3 °C warmer than normal supplies both more precipitable water and greater convective energy (CAPE) to fuel thunderstorm updrafts.",
+      "• When the storm system locks into a 'V-shaped' back-building structure on satellite imagery, fresh cells continuously form over the same watersheds, sometimes dumping 200 to 400 mm of rain in 24 hours.",
+      "[[figure:fig2]]",
+      "## Essential safety rules during flood alerts",
+      "• Never drive or walk onto a flooded road: just 30 cm of moving water can sweep a car away.",
+      "• Stay away from basements, underground car parks and riverbanks prone to flash flooding.",
+      "• Track hourly rainfall totals and official flood alerts directly in the Risks tab and radar maps of Liquid Weather."
+    ],
+    "es": [
+      "De septiembre a noviembre, la cuenca mediterránea vive sus episodios de lluvia más intensos del año: en pocas horas pueden caer sobre Cataluña, la Comunidad Valenciana, las Cevenas o Liguria el equivalente a varios meses de precipitación.",
+      "## Los tres ingredientes del «polvorín» otoñal",
+      "Todo parte de un fuerte contraste térmico. A finales de octubre, el mar Mediterráneo conserva aún el calor acumulado en verano (a menudo entre 20 y 23 °C), mientras las primeras depresiones aisladas en niveles altos (DANA) descienden desde el Atlántico hacia la península ibérica o el golfo de León.",
+      "En el flanco delantero de la depresión, un viento marino cálido y cargado de humedad es aspirado hacia la costa. Al chocar contra los primeros relieves, este aire se ve obligado a ascender bruscamente, disparando tormentas estacionarias autorregenerativas.",
+      "[[figure:fig1]]",
+      "## Por qué un Mediterráneo más cálido amplifica el riesgo",
+      "• Por cada grado adicional de temperatura, el aire puede contener cerca de un 7 % más de vapor de agua.",
+      "• Un mar entre 2 y 3 °C más cálido de lo normal aporta más agua precipitable y más energía convectiva (CAPE) para alimentar las tormentas.",
+      "• Cuando el sistema adopta una estructura en «V» en el satélite, nuevas células nacen continuamente sobre el mismo lugar, dejando a veces entre 200 y 400 mm en 24 horas.",
+      "[[figure:fig2]]",
+      "## Consejos esenciales ante alertas por lluvias e inundaciones",
+      "• No cruzar nunca, ni a pie ni en coche, una carretera inundada: 30 centímetros de agua en movimiento bastan para arrastrar un vehículo.",
+      "• Evitar sótanos, garajes subterráneos y cauces o ramblas propensos a crecidas súbitas.",
+      "• Seguir la evolución de los acumulados horarios y los avisos oficiales en la pestaña Riesgos de Liquid Weather."
+    ],
+    "de": [
+      "Von September bis November erlebt der Mittelmeerraum seine heftigsten Starkregenereignisse des Jahres: Innerhalb weniger Stunden kann in den Cevennen, an der Côte d’Azur, in Ligurien oder an der spanischen Mittelmeerküste der Regen mehrerer Monate fallen.",
+      "## Die drei Zutaten für das herbstliche „Pulverfass“",
+      "Alles beginnt mit einem starken Temperaturgegensatz. Ende Oktober speichert das Mittelmeer noch die Sommerwärme (oft 20 bis 23 °C), während erste Höhentiefs (Kaltlufttropfen) vom Nordatlantik Richtung Iberische Halbinsel oder Golfe du Lion vorstoßen.",
+      "Auf der Vorderseite des Tiefs wird feuchtwarme Meeresluft gegen die Küstengebirge geführt. Beim Aufprall auf Cevennen, Südalpen, Pyrenäen oder Apennin wird die Luft zum Aufsteigen gezwungen und löst ortsfeste, sich ständig regenerierende Gewitter aus.",
+      "[[figure:fig1]]",
+      "## Warum ein wärmeres Mittelmeer das Risiko verstärkt",
+      "• Pro Grad Erwärmung kann die Luft rund 7 % mehr Wasserdampf aufnehmen.",
+      "• Ein um 2 bis 3 °C zu warmes Meer liefert sowohl mehr niederschlagbares Wasser als auch mehr Konvektionsenergie (CAPE) für die Gewitterzellen.",
+      "• Nimmt das Gewittersystem auf Satellitenbildern eine V-förmige Struktur an, bilden sich über denselben Einzugsgebieten immer neue Zellen mit teils 200 bis 400 mm Regen in 24 Stunden.",
+      "[[figure:fig2]]",
+      "## Wichtige Verhaltensregeln bei Starkregen- und Hochwasserwarnung",
+      "• Niemals zu Fuß oder mit dem Auto überflutete Straßen überqueren: Schon 30 cm fließendes Wasser können ein Fahrzeug mitreißen.",
+      "• Keller, Tiefgaragen und Flussufer mit Sturzflutgefahr meiden.",
+      "• Stündliche Regenmengen und offizielle Warnungen direkt im Reiter „Risiken“ von Liquid Weather verfolgen."
+    ],
+    "it": [
+      "Da settembre a novembre il bacino del Mediterraneo vive gli episodi piovosi più intensi dell'anno: in poche ore possono cadere su Liguria, Piemonte, Cevenne, Costa Azzurra o Spagna orientale le piogge di diversi mesi.",
+      "## I tre ingredienti della «polveriera» d'autunno",
+      "Tutto nasce da un forte contrasto termico. A fine ottobre il Mar Mediterraneo conserva ancora il calore estivo (spesso tra 20 e 23 °C), mentre le prime gocce fredde in quota affondano dall'Atlantico verso la penisola iberica o il Golfo del Leone.",
+      "Sul fianco orientale della depressione, venti marini caldi e saturi di umidità (scirocco o libeccio) vengono spinti verso le coste. Scontrandosi con i rilievi — Appennini, Alpi Marittime, Cevenne o Pirenei — l'aria è costretta a salire bruscamente, innescando temporali stazionari autorigeneranti.",
+      "[[figure:fig1]]",
+      "## Perché un Mediterraneo più caldo amplifica il rischio",
+      "• Per ogni grado in più, l'atmosfera può contenere circa il 7 % di vapore acqueo supplementare.",
+      "• Un mare più caldo di 2-3 °C fornisce sia più acqua precipitabile sia più energia convettiva (CAPE) ai temporali.",
+      "• Quando il sistema assume una forma a «V» dal satellite, nuove celle si rigenerano continuamente sullo stesso punto scaricando talvolta 200-400 mm in 24 ore.",
+      "[[figure:fig2]]",
+      "## I comportamenti corretti in allerta pioggia e alluvioni",
+      "• Non percorrere mai strade allagate a piedi o in auto: 30 centimetri d'acqua in movimento bastano a trascinare un veicolo.",
+      "• Evitare sottopassi, scantinati, garage interrati e argini di torrenti soggetti a piene improvvise.",
+      "• Seguire gli accumuli orari e le allerte ufficiali nella scheda Rischi di Liquid Weather."
+    ],
+    "pt": [
+      "De setembro a novembro, a bacia do Mediterrâneo regista os episódios de chuva mais intensos do ano: em poucas horas pode cair sobre o sul de França, a Catalunha, Valência ou a Ligúria o equivalente a vários meses de precipitação.",
+      "## Os três ingredientes do «barril de pólvora» de outono",
+      "Tudo começa com um forte contraste térmico. No fim de outubro, o mar Mediterrâneo ainda guarda o calor acumulado no verão (muitas vezes entre 20 e 23 °C), enquanto as primeiras depressões isoladas em altitude (DANA) descem do Atlântico Norte para a Península Ibérica ou o golfo de Leão.",
+      "Na frente da depressão, ventos marítimos quentes e saturados de humidade são aspirados para a costa. Ao embaterem nas primeiras serras, este ar é forçado a subir abruptamente, desencadeando trovoadas estacionárias autorregenerativas.",
+      "[[figure:fig1]]",
+      "## Porque é que um Mediterrâneo mais quente amplifica o risco",
+      "• Por cada grau de aquecimento, o ar pode conter cerca de 7 % mais vapor de água.",
+      "• Um mar 2 a 3 °C acima do normal fornece mais água precipitável e mais energia convectiva (CAPE) às trovoadas.",
+      "• Quando o sistema adota uma estrutura em «V» nas imagens de satélite, novas células formam-se continuamente no mesmo local, descarregando por vezes 200 a 400 mm em 24 horas.",
+      "[[figure:fig2]]",
+      "## Cuidados essenciais em alerta de chuva e inundações",
+      "• Nunca atravessar estradas inundadas a pé ou de carro: 30 centímetros de água em movimento bastam para arrastar um veículo.",
+      "• Evitar caves, parques subterrâneos e margens de ribeiras sujeitas a cheias rápidas.",
+      "• Acompanhar os acumulados horários e os alertas oficiais no separador Riscos do Liquid Weather."
+    ],
+    "ar": [
+      "من سبتمبر إلى نوفمبر يشهد حوض البحر الأبيض المتوسط أعنف حالات الهطول في السنة: ففي غضون ساعات قليلة قد تهطل على جنوب فرنسا أو شرق إسبانيا أو إيطاليا كميات تعادل أمطار عدة أشهر.",
+      "## المكونات الثلاثة لـ«برميل البارود» الخريفي",
+      "يبدأ كل شيء بتباين حراري حاد. في أواخر أكتوبر يحتفظ البحر المتوسط بحرارة الصيف (غالباً بين 20 و23 درجة مئوية)، بينما تنحدر أولى الأحواض الباردة في طبقات الجو العليا من شمال الأطلسي نحو شبه الجزيرة الإيبيرية أو خليج الأسد.",
+      "في مقدمة المنخفض تُسحب رياح بحرية دافئة ومشبعة بالرطوبة نحو السواحل. وعند اصطدامها بالتضاريس الساحلية يُجبر الهواء على الصعود بقوة مفجّراً عواصف رعدية ثابتة متجددة ذاتياً.",
+      "[[figure:fig1]]",
+      "## لماذا يضاعف احترار المتوسط من المخاطر",
+      "• مع كل درجة احترار إضافية يستطيع الهواء حمل نحو 7٪ إضافية من بخار الماء.",
+      "• بحر أدفأ بـ2 إلى 3 درجات من المعتاد يمدّ العواصف بمزيد من بخار الماء وطاقة الحمل الحراري (CAPE).",
+      "• عندما يتخذ النظام الرعدي شكل حرف «V» في صور الأقمار الصناعية تتجدد الخلايا باستمرار فوق نفس الأحواض مسقطة أحياناً 200 إلى 400 ملم في 24 ساعة.",
+      "[[figure:fig2]]",
+      "## إرشادات السلامة أثناء تحذيرات الأمطار والفيضانات",
+      "• عدم عبور الطرق المغمورة بالمياه أبداً سيراً أو بالسيارة: 30 سم من المياه الجارية تكفي لجرف مركبة.",
+      "• تجنب الأقبية ومواقف السيارات تحت الأرض وضفاف الأودية المعرضة للسيول الخاطفة.",
+      "• متابعة كميات الأمطار الساعية والتحذيرات الرسمية مباشرة في تبويب المخاطر داخل Liquid Weather."
+    ]
+  },
+  "figures": {
+    "fig1": {
+      "file": "images/fig1.jpg",
+      "credit": "NASA/JSC",
+      "license": "pd",
+      "caption": {
+        "fr": "Un puissant système orageux à enclume étalée photographié depuis l'orbite terrestre : lorsque le vent marin bute sur le relief côtier, les cellules convectives se régénèrent sur place pendant plusieurs heures (image d'archive NASA).",
+        "en": "A powerful anvil thunderstorm system photographed from Earth orbit: when moist onshore winds hit coastal terrain, convective cells regenerate in place for hours (NASA archive image).",
+        "es": "Un potente sistema tormentoso con yunque fotografiado desde la órbita terrestre: cuando el viento marino choca con el relieve, las células se regeneran durante horas (archivo NASA).",
+        "de": "Ein mächtiges Gewittersystem mit Amboss aus der Erdumlaufbahn fotografiert: Wenn feuchte Meeresluft auf Küstengebirge trifft, regenerieren sich die Zellen stundenlang an Ort und Stelle (NASA-Archiv).",
+        "it": "Un potente sistema temporalesco a incudine fotografato dall'orbita terrestre: quando il vento marino impatta sui rilievi costieri, le celle si rigenerano sul posto per ore (archivio NASA).",
+        "pt": "Um poderoso sistema de trovoada com bigorna fotografado a partir da órbita terrestre: quando o vento marítimo embate no relevo costeiro, as células regeneram-se no mesmo local durante horas (arquivo NASA).",
+        "ar": "نظام عاصفة رعدية ضخم بسندان ممتد مصوَّر من مدار الأرض: عندما تصطدم الرياح البحرية بالتضاريس الساحلية تتجدد الخلايا الرعدية في مكانها لساعات (أرشيف ناسا)."
+      }
+    },
+    "fig2": {
+      "file": "images/fig2.jpg",
+      "credit": "NASA/Jim Grossmann",
+      "license": "pd",
+      "caption": {
+        "fr": "Des tours convectives de cumulonimbus s'élevant au-dessus d'une mer chaude au lever du jour : l'évaporation marine alimente directement la colonne d'air ascendant.",
+        "en": "Towering cumulonimbus clouds rising over warm coastal waters at daybreak: marine evaporation directly feeds the updraft column.",
+        "es": "Torres convectivas de cumulonimbos elevándose sobre aguas cálidas al amanecer: la evaporación marina alimenta directamente la corriente ascendente.",
+        "de": "Hochreichende Cumulonimbus-Türme über warmem Küstenwasser bei Sonnenaufgang: Die Verdunstung über dem Meer speist direkt den Aufwind.",
+        "it": "Torri convettive di cumulonembi che si innalzano sopra acque calde all'alba: l'evaporazione marina alimenta direttamente la corrente ascensionale.",
+        "pt": "Torres convectivas de cumulonimbos erguendo-se sobre águas quentes ao amanhecer: a evaporação marinha alimenta diretamente a corrente ascendente.",
+        "ar": "أبراج ركامية من سحب المزن الركامي ترتفع فوق مياه دافئة عند الفجر: التبخر البحري يغذي مباشرة تيار الهواء الصاعد."
+      }
+    }
+  },
+  "source": {
+    "name": "Météo-France — Comprendre les épisodes méditerranéens et cévenols",
+    "url": "https://meteofrance.com/comprendre-la-meteo/precipitations/episodes-mediterraneens-et-cevenols"
+  }
+}

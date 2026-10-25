@@ -1,0 +1,141 @@
+{
+  "id": "2026-10-25-heure-hiver-brouillards-inversions",
+  "cover": {
+    "credit": "NASA/ISS Expedition 37",
+    "license": "pd"
+  },
+  "body": {
+    "fr": [
+      "Ce dimanche 25 octobre marque le passage à l'heure d'hiver. Alors que les nuits s'allongent désormais à plus de treize heures sous nos latitudes, une mécanique typique de la fin d'automne s'installe dès que les hautes pressions reviennent : les inversions thermiques et leurs mers de brouillard.",
+      "## Quand l'atmosphère marche à l'envers",
+      "En temps normal, la température baisse avec l'altitude d'environ 6,5 °C par kilomètre. Mais lors d'une longue nuit d'octobre ou de novembre, sous un ciel dégagé et sans vent, le sol perd rapidement sa chaleur par rayonnement infrarouge vers l'espace.",
+      "Le sol glacé refroidit alors la couche d'air qui le touche. Plus lourd, cet air froid glisse au fond des vallées et des plaines, tandis qu'en altitude subsiste une masse d'air plus douce : la courbe des températures s'inverse. Il peut ainsi faire 2 °C sous la grisaille à Lyon ou à Genève et 14 °C au soleil à 1 200 mètres d'altitude.",
+      "[[figure:fig1]]",
+      "## Un couvercle invisible sur les vallées",
+      "• Dès que l'air refroidi au sol atteint son point de rosée, la vapeur d'eau se condense en gouttelettes microscopiques : le brouillard de rayonnement ou les stratus bas se forment.",
+      "• En fin d'octobre, le soleil est déjà bas sur l'horizon : ses rayons rasants traversent difficilement le sommet très réfléchissant du nuage et ne parviennent parfois plus à le dissiper en journée.",
+      "• Ce « couvercle » thermique bloque tout brassage vertical et piège les particules fines près du sol.",
+      "[[figure:fig2]]",
+      "## Comment le repérer dans Liquid Weather",
+      "Dans Liquid Weather, l'écart entre la température actuelle et le point de rosée (ou un taux d'humidité proche de 100 % combiné à un vent faible) signale un risque immédiat de brouillard. Et dans le widget Montagne ou le style d'accueil Altitude, vous pouvez vérifier en un coup d'œil si les sommets émergent au-dessus de la mer de nuages."
+    ],
+    "en": [
+      "This Sunday, 25 October marks the switch back to winter time across Europe. With nights now stretching beyond thirteen hours at mid-latitudes, a classic late-autumn pattern sets in whenever high pressure returns: temperature inversions and seas of valley fog.",
+      "## When the atmosphere turns upside down",
+      "Normally, air temperature drops with altitude by about 6.5 °C per kilometre. But during a long October or November night under clear skies and calm winds, the ground rapidly radiates its heat out into space.",
+      "The chilled ground cools the air directly in contact with it. Denser and heavier, this cold air drains into valleys and plains while milder air remains aloft: the vertical temperature profile flips. It can be 2 °C under grey stratus in the valley and 14 °C in bright sunshine at 1,200 metres.",
+      "[[figure:fig1]]",
+      "## An invisible lid over the plains",
+      "• As soon as the cooled surface air reaches its dew point, water vapour condenses into tiny droplets, forming radiation fog or low stratus decks.",
+      "• By late October, the Sun sits low in the sky: its grazing rays struggle to penetrate the reflective cloud tops, so the fog sometimes lingers all day.",
+      "• This thermal 'lid' blocks vertical mixing and traps fine particulate pollution near the ground.",
+      "[[figure:fig2]]",
+      "## How to spot it in Liquid Weather",
+      "In Liquid Weather, a narrowing gap between air temperature and dew point (or humidity near 100% with light winds) flags an immediate fog risk. And in the Mountain widget or the Altitude hero style, you can check at a glance whether the peaks rise into clear skies above the cloud sea."
+    ],
+    "es": [
+      "Este domingo 25 de octubre marca el cambio al horario de invierno. Con noches que ya superan las trece horas en nuestras latitudes, un fenómeno típico de finales de otoño se instala en cuanto regresan las altas presiones: las inversiones térmicas y los mares de niebla.",
+      "## Cuando la atmósfera funciona al revés",
+      "Normalmente, la temperatura baja con la altitud unos 6,5 °C por kilómetro. Pero durante una larga noche de octubre o noviembre, con cielo despejado y sin viento, el suelo pierde rápidamente su calor por radiación infrarroja.",
+      "El suelo frío enfría la capa de aire en contacto con él. Más pesado, este aire frío se desliza hacia el fondo de los valles mientras arriba permanece aire más templado: el perfil térmico se invierte.",
+      "[[figure:fig1]]",
+      "## Una tapadera invisible sobre los valles",
+      "• En cuanto el aire enfriado alcanza su punto de rocío, el vapor de agua se condensa en niebla de radiación o estratos bajos.",
+      "• A finales de octubre, el sol ya está bajo en el horizonte y a veces no logra disipar la niebla durante el día.",
+      "• Esta «tapadera» térmica bloquea la mezcla vertical y atrapa los contaminantes cerca del suelo.",
+      "[[figure:fig2]]",
+      "## Cómo detectarlo en Liquid Weather",
+      "En Liquid Weather, una temperatura muy próxima al punto de rocío con viento débil señala riesgo de niebla. Y con el widget de Montaña o el estilo Altitud puedes comprobar si las cumbres sobresalen por encima del mar de nubes."
+    ],
+    "de": [
+      "Dieser Sonntag, der 25. Oktober, bringt die Umstellung auf die Winterzeit. Während die Nächte in unseren Breiten nun über dreizehn Stunden dauern, stellt sich bei Hochdruckwetterlagen ein typisches Spätherbstphänomen ein: Temperaturinversionen und Nebelmeere.",
+      "## Wenn die Atmosphäre Kopf steht",
+      "Normalerweise sinkt die Temperatur mit der Höhe um rund 6,5 °C pro Kilometer. Doch in einer langen, klaren und windstillen Oktober- oder Novembernacht strahlt der Boden seine Wärme rasch ins All ab.",
+      "Der ausgekühlte Boden kühlt die aufliegende Luftschicht ab. Da kalte Luft schwerer ist, fließt sie in Täler und Becken, während darüber mildere Luft liegt: Die Temperaturkurve kehrt sich um. So kann es im Tal unter Hochnebel 2 °C kalt sein, während auf 1.200 Metern bei Sonnenschein 14 °C gemessen werden.",
+      "[[figure:fig1]]",
+      "## Ein unsichtbarer Deckel über den Tälern",
+      "• Sobald die abgekühlte Luft ihren Taupunkt erreicht, kondensiert der Wasserdampf zu Strahlungsnebel oder Hochnebel (Stratus).",
+      "• Ende Oktober steht die Sonne bereits tief: Ihre flachen Strahlen schaffen es oft nicht mehr, die Nebeldecke tagsüber aufzulösen.",
+      "• Dieser thermische „Deckel“ unterbindet den vertikalen Luftaustausch und hält Feinstaub in Bodennähe fest.",
+      "[[figure:fig2]]",
+      "## Wie Sie es in Liquid Weather erkennen",
+      "In Liquid Weather weist ein geringer Abstand zwischen Temperatur und Taupunkt bei schwachem Wind auf Nebelgefahr hin. Im Berg-Widget oder im Startseiten-Stil „Höhe“ sehen Sie zudem sofort, ob die Gipfel über dem Nebelmeer in der Sonne liegen."
+    ],
+    "it": [
+      "Questa domenica 25 ottobre segna il passaggio all'ora solare. Con le notti che superano ormai le tredici ore alle nostre latitudini, un meccanismo tipico del tardo autunno si innesca appena torna l'alta pressione: le inversioni termiche e i mari di nebbia.",
+      "## Quando l'atmosfera funziona al contrario",
+      "Normalmente la temperatura scende con la quota di circa 6,5 °C per chilometro. Ma durante una lunga notte d'ottobre o novembre, con cielo sereno e assenza di vento, il suolo perde rapidamente calore per irraggiamento infrarosso.",
+      "Il terreno freddo raffredda lo strato d'aria a contatto. Più pesante, quest'aria fredda scivola sul fondo delle valli e delle pianure, mentre in quota resta aria più mite: il profilo termico si inverte.",
+      "[[figure:fig1]]",
+      "## Un coperchio invisibile sulle pianure",
+      "• Appena l'aria raffreddata al suolo raggiunge il punto di rugiada, il vapore acqueo condensa in nebbia da irraggiamento o nubi basse (strati).",
+      "• A fine ottobre il sole è già basso sull'orizzonte e talvolta non riesce più a dissolvere la nebbia durante il giorno.",
+      "• Questo «coperchio» termico blocca il rimescolamento verticale e intrappola gli inquinanti vicino al suolo.",
+      "[[figure:fig2]]",
+      "## Come individuarlo in Liquid Weather",
+      "In Liquid Weather la vicinanza tra temperatura e punto di rugiada con vento debole segnala il rischio di nebbia, mentre nel widget Montagna o nello stile Altitudine puoi verificare se le vette emergono sopra il mare di nubi."
+    ],
+    "pt": [
+      "Este domingo, 25 de outubro, marca a mudança para a hora de inverno. Com as noites a ultrapassarem já as treze horas nas nossas latitudes, um fenómeno típico do fim do outono instala-se assim que regressam as altas pressões: as inversões térmicas e os mares de nevoeiro.",
+      "## Quando a atmosfera funciona ao contrário",
+      "Normalmente, a temperatura desce com a altitude cerca de 6,5 °C por quilómetro. Mas durante uma longa noite de outubro ou novembro, sob céu limpo e sem vento, o solo perde rapidamente calor por radiação infravermelha.",
+      "O solo arrefecido arrefece a camada de ar em contacto com ele. Mais pesado, esse ar frio escorre para o fundo dos vales enquanto em altitude permanece ar mais ameno: o perfil térmico inverte-se.",
+      "[[figure:fig1]]",
+      "## Uma tampa invisível sobre os vales",
+      "• Assim que o ar arrefecido atinge o ponto de orvalho, o vapor de água condensa-se em nevoeiro de radiação ou estratos baixos.",
+      "• No final de outubro, o sol já está baixo no horizonte e por vezes não consegue dissipar o nevoeiro durante o dia.",
+      "• Esta «tampa» térmica bloqueia a mistura vertical e retém os poluentes junto ao solo.",
+      "[[figure:fig2]]",
+      "## Como detetar no Liquid Weather",
+      "No Liquid Weather, a proximidade entre a temperatura e o ponto de orvalho com vento fraco indica risco de nevoeiro, e no widget de Montanha ou no estilo Altitude pode ver se os cumes ficam acima do mar de nuvens."
+    ],
+    "ar": [
+      "يمثل هذا الأحد 25 أكتوبر الانتقال إلى التوقيت الشتوي. ومع امتداد الليالي لأكثر من ثلاث عشرة ساعة في عروضنا الوسطى، تستقر آلية خريفية معتادة كلما عادت المرتفعات الجوية: الانقلاب الحراري وبحار الضباب.",
+      "## عندما يعمل الغلاف الجوي بالعكس",
+      "في الأحوال العادية تنخفض الحرارة مع الارتفاع بنحو 6.5 درجات مئوية لكل كيلومتر. لكن خلال ليالي أكتوبر ونوفمبر الطويلة، تحت سماء صافية ورياح ساكنة، تفقد الأرض حرارتها سريعاً بالإشعاع.",
+      "تبرّد الأرض الباردة طبقة الهواء الملامسة لها، فينزلق الهواء البارد الأثقل إلى بطون الأودية والسهول بينما يبقى هواء أدفأ في الأعلى، فينعكس المنحنى الحراري.",
+      "[[figure:fig1]]",
+      "## غطاء غير مرئي فوق الأودية",
+      "• بمجرد وصول الهواء المبرّد إلى نقطة الندى يتكاثف بخار الماء مكوناً ضباب الإشعاع أو سحب الستراتوس المنخفضة.",
+      "• في أواخر أكتوبر تكون الشمس منخفضة في الأفق فلا تنجح أشعتها أحياناً في تبديد الضباب نهاراً.",
+      "• يمنع هذا «الغطاء» الحراري اختلاط الهواء عمودياً ويحبس الملوثات قرب السطح.",
+      "[[figure:fig2]]",
+      "## كيف ترصده في Liquid Weather",
+      "في Liquid Weather يشير تقارب درجة الحرارة مع نقطة الندى مع رياح خفيفة إلى خطر تشكل الضباب، ويمكنك عبر أداة الجبال أو نمط الارتفاع التحقق مما إذا كانت القمم تشرق فوق بحر الغيوم."
+    ]
+  },
+  "figures": {
+    "fig1": {
+      "file": "images/fig1.jpg",
+      "credit": "NASA/STS-98",
+      "license": "pd",
+      "caption": {
+        "fr": "Une mer de stratus et de brouillard piégée au fond de la vallée de l'Inn, dans les Alpes autrichiennes, tandis que les sommets enneigés émergent au grand soleil (photographie prise depuis la navette Atlantis, archive NASA).",
+        "en": "A sea of stratus and valley fog trapped in the Inn River Valley in the Austrian Alps, while snow-capped peaks stand in bright sunshine above (photographed from Space Shuttle Atlantis, NASA archive).",
+        "es": "Un mar de estratos y niebla atrapado en el valle del Inn, en los Alpes austríacos, mientras las cumbres nevadas emergen al sol (fotografía desde el transbordador Atlantis, archivo NASA).",
+        "de": "Ein Meer aus Hochnebel im Inntal in den österreichischen Alpen, während die verschneiten Gipfel darüber in der Sonne liegen (Aufnahme aus dem Space Shuttle Atlantis, NASA-Archiv).",
+        "it": "Un mare di strati e nebbia intrappolato nella valle dell'Inn, nelle Alpi austriache, mentre le vette innevate emergono al sole (foto dallo Space Shuttle Atlantis, archivio NASA).",
+        "pt": "Um mar de estratos e nevoeiro retido no vale do Inn, nos Alpes austríacos, enquanto os cumes nevados emergem ao sol (fotografia do vaivém Atlantis, arquivo NASA).",
+        "ar": "بحر من الضباب والسحب المنخفضة محصور في وادي نهر إن في جبال الألب النمساوية بينما تبرز القمم الثلجية تحت الشمس (صورة من المكوك أتلانتس، أرشيف ناسا)."
+      }
+    },
+    "fig2": {
+      "file": "images/fig2.jpg",
+      "credit": "NASA/ISS Expedition 23",
+      "license": "pd",
+      "caption": {
+        "fr": "Les lumières de Lyon, Genève, Turin et Marseille vues de nuit depuis la Station spatiale internationale de part et d'autre de l'arc alpin : des bassins et vallées particulièrement sujets aux inversions thermiques d'automne et d'hiver.",
+        "en": "City lights of Lyon, Geneva, Turin and Marseille at night from the International Space Station on either side of the Alps: basins and valleys especially prone to autumn and winter temperature inversions.",
+        "es": "Las luces de Lyon, Ginebra, Turín y Marsella de noche desde la Estación Espacial Internacional a ambos lados de los Alpes: cuencas especialmente propensas a las inversiones térmicas.",
+        "de": "Die Lichter von Lyon, Genf, Turin und Marseille bei Nacht von der Internationalen Raumstation aus beiderseits des Alpenbogens: Beckenlagen, in denen sich im Herbst und Winter häufig Inversionen bilden.",
+        "it": "Le luci di Lione, Ginevra, Torino e Marsiglia viste di notte dalla Stazione Spaziale Internazionale ai lati delle Alpi: bacini particolarmente soggetti alle inversioni termiche.",
+        "pt": "As luzes de Lyon, Genebra, Turim e Marselha vistas de noite a partir da Estação Espacial Internacional de ambos os lados dos Alpes: bacias particularmente propensas a inversões térmicas.",
+        "ar": "أضواء ليون وجنيف وتورينو ومرسيليا ليلاً من محطة الفضاء الدولية على جانبي جبال الألب: أحواض وأودية معرضة بشكل خاص للانقلاب الحراري في الخريف والشتاء."
+      }
+    }
+  },
+  "source": {
+    "name": "Météo-France — Comprendre le brouillard et les inversions",
+    "url": "https://meteofrance.com/comprendre-la-meteo/atmosphere/le-brouillard-comment-se-forme-t-il"
+  }
+}

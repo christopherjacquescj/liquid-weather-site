@@ -2,6 +2,138 @@
   "version": 2,
   "articles": [
     {
+      "id": "2026-10-25-episodes-mediterraneens-automne",
+      "date": "2026-10-25T11:15:00+01:00",
+      "folder": "2026-10-25-episodes-mediterraneens-automne",
+      "cover": "images/cover.jpg",
+      "category": {
+        "fr": "Vigilance",
+        "en": "Alert",
+        "es": "Alerta",
+        "de": "Warnung",
+        "it": "Allerta",
+        "pt": "Alerta",
+        "ar": "تحذير"
+      },
+      "title": {
+        "fr": "Épisodes méditerranéens et cévenols : pourquoi l'automne est la saison de tous les dangers",
+        "en": "Mediterranean heavy rain events: why autumn is the most dangerous season",
+        "es": "Episodios mediterráneos y DANA: por qué el otoño es la estación más peligrosa",
+        "de": "Mediterrane Starkregenereignisse: Warum der Herbst die gefährlichste Jahreszeit ist",
+        "it": "Episodi mediterranei e alluvioni: perché l'autunno è la stagione più pericolosa",
+        "pt": "Episódios mediterrânicos de chuva extrema: porque é que o outono é a estação mais perigosa",
+        "ar": "أحداث الأمطار المتوسطية الغزيرة: لماذا يُعد الخريف الموسم الأكثر خطورة"
+      },
+      "summary": {
+        "fr": "Une mer Méditerranée encore chaude, les premières gouttes froides d'altitude et le barrage des reliefs : comment se forment les orages diluviens d'octobre et novembre.",
+        "en": "A still-warm Mediterranean Sea, the first upper-level cold lows and coastal mountains: how autumn flash-flood thunderstorms form.",
+        "es": "Un Mediterráneo aún cálido, las primeras DANA en altura y el freno del relieve: así se forman las lluvias torrenciales de otoño.",
+        "de": "Ein noch warmes Mittelmeer, erste Höhentiefs und steile Küstengebirge: Wie die extremen Herbstgewitter entstehen.",
+        "it": "Un Mediterraneo ancora caldo, le prime gocce fredde in quota e l'ostacolo dei rilievi: come nascono i nubifragi autunnali.",
+        "pt": "Um Mediterrâneo ainda quente, as primeiras depressões em altitude e o relevo costeiro: como se formam as chuvadas torrenciais de outono.",
+        "ar": "بحر متوسط لا يزال دافئاً وأحواض باردة علوية وتضاريس ساحلية: كيف تتشكل العواصف الفيضانية في الخريف."
+      }
+    },
+    {
+      "id": "2026-10-25-heure-hiver-brouillards-inversions",
+      "date": "2026-10-25T09:00:00+01:00",
+      "folder": "2026-10-25-heure-hiver-brouillards-inversions",
+      "cover": "images/cover.jpg",
+      "category": {
+        "fr": "Saisons",
+        "en": "Seasons",
+        "es": "Estaciones",
+        "de": "Jahreszeiten",
+        "it": "Stagioni",
+        "pt": "Estações",
+        "ar": "الفصول"
+      },
+      "title": {
+        "fr": "Passage à l'heure d'hiver : le grand retour des brouillards et des inversions thermiques",
+        "en": "Winter time begins: the return of valley fog and temperature inversions",
+        "es": "Cambio al horario de invierno: el regreso de las nieblas y las inversiones térmicas",
+        "de": "Umstellung auf die Winterzeit: Die Rückkehr von Nebelmeeren und Temperaturinversionen",
+        "it": "Passaggio all'ora solare: il ritorno delle nebbie e delle inversioni termiche",
+        "pt": "Mudança para a hora de inverno: o regresso dos nevoeiros e das inversões térmicas",
+        "ar": "بدء التوقيت الشتوي: عودة الضباب والانقلابات الحرارية في الأودية"
+      },
+      "summary": {
+        "fr": "Avec des nuits de plus de treize heures et un soleil bas, les hautes pressions d'automne piègent le froid et la grisaille dans les vallées pendant qu'il fait grand beau en montagne.",
+        "en": "With nights over thirteen hours long and a low sun, autumn high pressure traps cold air and fog in the valleys while mountain peaks bask in warm sunshine.",
+        "es": "Con noches de más de trece horas y un sol bajo, los anticiclones otoñales atrapan el frío y la niebla en los valles mientras luce el sol en las cumbres.",
+        "de": "Mit über dreizehn Stunden langen Nächten und tiefstehender Sonne hält Herbsthochdruck Kälte und Hochnebel in den Tälern fest, während auf den Bergen die Sonne scheint.",
+        "it": "Con notti di oltre tredici ore e il sole basso, l'alta pressione autunnale intrappola freddo e nebbia nelle valli mentre sulle vette splende il sole.",
+        "pt": "Com noites de mais de treze horas e o sol baixo, os anticiclões de outono prendem o frio e o nevoeiro nos vales enquanto o sol brilha nas montanhas.",
+        "ar": "مع ليالٍ تتجاوز ثلاث عشرة ساعة وشمس منخفضة، تحبس المرتفعات الخريفية البرد والضباب في الأودية بينما تشرق الشمس فوق الجبال."
+      }
+    },
+    {
+      "id": "2026-10-24-vortex-polaire-hiver",
+      "date": "2026-10-24T18:30:00+02:00",
+      "folder": "2026-10-24-vortex-polaire-hiver",
+      "cover": "images/cover.jpg",
+      "category": {
+        "fr": "Saisons",
+        "en": "Seasons",
+        "es": "Estaciones",
+        "de": "Jahreszeiten",
+        "it": "Stagioni",
+        "pt": "Estações",
+        "ar": "الفصول"
+      },
+      "title": {
+        "fr": "Le vortex polaire se reforme au-dessus de l'Arctique : que nous réserve-t-il pour l'hiver ?",
+        "en": "The polar vortex is spinning up over the Arctic: what does it hold for winter?",
+        "es": "El vórtice polar se reorganiza sobre el Ártico: ¿qué nos depara para el invierno?",
+        "de": "Der Polarwirbel formiert sich über der Arktis neu: Was bedeutet das für den Winter?",
+        "it": "Il vortice polare si riforma sull'Artico: cosa ci riserva per l'inverno?",
+        "pt": "O vórtice polar reorganiza-se sobre o Ártico: o que nos reserva para o inverno?",
+        "ar": "الدوامة القطبية تتشكل مجدداً فوق القطب الشمالي: ماذا تخبئ لنا في الشتاء؟"
+      },
+      "summary": {
+        "fr": "À 30 km d'altitude, l'anneau de vents glacials qui coiffe le pôle Nord gagne en puissance. Concentré ou déstabilisé, c'est lui qui détient la clé des vagues de froid hivernales.",
+        "en": "Thirty kilometres above the North Pole, the ring of icy stratospheric winds is gaining strength. Whether it stays tight or splits holds the key to winter cold waves.",
+        "es": "A 30 km de altitud, el anillo de vientos helados sobre el Polo Norte gana fuerza. Que se mantenga compacto o se divida es clave para las olas de frío invernales.",
+        "de": "In 30 km Höhe gewinnt der eisige Windring über dem Nordpol an Kraft. Ob er stabil bleibt oder aufbricht, entscheidet über winterliche Kältewellen.",
+        "it": "A 30 km di quota l'anello di venti gelidi sul Polo Nord acquista forza. La sua tenuta o la sua rottura è la chiave delle ondate di freddo invernali.",
+        "pt": "A 30 km de altitude, o anel de ventos gelados sobre o Polo Norte ganha força. Manter-se compacto ou dividir-se é a chave para as vagas de frio no inverno.",
+        "ar": "على ارتفاع 30 كم تزداد قوة حلقة الرياح الجليدية فوق القطب الشمالي. تماسكها أو انقسامها يحمل مفتاح موجات البرد الشتوية."
+      }
+    },
+    {
+      "id": "2026-10-24-automne-douceur-records",
+      "date": "2026-10-24T14:00:00+02:00",
+      "folder": "2026-10-24-automne-douceur-records",
+      "cover": "images/cover.jpg",
+      "category": {
+        "fr": "Climat",
+        "en": "Climate",
+        "es": "Clima",
+        "de": "Klima",
+        "it": "Clima",
+        "pt": "Clima",
+        "ar": "المناخ"
+      },
+      "title": {
+        "fr": "Octobre hors normes : pourquoi les automnes européens s'étirent de plus en plus vers l'été",
+        "en": "Unseasonable October warmth: why European autumns are increasingly stretching summer",
+        "es": "Octubre fuera de lo normal: por qué los otoños europeos alargan cada vez más el verano",
+        "de": "Ungewöhnlich milder Oktober: Warum sich Europas Herbste immer weiter wie ein Spätsommer anfühlen",
+        "it": "Ottobre fuori norma: perché gli autunni europei prolungano sempre più l'estate",
+        "pt": "Outubro fora do normal: porque é que os outonos europeus prolongam cada vez mais o verão",
+        "ar": "أكتوبر استثنائي: لماذا يطيل الخريف الأوروبي فصل الصيف أكثر فأكثر"
+      },
+      "summary": {
+        "fr": "Remontées d'air subtropical (« plume ibérique »), dômes anticycloniques et effet de foehn : décryptage de ces coups de douceur tardifs qui redessinent l'automne.",
+        "en": "Subtropical air plumes from Iberia, high-pressure domes and Foehn winds: unpacking the late warm spells reshaping autumn across Europe.",
+        "es": "Plumas de aire subtropical, domos anticiclónicos y efecto foehn: las claves de los episodios cálidos tardíos que están transformando el otoño.",
+        "de": "Subtropische Warmluftvorstöße, Hochdruckkuppeln und Föhneffekt: Warum späte Wärmewellen den europäischen Herbst verändern.",
+        "it": "Risalite subtropicali («piuma iberica»), promontori anticiclonici ed effetto foehn: ecco perché le ondate di tepore tardivo ridisegnano l'autunno.",
+        "pt": "Subidas de ar subtropical («pluma ibérica»), cúpulas anticiclónicas e efeito de foehn: como os episódios de calor tardio estão a mudar o outono.",
+        "ar": "اندفاعات الهواء شبه المداري والقباب المرتفعة ورياح الفوهن: قراءة في موجات الدفء المتأخرة التي تعيد رسم فصل الخريف."
+      }
+    },
+    {
       "id": "2026-10-23-tempete-austen",
       "date": "2026-10-23T18:00:00+02:00",
       "folder": "2026-10-23-tempete-austen",
