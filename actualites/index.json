@@ -2,6 +2,39 @@
   "version": 2,
   "articles": [
     {
+      "id": "2026-10-26-merci-telechargements-beta",
+      "date": "2026-10-26T09:00:00+01:00",
+      "folder": "2026-10-26-merci-telechargements-beta",
+      "cover": "images/cover.jpg",
+      "category": {
+        "fr": "Annonce",
+        "en": "Announcement",
+        "es": "Anuncio",
+        "de": "Ankündigung",
+        "it": "Annuncio",
+        "pt": "Anúncio",
+        "ar": "إعلان"
+      },
+      "title": {
+        "fr": "Merci pour vos téléchargements et votre bêta-test",
+        "en": "Thank you for downloading and beta testing",
+        "es": "Gracias por las descargas y por probar la beta",
+        "de": "Danke für eure Downloads und den Beta-Test",
+        "it": "Grazie per i download e per il beta testing",
+        "pt": "Obrigado pelos downloads e pelo beta teste",
+        "ar": "شكراً على التنزيلات والاختبار التجريبي"
+      },
+      "summary": {
+        "fr": "Merci aux utilisateurs de Liquid Weather et aux testeurs de la bêta.",
+        "en": "Thanks to everyone using Liquid Weather and to the beta testers.",
+        "es": "Gracias a quienes usan Liquid Weather y a los probadores de la beta.",
+        "de": "Danke an alle, die Liquid Weather nutzen, und an die Beta-Tester.",
+        "it": "Grazie a chi usa Liquid Weather e ai beta tester.",
+        "pt": "Obrigado a quem usa o Liquid Weather e aos beta testers.",
+        "ar": "شكراً لمستخدمي Liquid Weather ولمختبري النسخ التجريبية."
+      }
+    },
+    {
       "id": "2026-10-25-episodes-mediterraneens-automne",
       "date": "2026-10-25T11:15:00+01:00",
       "folder": "2026-10-25-episodes-mediterraneens-automne",
