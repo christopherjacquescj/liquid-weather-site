@@ -35,6 +35,39 @@
       }
     },
     {
+      "id": "2026-10-26-neige-siberie-hivers-europe",
+      "date": "2026-10-26T08:00:00+01:00",
+      "folder": "2026-10-26-neige-siberie-hivers-europe",
+      "cover": "images/cover.jpg",
+      "category": {
+        "fr": "Saisons",
+        "en": "Seasons",
+        "es": "Estaciones",
+        "de": "Jahreszeiten",
+        "it": "Stagioni",
+        "pt": "Estações",
+        "ar": "الفصول"
+      },
+      "title": {
+        "fr": "La neige de Sibérie peut-elle refroidir nos hivers ?",
+        "en": "Can Siberian snow make our winters colder?",
+        "es": "¿Puede la nieve de Siberia enfriar nuestros inviernos?",
+        "de": "Kann Schnee in Sibirien unsere Winter kälter machen?",
+        "it": "La neve della Siberia può raffreddare i nostri inverni?",
+        "pt": "Pode a neve da Sibéria arrefecer os nossos invernos?",
+        "ar": "هل يمكن لثلوج سيبيريا أن تجعل شتاءنا أكثر برودة؟"
+      },
+      "summary": {
+        "fr": "Chaque octobre, la neige recouvre la Sibérie plus ou moins vite. Une théorie relie cette course aux hivers froids en Europe : voici comment elle fonctionne, et pourquoi elle convainc de moins en moins.",
+        "en": "Every October, snow spreads across Siberia at a different pace. One theory links this race to cold European winters: here is how it works, and why it is convincing fewer and fewer experts.",
+        "es": "Cada octubre, la nieve cubre Siberia a un ritmo distinto. Una teoría relaciona esta carrera con los inviernos fríos en Europa: así funciona, y por eso convence cada vez menos.",
+        "de": "Jeden Oktober breitet sich der Schnee unterschiedlich schnell über Sibirien aus. Eine Theorie verknüpft das mit kalten Wintern in Europa: So funktioniert sie, und darum überzeugt sie immer weniger.",
+        "it": "Ogni ottobre la neve copre la Siberia a ritmi diversi. Una teoria collega questa corsa agli inverni freddi in Europa: ecco come funziona e perché convince sempre meno.",
+        "pt": "Todos os outubros, a neve cobre a Sibéria a ritmos diferentes. Uma teoria liga esta corrida aos invernos frios na Europa: eis como funciona e porque convence cada vez menos.",
+        "ar": "في كل أكتوبر تغطي الثلوج سيبيريا بسرعات متفاوتة. نظرية تربط هذا السباق بفصول الشتاء الباردة في أوروبا: إليك كيف تعمل، ولماذا باتت تُقنع عدداً أقل من الخبراء."
+      }
+    },
+    {
       "id": "2026-10-25-episodes-mediterraneens-automne",
       "date": "2026-10-25T11:15:00+01:00",
       "folder": "2026-10-25-episodes-mediterraneens-automne",
