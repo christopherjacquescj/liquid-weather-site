@@ -2,6 +2,39 @@
   "version": 2,
   "articles": [
     {
+      "id": "2026-10-27-cartes-pollution-vigilance-apple-pcc",
+      "date": "2026-10-27T09:50:00+01:00",
+      "folder": "2026-10-27-cartes-pollution-vigilance-apple-pcc",
+      "cover": "images/cover.jpg",
+      "category": {
+        "fr": "Annonce",
+        "en": "Announcement",
+        "es": "Anuncio",
+        "de": "Ankündigung",
+        "it": "Annuncio",
+        "pt": "Anúncio",
+        "ar": "إعلان"
+      },
+      "title": {
+        "fr": "À venir : cartes de pollution et de vigilance MeteoAlarm, et plus tard cette année Apple Private Cloud Compute",
+        "en": "Coming up: pollution and MeteoAlarm warning maps, and later this year Apple Private Cloud Compute",
+        "es": "Próximamente: mapas de contaminación y de avisos MeteoAlarm, y más adelante este año Apple Private Cloud Compute",
+        "de": "Geplant: Karten zu Luftverschmutzung und MeteoAlarm-Warnungen, und später in diesem Jahr Apple Private Cloud Compute",
+        "it": "In arrivo: mappe dell'inquinamento e delle allerte MeteoAlarm, e più avanti quest'anno Apple Private Cloud Compute",
+        "pt": "A caminho: mapas de poluição e de avisos MeteoAlarm, e mais tarde este ano o Apple Private Cloud Compute",
+        "ar": "قريباً: خرائط التلوث وتحذيرات MeteoAlarm، وفي وقت لاحق من هذا العام Apple Private Cloud Compute"
+      },
+      "summary": {
+        "fr": "Les cartes de pollution et de vigilance MeteoAlarm arrivent dans l'onglet Cartes. Plus tard cette année, Ask Liquid gagnera en précision grâce au cloud sécurisé d'Apple.",
+        "en": "The pollution and MeteoAlarm warning maps are coming to the Maps tab. Later this year, Ask Liquid will become more precise thanks to Apple's secure cloud.",
+        "es": "Los mapas de contaminación y de avisos MeteoAlarm llegan a la pestaña Mapas. Más adelante este año, Ask Liquid será más preciso gracias a la nube segura de Apple.",
+        "de": "Die Karten zu Luftverschmutzung und MeteoAlarm-Warnungen kommen in den Tab „Karten“. Später in diesem Jahr wird Ask Liquid dank der sicheren Cloud von Apple genauer.",
+        "it": "Le mappe dell'inquinamento e delle allerte MeteoAlarm arrivano nella scheda Mappe. Più avanti quest'anno Ask Liquid diventerà più preciso grazie al cloud sicuro di Apple.",
+        "pt": "Os mapas de poluição e de avisos MeteoAlarm chegam ao separador Mapas. Mais tarde este ano, o Ask Liquid ficará mais preciso graças à nuvem segura da Apple.",
+        "ar": "تصل خريطتا التلوث وتحذيرات MeteoAlarm إلى تبويب الخرائط. وفي وقت لاحق من هذا العام، سيصبح Ask Liquid أدق بفضل سحابة Apple الآمنة."
+      }
+    },
+    {
       "id": "2026-10-26-merci-telechargements-beta",
       "date": "2026-10-26T09:00:00+01:00",
       "folder": "2026-10-26-merci-telechargements-beta",
