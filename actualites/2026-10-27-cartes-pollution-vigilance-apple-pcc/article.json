@@ -187,13 +187,13 @@
       "credit": "Apple / Liquid Weather",
       "license": "",
       "caption": {
-        "fr": "Ask Liquid, l'assistant de Liquid Weather.",
-        "en": "Ask Liquid, the Liquid Weather assistant.",
-        "es": "Ask Liquid, el asistente de Liquid Weather.",
-        "de": "Ask Liquid, der Assistent von Liquid Weather.",
-        "it": "Ask Liquid, l'assistente di Liquid Weather.",
-        "pt": "Ask Liquid, o assistente do Liquid Weather.",
-        "ar": "Ask Liquid، مساعد Liquid Weather."
+        "fr": "Ask Liquid : sur votre iPhone, ou avec le cloud sécurisé d'Apple quand vous êtes connecté.",
+        "en": "Ask Liquid: on your iPhone, or with Apple's secure cloud when you are online.",
+        "es": "Ask Liquid: en tu iPhone, o con la nube segura de Apple cuando tienes conexión.",
+        "de": "Ask Liquid: auf deinem iPhone oder mit der sicheren Cloud von Apple, wenn du online bist.",
+        "it": "Ask Liquid: sul tuo iPhone, o con il cloud sicuro di Apple quando sei connesso.",
+        "pt": "Ask Liquid: no seu iPhone, ou com a nuvem segura da Apple quando está ligado.",
+        "ar": "Ask Liquid: على جهاز iPhone الخاص بك، أو مع سحابة Apple الآمنة عندما تكون متصلاً."
       }
     }
   },
