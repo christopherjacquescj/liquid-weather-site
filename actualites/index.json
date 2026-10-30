@@ -2,6 +2,39 @@
   "version": 2,
   "articles": [
     {
+      "id": "2026-10-30-baisse-des-temperatures-novembre",
+      "date": "2026-10-30T14:20:00+01:00",
+      "folder": "2026-10-30-baisse-des-temperatures-novembre",
+      "cover": "images/cover.jpg",
+      "category": {
+        "fr": "Saisons",
+        "en": "Seasons",
+        "es": "Estaciones",
+        "de": "Jahreszeiten",
+        "it": "Stagioni",
+        "pt": "Estações",
+        "ar": "الفصول"
+      },
+      "title": {
+        "fr": "Les températures vont baisser la semaine prochaine",
+        "en": "Temperatures will drop next week",
+        "es": "Las temperaturas bajarán la próxima semana",
+        "de": "Die Temperaturen sinken nächste Woche",
+        "it": "Le temperature scenderanno la prossima settimana",
+        "pt": "As temperaturas vão descer na próxima semana",
+        "ar": "درجات الحرارة ستنخفض الأسبوع المقبل"
+      },
+      "summary": {
+        "fr": "Après le week-end du 1er novembre, l'air devient plus froid : 1 à 3 °C de moins que la normale, et jusqu'à 6 °C de moins dans le centre et l'est.",
+        "en": "After the weekend of 1 November, the air turns colder: 1 to 3 °C below normal, and up to 6 °C below in the centre and east.",
+        "es": "Tras el fin de semana del 1 de noviembre, el aire se enfría: de 1 a 3 °C menos que lo normal, y hasta 6 °C menos en el centro y el este.",
+        "de": "Nach dem Wochenende vom 1. November wird die Luft kälter: 1 bis 3 °C unter dem Normalwert, im Zentrum und Osten bis zu 6 °C.",
+        "it": "Dopo il fine settimana del 1° novembre l'aria si fa più fredda: da 1 a 3 °C sotto la norma, fino a 6 °C in meno al centro e a est.",
+        "pt": "Depois do fim de semana de 1 de novembro, o ar fica mais frio: 1 a 3 °C abaixo do normal e até 6 °C abaixo no centro e no leste.",
+        "ar": "بعد عطلة نهاية الأسبوع في 1 نوفمبر يصبح الهواء أبرد: أقل بدرجة إلى ثلاث درجات من المعدل، وحتى ست درجات في الوسط والشرق."
+      }
+    },
+    {
       "id": "2026-10-27-cartes-pollution-vigilance-apple-pcc",
       "date": "2026-10-27T09:50:00+01:00",
       "folder": "2026-10-27-cartes-pollution-vigilance-apple-pcc",
