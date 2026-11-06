@@ -2,6 +2,39 @@
   "version": 2,
   "articles": [
     {
+      "id": "2026-11-06-retour-de-la-douceur-semaine-prochaine",
+      "date": "2026-11-06T07:45:00+01:00",
+      "folder": "2026-11-06-retour-de-la-douceur-semaine-prochaine",
+      "cover": "images/cover.jpg",
+      "category": {
+        "fr": "Saisons",
+        "en": "Seasons",
+        "es": "Estaciones",
+        "de": "Jahreszeiten",
+        "it": "Stagioni",
+        "pt": "Estações",
+        "ar": "الفصول"
+      },
+      "title": {
+        "fr": "La douceur revient la semaine prochaine sur l'ouest de l'Europe",
+        "en": "Mild weather returns next week over western Europe",
+        "es": "La suavidad vuelve la próxima semana al oeste de Europa",
+        "de": "Nächste Woche wird es in Westeuropa wieder mild",
+        "it": "La mitezza torna la prossima settimana sull'Europa occidentale",
+        "pt": "O tempo ameno volta na próxima semana ao oeste da Europa",
+        "ar": "الدفء يعود الأسبوع المقبل إلى غرب أوروبا"
+      },
+      "summary": {
+        "fr": "Après une semaine fraîche, le vent tourne au sud dès dimanche. En milieu de semaine, il fera 15 à 20 °C en France, soit 3 à 5 °C de plus que la normale. La douceur gagne aussi l'Espagne et l'Allemagne.",
+        "en": "After a cool week, the wind turns south from Sunday. By midweek it will be 15 to 20 °C in France, 3 to 5 °C above normal. The mild air also reaches Spain and Germany.",
+        "es": "Tras una semana fresca, el viento gira al sur desde el domingo. A mitad de semana hará de 15 a 20 °C en Francia, 3 a 5 °C más que lo normal. La suavidad llega también a España y Alemania.",
+        "de": "Nach einer kühlen Woche dreht der Wind ab Sonntag auf Süd. Zur Wochenmitte werden es in Frankreich 15 bis 20 °C, 3 bis 5 °C mehr als normal. Die milde Luft erreicht auch Spanien und Deutschland.",
+        "it": "Dopo una settimana fresca, il vento gira a sud da domenica. A metà settimana ci saranno 15-20 °C in Francia, 3-5 °C sopra la norma. La mitezza raggiunge anche Spagna e Germania.",
+        "pt": "Depois de uma semana fresca, o vento roda para sul a partir de domingo. A meio da semana estarão 15 a 20 °C em França, 3 a 5 °C acima do normal. O ar ameno chega também a Espanha e à Alemanha.",
+        "ar": "بعد أسبوع منعش، تتحول الرياح إلى جنوبية من الأحد. في منتصف الأسبوع ستكون الحرارة بين 15 و20 درجة في فرنسا، أي أعلى بـ3 إلى 5 درجات من المعدل. ويصل الدفء أيضاً إلى إسبانيا وألمانيا."
+      }
+    },
+    {
       "id": "2026-10-30-baisse-des-temperatures-novembre",
       "date": "2026-10-30T14:20:00+01:00",
       "folder": "2026-10-30-baisse-des-temperatures-novembre",
