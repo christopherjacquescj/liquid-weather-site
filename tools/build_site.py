@@ -65,12 +65,12 @@ TOUR = {
              "compare": [40.341, 91.736, 19.318, 5.649], "maps": [57.682, 91.736, 19.318, 5.649],
              "moon": [75.0, 91.736, 19.318, 5.649]},
     "tabs": [
-        {"id": "home", "ratio": 6.7242, "layers": [{"img": "assets/home.webp"}], "top": "assets/home-top.webp", "bot": "assets/home-bot.webp"},
-        {"id": "forecast", "ratio": 7.25, "layers": [{"img": "assets/forecast-s0.webp", "label": "Températures"}, {"img": "assets/forecast-s1.webp", "label": "Précipitations"}], "top": "assets/forecast-top.webp", "bot": "assets/forecast-bot.webp"},
-        {"id": "compare", "ratio": 7.4636, "layers": [{"img": "assets/compare-s0.webp", "label": "Résumé"}, {"img": "assets/compare-s1.webp", "label": "Quelques Nuages"}, {"img": "assets/compare-s2.webp", "label": "Thermomètre"}], "top": "assets/compare-top.webp", "bot": "assets/compare-bot.webp"},
+        {"id": "home", "ratio": 6.7242, "layers": [{"img": "assets/home.webp"}], "top": "assets/home-top.webp", "bot": "assets/home-tab.webp"},
+        {"id": "forecast", "ratio": 7.25, "layers": [{"img": "assets/forecast-s0.webp", "label": "Températures"}, {"img": "assets/forecast-s1.webp", "label": "Précipitations"}], "top": "assets/forecast-top.webp", "bot": "assets/forecast-tab.webp"},
+        {"id": "compare", "ratio": 7.4636, "layers": [{"img": "assets/compare-s0.webp", "label": "Résumé"}, {"img": "assets/compare-s1.webp", "label": "Quelques Nuages"}, {"img": "assets/compare-s2.webp", "label": "Thermomètre"}], "top": "assets/compare-top.webp", "bot": "assets/compare-tab.webp"},
         {"id": "maps", "layers": [{"img": "assets/map-l0.webp", "label": "Température"}, {"img": "assets/map-l1.webp", "label": "Précipitations"}, {"img": "assets/map-l2.webp", "label": "Vent"}, {"img": "assets/map-l3.webp", "label": "Nuages"}, {"img": "assets/map-l4.webp", "label": "Cumul neige"}],
          "times": ["assets/map-t%d.webp" % i for i in range(8)]},
-        {"id": "moon", "ratio": 6.8667, "layers": [{"img": "assets/moon.webp"}], "top": "assets/moon-top.webp", "bot": "assets/moon-bot.webp"},
+        {"id": "moon", "ratio": 6.8667, "layers": [{"img": "assets/moon.webp"}], "top": "assets/moon-top.webp", "bot": "assets/moon-tab.webp"},
     ],
 }
 
@@ -222,7 +222,7 @@ def shell(t, page, title, desc, body, scripts, ld=None, noindex=False, bodyclass
         head(t, page, title, desc, ld, noindex),
         f'<body class="page-{page} {bodyclass}">',
         f'<a class="skip" href="#main">{t["skip"]}</a>',
-        '<div class="sky" aria-hidden="true"><canvas id="sky"></canvas></div><div class="sky-scrim" aria-hidden="true"></div>',
+        '<div class="sky" aria-hidden="true"><canvas id="sky"></canvas><canvas id="fx"></canvas></div><div class="sky-scrim" aria-hidden="true"></div>',
         nav(t, page), body, footer(t), dock(t) if with_dock else "",
         sc, "</body></html>\n"])
 
@@ -284,7 +284,7 @@ def home(t):
 <div class="tour-phone">
 <div class="phone" id="phone">
 <div class="phone-body"><div class="screen" id="screen" role="img" aria-label="{esc(t['phone_label'])}">
-<div class="layer is-on" data-tab="home"><div class="page"><img src="{first['layers'][0]['img']}" width="660" height="4438" alt="" decoding="async" fetchpriority="high"></div>
+<div class="layer is-on" data-tab="home"><div class="page-clip"><div class="page"><img src="{first['layers'][0]['img']}" width="660" height="4438" alt="" decoding="async" fetchpriority="high"></div></div>
 <img class="ov top" src="{first['top']}" width="660" height="170" alt=""><img class="ov bot" src="{first['bot']}" width="660" height="154" alt=""></div>
 </div></div>
 </div>
@@ -426,7 +426,7 @@ def home(t):
           "applicationCategory": "WeatherApplication", "description": t["home_desc"], "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"},
           "inLanguage": ["fr", "en", "es", "de", "it", "pt", "ar"], "url": BASE}
     body = f'<main id="main">\n{tour}\n{models}\n{feat}\n{news}\n{soon}\n{priv}\n{faqs}\n{finale}\n</main>'
-    page = shell(t, "home", t["home_title"], t["home_desc"], body, ["js/sky.js", "js/site.js", "js/home.js"], ld=ld, bodyclass="")
+    page = shell(t, "home", t["home_title"], t["home_desc"], body, ["js/sky.js", "js/fx.js", "js/site.js", "js/home.js"], ld=ld, bodyclass="")
     write(page_url("home", lang), page)
 
 
@@ -434,23 +434,23 @@ def home(t):
 def news_page(t):
     lang = t["lang"]
     cfg = {k: t[k] for k in ["np_search", "np_all", "np_count_one", "np_count_many", "np_none", "np_back", "np_read", "np_source", "np_photo", "np_share", "np_copied",
-                              "np_more", "np_lang", "np_licence", "np_notfound", "np_notfound_p", "np_updated", "np_pd", "news_error", "np_title", "nav_news"]}
+                              "np_more", "np_lang", "np_licence", "np_notfound", "np_notfound_p", "np_updated", "np_pd", "news_error", "np_title", "nav_news", "np_period", "np_p_week", "np_p_month", "np_p_quarter", "np_p_year", "np_type", "np_all_types", "np_newest", "np_oldest", "np_clear", "np_prev", "np_next", "np_pages", "np_page"]}
     cfg.update({"lang": lang, "page": page_url("news", lang), "other": page_url("news", t["other_lang"])})
     body = f'''<main id="main" class="np">
 <div class="wrap">
 <div id="np-list-view">
 <header class="np-head"><h1>{t['np_h1']}</h1><p class="lead">{t['np_lead']}</p></header>
-<div class="np-tools"><div class="np-filters" id="np-filters" role="group" aria-label="{esc(t['np_all'])}"></div>
-<label class="np-search"><span class="sr">{t['np_search']}</span><input id="np-q" type="search" placeholder="{esc(t['np_search'])}" autocomplete="off"></label></div>
-<p class="np-count" id="np-count" aria-live="polite"></p>
+<div id="np-controls" class="np-controls"></div>
+<div id="np-bar" class="np-bar"><p class="np-count" id="np-count" aria-live="polite"></p></div>
 <div id="np-list" class="np-list"><p class="rail-msg">{t['news_loading']}</p></div>
+<nav id="np-pages" class="np-pages" aria-label="{esc(t['np_pages'])}" hidden></nav>
 </div>
 <article id="np-reader" class="reader" hidden></article>
 <noscript><p class="rail-msg">{t['news_noscript']}</p></noscript>
 </div>
 <script type="application/json" id="lw-news-cfg">{json.dumps(cfg, ensure_ascii=False, separators=(",", ":"))}</script>
 </main>'''
-    write(page_url("news", lang), shell(t, "news", t["np_title"], t["np_desc"], body, ["js/sky.js", "js/site.js", "js/news.js"], bodyclass="page-text"))
+    write(page_url("news", lang), shell(t, "news", t["np_title"], t["np_desc"], body, ["js/sky.js", "js/fx.js", "js/site.js", "js/news.js"], bodyclass="page-text"))
 
 
 def privacy_page(t):
@@ -459,7 +459,7 @@ def privacy_page(t):
 <h1 class="h-page">{t['pv_h1']}</h1><p class="muted">{t['pv_updated']}</p>
 <div class="prose glass">{t['pv_body']}</div>
 </div></main>'''
-    write(page_url("privacy", lang), shell(t, "privacy", t["pv_title"], t["pv_desc"], body, ["js/sky.js", "js/site.js"], bodyclass="page-text"))
+    write(page_url("privacy", lang), shell(t, "privacy", t["pv_title"], t["pv_desc"], body, ["js/sky.js", "js/fx.js", "js/site.js"], bodyclass="page-text"))
 
 
 def support_page(t):
@@ -479,7 +479,7 @@ def support_page(t):
 </div>
 <div class="prose glass sp-prose"><h2>{t['sp_before_t']}</h2><p>{t['sp_before_p']}</p><h2>{t['sp_priv_t']}</h2><p>{t['sp_priv_p']}</p></div>
 </div></main>'''
-    write(page_url("support", lang), shell(t, "support", t["sp_title"], t["sp_desc"], body, ["js/sky.js", "js/site.js"], bodyclass="page-text"))
+    write(page_url("support", lang), shell(t, "support", t["sp_title"], t["sp_desc"], body, ["js/sky.js", "js/fx.js", "js/site.js"], bodyclass="page-text"))
 
 
 def not_found():
@@ -491,7 +491,7 @@ def not_found():
 <p class="cta"><a class="btn btn-store btn-lg" href="{BASE}">{fr['nf_btn']}</a><a class="btn btn-glass btn-lg" href="{BASE}index-en.html" lang="en">{en['nf_btn']}</a></p>
 </div></main>'''
     # la page 404 est servie à n'importe quelle adresse : on utilise des liens absolus pour les fichiers
-    page = shell(fr, "404", fr["nf_title"], fr["nf_h1"], body, ["js/sky.js", "js/site.js"], noindex=True, bodyclass="page-nf", with_dock=False)
+    page = shell(fr, "404", fr["nf_title"], fr["nf_h1"], body, ["js/sky.js", "js/fx.js", "js/site.js"], noindex=True, bodyclass="page-nf", with_dock=False)
     page = page.replace('href="css/', 'href="%scss/' % BASE).replace('src="js/', 'src="%sjs/' % BASE).replace('src="assets/', 'src="%sassets/' % BASE)
     page = page.replace('href="assets/', 'href="%sassets/' % BASE)
     for key in ("index.html", "actualites.html", "privacy.html", "support.html", "index-en.html"):

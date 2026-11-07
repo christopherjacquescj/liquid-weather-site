@@ -26,6 +26,13 @@
   var sky = canvas && window.LWSky ? window.LWSky.mount(canvas, { reduced: reduce }) : null;
   LW.sky = sky;
   if (!sky) root.classList.add('no-gl');
+  /* pluie, neige et éclairs (comme dans l'appli) : un second canevas posé sur le ciel */
+  var fxCanvas = $('#fx');
+  var fx = fxCanvas && window.LWFx ? window.LWFx.mount(fxCanvas, {
+    reduced: reduce,
+    onFlash: function (v, x) { if (sky && sky.setFlash) sky.setFlash(v, x); }
+  }) : null;
+  LW.fx = fx;
   var P = window.LWSky ? window.LWSky.PRESETS : {};
   var KEYS = ['sun', 'sunX', 'cloud', 'rain', 'snow', 'dark', 'aurora'];
   var PAGE_SKY = { news: 'dusk', privacy: 'night', support: 'golden', '404': 'storm' };
@@ -58,6 +65,7 @@
   function apply() {
     var s = mode === 'auto' ? scrollState() : P[mode];
     if (!s) return;
+    if (fx) fx.set(s, reduce ? { instant: true } : undefined);
     if (sky) sky.set(s, reduce ? { instant: true } : undefined);
     else if (window.LWSky) {
       var g = window.LWSky.gradient(s), el = $('.sky');
@@ -89,12 +97,13 @@
     });
     var pause = $('.dock-pause', dock);
     if (pause) {
-      if (!sky || reduce) pause.hidden = true;
+      if ((!sky && !fx) || reduce) pause.hidden = true;
       pause.addEventListener('click', function () {
         var on = pause.getAttribute('aria-pressed') !== 'true';
         pause.setAttribute('aria-pressed', String(on));
         pause.setAttribute('aria-label', pause.getAttribute(on ? 'data-label-play' : 'data-label-pause'));
         if (sky) { if (on) sky.pause(); else sky.play(); }
+        if (fx) { if (on) fx.pause(); else fx.play(); }
       });
     }
     var hint = null;

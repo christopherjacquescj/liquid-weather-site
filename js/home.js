@@ -43,7 +43,7 @@
           page.appendChild(im); imgs.push(im);
         });
       }
-      layer.appendChild(page);
+      var clip = el('div', 'page-clip'); clip.appendChild(page); layer.appendChild(clip);
       if (tab.top) {
         var top = img(tab.top, { width: 660, height: 170 }); top.className = 'ov top'; top.loading = 'eager';
         var bot = img(tab.bot, { width: 660, height: 154 }); bot.className = 'ov bot'; bot.loading = 'eager';

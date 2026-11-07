@@ -12,7 +12,7 @@
     'varying vec2 vUv;',
     'uniform vec2 uRes;uniform float uTime;uniform float uSun;uniform float uSunX;',
     'uniform float uCloud;uniform float uRain;uniform float uSnow;uniform float uDark;',
-    'uniform float uAurora;uniform float uFlash;uniform float uPhase;uniform vec2 uMoon;',
+    'uniform float uAurora;uniform float uFlash;uniform float uFlashX;uniform float uPhase;uniform vec2 uMoon;',
     'uniform float uDrift;uniform vec2 uPtr;',
 
     'float hash21(vec2 p){p=fract(p*vec2(123.34,456.21));p+=dot(p,p+45.32);return fract(p.x*p.y);}',
@@ -29,6 +29,7 @@
 
     // --- moment de la journée
     ' float day=smoothstep(-.02,.5,s);float night=smoothstep(.02,-.32,s);float tw=max(1.-day-night,0.);',
+    ' float over=clamp(uCloud*.8+uDark*.5,0.,1.);',
 
     // --- dégradé du ciel
     ' float g=pow(1.-uv.y,1.5);',
@@ -41,30 +42,38 @@
     // --- soleil
     ' vec2 sunPos=vec2(uSunX,mix(.03,.80,clamp((s+.08)/.95,0.,1.)));',
     ' vec2 sd=(uv-sunPos)*vec2(asp,1.);float sr=length(sd);',
-    ' float sunVis=smoothstep(-.14,-.02,s);',
+    ' float sunVis=smoothstep(-.14,-.02,s)*(1.-over*.82);',
     ' vec3 sunCol=mix(vec3(1.,.50,.22),vec3(1.,.96,.86),smoothstep(0.,.5,s));',
     ' float halo=exp(-sr*3.2)*.34+exp(-sr*9.)*.5;',
     ' sky+=sunCol*halo*sunVis*(.5+.5*(1.-night));',
 
     // --- ciel couvert / orage : on éteint les couleurs
-    ' float over=clamp(uCloud*.8+uDark*.5,0.,1.);',
     ' float lum=dot(sky,vec3(.299,.587,.114));',
     ' sky=mix(sky,vec3(lum)*vec3(.90,.98,1.08),over*.6);',
     ' sky*=1.-uDark*.5;',
+    ' sky=mix(sky,vec3(.62,.69,.80)*(.42+.58*day),uSnow*.55);',
 
     // --- nuages : bruit en 2D, plus petits vers l'horizon (le bas de l'écran)
+    // « deck » : quand le ciel est couvert, les nuages forment une nappe continue (pas des îlots sur fond bleu)
+    ' float deck=smoothstep(.55,.95,uCloud);',
     ' float dp=mix(1.5,1.0,uv.y);',
     ' vec2 cp=vec2((uv.x-.5)*asp,uv.y*.85)*dp*1.5+vec2(uDrift*.05+uPtr.x*.03,uDrift*.012+uPtr.y*.02);',
     ' float f=fbm(cp);',
-    ' float cover=mix(.66,.30,uCloud);float soft=.22-.10*uCloud;',
+    ' float cover=mix(mix(.66,.30,uCloud),.10,deck);float soft=mix(.22-.10*uCloud,.32,deck);',
     ' float dens=smoothstep(cover,cover+soft,f);',
     ' vec2 toSun=normalize(sunPos-uv+vec2(1e-4));',
     ' float f2=fbm(cp+vec2(toSun.x*asp,toSun.y)*.12);',
     ' float light=clamp(.58+(f-f2)*7.,0.,1.);light=mix(light,.4,uCloud*.35);',
+    // ciel couvert : des plaques un peu plus claires ou plus sombres, sans lumière qui vient d'un côté
+    ' float ctex=fbm3(cp*2.4+vec2(7.3,2.1));',
+    ' light=mix(light,clamp(.10+ctex*1.05,0.,1.),deck*.78);',
     ' vec3 lit=mix(vec3(.78,.84,.95),vec3(1.,.995,.98),day);',
     ' lit=mix(lit,vec3(1.,.74,.58),tw*.85);lit=mix(lit,vec3(.30,.36,.58),night);',
     ' vec3 shade=mix(vec3(.42,.50,.68),vec3(.50,.62,.82),day);',
     ' shade=mix(shade,vec3(.38,.26,.50),tw*.8);shade=mix(shade,vec3(.03,.05,.13),night);',
+    // couvert = gris clair ; neige = plus pâle, un peu bleuté ; puis on assombrit pour la pluie et l'orage
+    ' lit=mix(lit,vec3(.84,.86,.91),deck*.80*day);shade=mix(shade,vec3(.54,.58,.66),deck*.85*day);',
+    ' lit=mix(lit,vec3(.88,.91,.96),uSnow*.55*day);shade=mix(shade,vec3(.62,.68,.78),uSnow*.55*day);',
     ' lit=mix(lit,vec3(.50,.54,.62),uDark*.85);shade=mix(shade,vec3(.07,.09,.14),uDark);',
     ' vec3 cc=mix(shade,lit,light);',
     ' vec3 col=mix(sky,cc,dens*mix(.96,1.,uCloud));',
@@ -119,37 +128,14 @@
     ' col=mix(col,mc,inDisc*mv*mix(.30,1.,ls));',
     ' col+=vec3(.55,.65,.95)*exp(-mdl*9.)*.16*mv*(.3+.7*ls);',
 
-    // --- pluie : fines traînées, chaque colonne tombe à sa vitesse (pas de bandes régulières)
-    ' if(uRain>.01){float ra=0.;',
-    '  for(int i=0;i<3;i++){float fi=float(i);',
-    '   float sc=90.+fi*70.;',
-    '   vec2 ru=vec2(uv.x*asp,uv.y);ru.x+=ru.y*.20;',
-    '   float cx=ru.x*sc;float colid=floor(cx);float fx=fract(cx);',
-    '   float rnd=hash21(vec2(colid,fi*7.+1.));',
-    '   float y=ru.y*(1.6+fi*.9)+uTime*(1.0+rnd*.9)*(1.+fi*.55)+rnd*13.;',
-    '   float cell=floor(y);float fy=fract(y);',
-    '   float h=hash21(vec2(colid,cell+fi*3.1));',
-    '   float pr=step(1.-uRain*.17,h);',
-    '   float ln=smoothstep(.16,0.,abs(fx-.5));',
-    '   float tl=smoothstep(0.,.75,fy)*smoothstep(1.,.72,fy);',
-    '   ra+=ln*tl*pr*(.52-fi*.12);}',
-    '  col+=vec3(.62,.74,.97)*clamp(ra,0.,1.)*.7;',
-    ' }',
-
-    // --- neige
-    ' if(uSnow>.01){float sn=0.;',
-    '  for(int i=0;i<3;i++){float fi=float(i);',
-    '   float sc=14.+fi*12.;vec2 su=vec2(uv.x*asp,uv.y)*sc;',
-    '   su.y+=uTime*(.35+fi*.18)+fi*7.;su.x+=sin(su.y*.7+uTime*.5+fi*2.)*.35+uTime*.05*fi;',
-    '   vec2 id=floor(su);vec2 fr=fract(su)-.5;float h=hash21(id+fi*13.);',
-    '   vec2 off=(vec2(hash21(id+3.1),hash21(id+9.7))-.5)*.6;',
-    '   float r=.10+.07*fract(h*7.)-fi*.015;',
-    '   sn+=smoothstep(r,r*.35,length(fr-off))*step(1.-uSnow*.55,h)*(.9-fi*.2);}',
-    '  col=mix(col,vec3(.95,.98,1.),clamp(sn,0.,1.)*.9);',
-    ' }',
+    // --- pluie et neige : gouttes et flocons sont dessinés par fx.js (comme dans l'appli) ; ici, seulement l'air qui s'alourdit
+    ' col*=1.-uRain*.16;',
+    ' col=mix(col,vec3(dot(col,vec3(.34)))+vec3(.03,.04,.06),uRain*.22*(1.-uv.y*.6));',
+    ' col=mix(col,vec3(.80,.84,.92),uSnow*.16*pow(1.-uv.y,2.));',
 
     // --- éclair : on éclaire surtout les nuages
-    ' col+=vec3(.62,.70,1.)*(.10+.55*dens)*uFlash;',
+    ' float fl=exp(-pow((uv.x-uFlashX)*asp,2.)*1.5);',
+    ' col+=vec3(.62,.70,1.)*(.06+.42*dens)*uFlash*(.45+.75*fl);',
 
     // --- vignette légère + grain (évite les bandes dans les dégradés)
     ' vec2 vp=(uv-.5)*vec2(1.,.9);col*=1.-.26*dot(vp,vp);',
@@ -163,10 +149,10 @@
     dawn:    { sun: 0.05, sunX: 0.74, cloud: 0.34, rain: 0, snow: 0, dark: 0, aurora: 0 },
     day:     { sun: 0.58, sunX: 0.80, cloud: 0.30, rain: 0, snow: 0, dark: 0, aurora: 0 },
     clear:   { sun: 0.60, sunX: 0.78, cloud: 0.10, rain: 0, snow: 0, dark: 0, aurora: 0 },
-    cloudy:  { sun: 0.42, sunX: 0.70, cloud: 0.80, rain: 0, snow: 0, dark: 0.08, aurora: 0 },
-    rain:    { sun: 0.30, sunX: 0.60, cloud: 0.94, rain: 0.85, snow: 0, dark: 0.35, aurora: 0 },
+    cloudy:  { sun: 0.42, sunX: 0.70, cloud: 0.92, rain: 0, snow: 0, dark: 0.12, aurora: 0 },
+    rain:    { sun: 0.28, sunX: 0.60, cloud: 1.00, rain: 0.85, snow: 0, dark: 0.40, aurora: 0 },
     storm:   { sun: 0.20, sunX: 0.50, cloud: 1.00, rain: 1.00, snow: 0, dark: 0.85, aurora: 0 },
-    snow:    { sun: 0.46, sunX: 0.65, cloud: 0.86, rain: 0, snow: 0.90, dark: 0, aurora: 0 },
+    snow:    { sun: 0.32, sunX: 0.65, cloud: 1.00, rain: 0, snow: 0.90, dark: 0.04, aurora: 0 },
     golden:  { sun: 0.13, sunX: 0.30, cloud: 0.42, rain: 0, snow: 0, dark: 0, aurora: 0 },
     dusk:    { sun: -0.04, sunX: 0.22, cloud: 0.38, rain: 0, snow: 0, dark: 0, aurora: 0 },
     night:   { sun: -0.46, sunX: 0.30, cloud: 0.22, rain: 0, snow: 0, dark: 0, aurora: 0 },
@@ -224,12 +210,12 @@
     gl.vertexAttribPointer(loc, 2, gl.FLOAT, false, 0, 0);
 
     var U = {};
-    ['uRes', 'uTime', 'uSun', 'uSunX', 'uCloud', 'uRain', 'uSnow', 'uDark', 'uAurora', 'uFlash', 'uPhase', 'uMoon', 'uDrift', 'uPtr']
+    ['uRes', 'uTime', 'uSun', 'uSunX', 'uCloud', 'uRain', 'uSnow', 'uDark', 'uAurora', 'uFlash', 'uFlashX', 'uPhase', 'uMoon', 'uDrift', 'uPtr']
       .forEach(function (n) { U[n] = gl.getUniformLocation(prog, n); });
 
     var cur = copy(PRESETS.day), target = copy(PRESETS.day);
     var phase = moonPhase();
-    var time = 3.7, drift = 0, flash = 0, flashAt = 0, nextFlash = 5 + Math.random() * 6;
+    var time = 3.7, drift = 0, flash = 0, flashX = 0.5, flashAt = 0, nextFlash = 5 + Math.random() * 6, extFlash = false;
     var ptr = [0, 0], ptrT = [0, 0];
     var scale = opts.scale || (small ? 0.55 : 0.85), minScale = 0.34;
     var fpsCap = small ? 30 : 60;
@@ -256,7 +242,7 @@
       gl.uniform1f(U.uSun, cur.sun); gl.uniform1f(U.uSunX, cur.sunX);
       gl.uniform1f(U.uCloud, cur.cloud); gl.uniform1f(U.uRain, cur.rain); gl.uniform1f(U.uSnow, cur.snow);
       gl.uniform1f(U.uDark, cur.dark); gl.uniform1f(U.uAurora, cur.aurora);
-      gl.uniform1f(U.uFlash, flash); gl.uniform1f(U.uPhase, phase);
+      gl.uniform1f(U.uFlash, flash); gl.uniform1f(U.uFlashX, flashX); gl.uniform1f(U.uPhase, phase);
       gl.uniform2f(U.uMoon, m[0], m[1]);
       gl.uniform1f(U.uDrift, drift); gl.uniform2f(U.uPtr, ptr[0], ptr[1]);
       gl.drawArrays(gl.TRIANGLES, 0, 3);
@@ -272,6 +258,7 @@
     }
 
     function lightning(dt) {
+      if (extFlash) return;
       if (reduced || cur.dark < 0.5) { flash = 0; return; }
       if (flashAt > 0) {
         flashAt += dt;
@@ -302,7 +289,7 @@
         var spent = (now - (frame.prev || now));
         frame.prev = now;
         if (spent > 1000 / 26) slow++; else slow = Math.max(0, slow - 1);
-        if (slow > 25 && scale > minScale) { scale = Math.max(minScale, scale * 0.8); slow = 0; size(); }
+        if (slow > 25 && scale > minScale) { scale = Math.max(minScale, scale * 0.8); slow = 0; size(); render(); }   // redessiner tout de suite : changer la taille efface le canevas
       } else frame.prev = now;
       if (!paused || moving || settleLeft-- > 0) loop();
     }
@@ -334,6 +321,8 @@
         wake();
       },
       setDrift: function (d) { drift = d; },
+      /* l'éclair dessiné par fx.js éclaire aussi les nuages : intensité, et position horizontale (0 à 1) */
+      setFlash: function (v, x) { extFlash = true; flash = v; if (x != null) flashX = x; },
       setPhase: function (p) { phase = p; wake(); },
       render: function (t) { if (t != null) time = t; render(); },
       pause: function () { paused = true; },
