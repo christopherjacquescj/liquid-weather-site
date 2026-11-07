@@ -27,6 +27,17 @@ def ver(path):
         return "%s?v=%s" % (path, hashlib.md5(f.read()).hexdigest()[:8])
 
 
+def ver_all(o):
+    """Same, for every "assets/…" string of a nested structure (the tour's captures change when re-shot)."""
+    if isinstance(o, str):
+        return ver(o) if o.startswith("assets/") else o
+    if isinstance(o, list):
+        return [ver_all(x) for x in o]
+    if isinstance(o, dict):
+        return {k: ver_all(v) for k, v in o.items()}
+    return o
+
+
 # ---------------------------------------------------------------- icônes (24×24, trait)
 def ico(body, extra=""):
     return ('<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" '
@@ -284,8 +295,8 @@ def home(t):
 <div class="tour-phone">
 <div class="phone" id="phone">
 <div class="phone-body"><div class="screen" id="screen" role="img" aria-label="{esc(t['phone_label'])}">
-<div class="layer is-on" data-tab="home"><div class="page-clip"><div class="page"><img src="{first['layers'][0]['img']}" width="660" height="4438" alt="" decoding="async" fetchpriority="high"></div></div>
-<img class="ov top" src="{first['top']}" width="660" height="170" alt=""><img class="ov bot" src="{first['bot']}" width="660" height="154" alt=""></div>
+<div class="layer is-on" data-tab="home"><div class="page-clip"><div class="page"><img src="{ver(first['layers'][0]['img'])}" width="660" height="4438" alt="" decoding="async" fetchpriority="high"></div></div>
+<img class="ov top" src="{ver(first['top'])}" width="660" height="170" alt=""><img class="ov bot" src="{ver(first['bot'])}" width="660" height="154" alt=""></div>
 </div></div>
 </div>
 <p class="phone-note">{t['tour_real']}</p>
@@ -295,7 +306,7 @@ def home(t):
 {"".join(dots)}
 </ol>
 </div>
-<script type="application/json" id="tour-data">{json.dumps(TOUR, ensure_ascii=False, separators=(",", ":"))}</script>
+<script type="application/json" id="tour-data">{json.dumps(ver_all(TOUR), ensure_ascii=False, separators=(",", ":"))}</script>
 </section>'''
 
     agents = [("arome", "#ffd166"), ("arpege", "#ff8fab"), ("icon", "#6fe3c4"), ("gfs", "#8fb8ff"), ("ecmwf", "#c9a8ff")]
