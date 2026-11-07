@@ -31,7 +31,7 @@ T = {
 
     # --- accueil : méta
     "home_title": "Liquid Weather — La météo en verre liquide pour iPhone, iPad et Apple Watch",
-    "home_desc": "Liquid Weather réunit AROME, ICON, ARPEGE, GFS et ECMWF : prévisions heure par heure, cartes météo HD animées, comparaison des modèles, alertes officielles, Lune et assistant IA. Gratuit, sans pub.",
+    "home_desc": "Liquid Weather compare jusqu’à 14 modèles météo (AROME, ICON, ARPEGE, GFS, ECMWF…) : prévisions heure par heure, cartes HD animées, alertes officielles, Lune et assistant IA. Gratuit, sans pub.",
 
     # --- accueil : héros
     "hero_title": "Voyez le ciel venir.",
@@ -52,7 +52,7 @@ T = {
     "models_now": "Maintenant", "models_in": "dans {n} j", "models_in1": "dans 1 jour",
     "models_agree": "Accord des modèles",
     "agree_4": "Très bon", "agree_3": "Bon", "agree_2": "Moyen", "agree_1": "Faible",
-    "models_note": "Illustration : ces courbes sont un exemple, pas une prévision.",
+    "models_note": "Illustration : cinq des 14 modèles de l’appli, avec des courbes d’exemple. Ce n’est pas une prévision.",
     "models_axis": "Maintenant|+3 j|+6 j|+10 j",
     "m_arome": "AROME", "m_arome_by": "Météo-France",
     "m_arpege": "ARPEGE", "m_arpege_by": "Météo-France",
@@ -173,7 +173,7 @@ T = {
     "sky_pause": "Pause the animated sky", "sky_play": "Play the animated sky",
 
     "home_title": "Liquid Weather — Weather in liquid glass for iPhone, iPad and Apple Watch",
-    "home_desc": "Liquid Weather brings together AROME, ICON, ARPEGE, GFS and ECMWF: hourly forecasts, animated HD weather maps, model comparison, official warnings, the Moon and an AI assistant. Free, no ads.",
+    "home_desc": "Liquid Weather compares up to 14 weather models (AROME, ICON, ARPEGE, GFS, ECMWF…): hourly forecasts, animated HD maps, official warnings, the Moon and an AI assistant. Free, no ads.",
 
     "hero_title": "See the sky coming.",
     "hero_lead": "Liquid Weather brings together the world’s best weather models in a liquid-glass interface. Free, no ads, no subscription, in 7 languages, with 10 days of hour-by-hour forecasts.",
@@ -192,7 +192,7 @@ T = {
     "models_now": "Now", "models_in": "in {n} days", "models_in1": "in 1 day",
     "models_agree": "Model agreement",
     "agree_4": "Very good", "agree_3": "Good", "agree_2": "Fair", "agree_1": "Low",
-    "models_note": "Illustration: these curves are an example, not a forecast.",
+    "models_note": "Illustration: five of the app’s 14 models, with example curves. This is not a forecast.",
     "models_axis": "Now|+3 d|+6 d|+10 d",
     "m_arome": "AROME", "m_arome_by": "Météo-France",
     "m_arpege": "ARPEGE", "m_arpege_by": "Météo-France",
