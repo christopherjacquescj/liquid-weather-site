@@ -294,10 +294,10 @@ def home(t):
 </div>
 <div class="tour-phone">
 <div class="phone" id="phone">
-<div class="phone-body"><div class="screen" id="screen" role="img" aria-label="{esc(t['phone_label'])}">
+<div class="phone-body"><i class="hw l act"></i><i class="hw l vup"></i><i class="hw l vdn"></i><i class="hw r pwr"></i><i class="hw r cam"></i><div class="glass"><div class="screen" id="screen" role="img" aria-label="{esc(t['phone_label'])}"><i class="island"></i>
 <div class="layer is-on" data-tab="home"><div class="page-clip"><div class="page"><img src="{ver(first['layers'][0]['img'])}" width="660" height="4438" alt="" decoding="async" fetchpriority="high"></div></div>
 <img class="ov top" src="{ver(first['top'])}" width="660" height="170" alt=""><img class="ov bot" src="{ver(first['bot'])}" width="660" height="154" alt=""></div>
-</div></div>
+</div></div></div>
 </div>
 <p class="phone-note">{t['tour_real']}</p>
 </div>

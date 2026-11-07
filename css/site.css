@@ -146,11 +146,27 @@ button,input{font:inherit;color:inherit}
 .moon-live{margin-top:1.1rem;font-size:.95rem;color:var(--ink-2);padding-top:1rem;border-top:1px solid rgba(255,255,255,.2)}
 
 .tour-phone{position:relative;display:grid;justify-items:center;align-content:center;gap:1rem;height:100%;padding-top:64px;padding-bottom:70px;z-index:1}
-.phone{--w:min(36svh,25vw,350px);width:var(--w);perspective:1600px;flex:none}
-.phone-body{padding:calc(var(--w) * .03);border-radius:calc(var(--w) * .172);background:linear-gradient(150deg,#4a5368 0%,#171b27 34%,#0b0d14 52%,#2d3547 100%);
-  box-shadow:inset 0 0 0 1px rgba(255,255,255,.28),inset 0 0 0 calc(var(--w) * .012) rgba(0,0,0,.55),0 50px 90px -28px rgba(2,8,34,.75),0 0 120px -10px rgba(110,170,255,.28);
+/* iPhone 18 Pro, finition argent : proportions du vrai appareil (71,9 × 150 mm, écran 6,3″ de 402 × 874 pt) */
+.phone{--w:min(36svh,25vw,350px);--rail:calc(var(--w) * .011);--bez:calc(var(--w) * .026);width:var(--w);perspective:1600px;flex:none}
+.phone-body{position:relative;padding:var(--rail);border-radius:calc(var(--w) * .18);
+  background:linear-gradient(128deg,#fbfbfc 0%,#c4c7cc 14%,#8d9097 30%,#dcdee2 47%,#a3a6ad 62%,#eceef0 80%,#b3b6bc 100%);
+  box-shadow:0 0 0 1px rgba(0,0,0,.45),inset 0 0 0 1px rgba(255,255,255,.7),inset 0 0 calc(var(--w) * .012) rgba(30,34,44,.35),0 50px 90px -28px rgba(2,8,34,.75),0 0 110px -14px rgba(120,170,255,.22);
   transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transform-style:preserve-3d;will-change:transform}
-.screen{position:relative;width:100%;aspect-ratio:660/1434;border-radius:calc(var(--w) * .142);overflow:hidden;background:#05070f}
+.glass{padding:var(--bez);border-radius:calc(var(--w) * .169);background:#000;box-shadow:0 0 0 calc(var(--w) * .0022) #101115,inset 0 0 0 1px rgba(255,255,255,.08)}
+.screen{position:relative;width:100%;aspect-ratio:660/1434;border-radius:calc(var(--w) * .1428);overflow:hidden;background:#05070f}
+/* Dynamic Island de l'iPhone 18 Pro : plus petit que celui de l'iPhone 17 Pro (c'est le matériel, pas l'appli) */
+.island{position:absolute;z-index:6;left:50%;top:calc(var(--w) * .0276);width:calc(var(--w) * .189);height:calc(var(--w) * .0783);transform:translateX(-50%);border-radius:999px;background:#000;pointer-events:none}
+.island::after{content:"";position:absolute;right:calc(var(--w) * .0125);top:50%;width:calc(var(--w) * .036);height:calc(var(--w) * .036);transform:translateY(-50%);border-radius:50%;
+  background:radial-gradient(circle at 36% 32%,rgba(150,170,230,.5) 0 7%,#111a30 24%,#05070d 62%,#000 100%);box-shadow:inset 0 0 0 calc(var(--w) * .0028) rgba(46,60,104,.55)}
+/* boutons : action, volume +/− à gauche ; veille et Camera Control à droite */
+.hw{position:absolute;display:block;border-radius:calc(var(--w) * .006);pointer-events:none}
+.hw.l{left:calc(var(--w) * -.0085);width:calc(var(--w) * .0125);background:linear-gradient(90deg,#8e9097,#e2e4e8 38%,#c2c5ca 70%,#9a9da3)}
+.hw.r{right:calc(var(--w) * -.0085);width:calc(var(--w) * .0125);background:linear-gradient(270deg,#8e9097,#e2e4e8 38%,#c2c5ca 70%,#9a9da3)}
+.hw.act{top:calc(var(--w) * .355);height:calc(var(--w) * .118)}
+.hw.vup{top:calc(var(--w) * .549);height:calc(var(--w) * .174)}
+.hw.vdn{top:calc(var(--w) * .786);height:calc(var(--w) * .174)}
+.hw.pwr{top:calc(var(--w) * .6);height:calc(var(--w) * .33)}
+.hw.cam{top:calc(var(--w) * 1.154);height:calc(var(--w) * .18);right:calc(var(--w) * -.0025);width:calc(var(--w) * .0065);background:linear-gradient(270deg,#2a2c31,#6b6e75 55%,#3a3c42)}
 .layer{position:absolute;inset:0;opacity:0;transition:opacity .45s ease}
 .layer.is-on{opacity:1}
 .page-clip{position:absolute;inset:0;overflow:hidden;
