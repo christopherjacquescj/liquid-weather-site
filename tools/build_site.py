@@ -117,9 +117,9 @@ CHAPTERS = {
 
 MOON = {
     "fr": {"names": "Nouvelle Lune|Premier croissant|Premier quartier|Lune gibbeuse croissante|Pleine Lune|Lune gibbeuse décroissante|Dernier quartier|Dernier croissant",
-           "tpl": "En ce moment dans le ciel : {name}, environ {pct} % éclairée."},
+           "tpl": "Aujourd’hui : {name}, environ {pct} % éclairée."},
     "en": {"names": "New Moon|Waxing crescent|First quarter|Waxing gibbous|Full Moon|Waning gibbous|Last quarter|Waning crescent",
-           "tpl": "In the sky right now: {name}, about {pct}% lit."},
+           "tpl": "Today: {name}, about {pct}% lit."},
 }
 
 
@@ -374,7 +374,6 @@ def home(t):
 <div class="soon-text"><p>{t['soon2_p1']}</p><p>{t['soon2_p2']}</p></div>
 </article>
 </div>
-<p class="fine soon-fine">{t['soon_fine']} <a href="{page_url('news', lang)}?a={ANNOUNCE}">{t['soon_read']}</a></p>
 </div>
 </section>'''
 

@@ -80,17 +80,15 @@ T = {
     "news_error": "Les articles ne se chargent pas pour le moment. Réessayez dans un instant.",
     "news_noscript": "Les actualités s’affichent avec JavaScript. Vous pouvez aussi les lire sur la page Actualités.",
 
-    # --- en préparation
-    "soon_title": "En préparation",
-    "soon_lead": "Deux nouveautés arrivent. Pas en même temps : voici le programme.",
-    "soon1_when": "Bientôt", "soon1_t": "Cartes de pollution et de vigilance",
+    # --- nouveautés (les cartes sont déjà dans l’appli ; Ask Liquid avec Apple PCC arrive plus tard)
+    "soon_title": "Nouveautés",
+    "soon_lead": "Les cartes de pollution et de vigilance sont déjà dans l’appli. Ask Liquid gagnera en précision plus tard cette année.",
+    "soon1_when": "Déjà dans l’appli", "soon1_t": "Cartes de pollution et de vigilance",
     "soon1_p1": "La carte des vigilances MeteoAlarm affiche les alertes météo officielles zone par zone, sur toute l’Europe, du vert au rouge.",
     "soon1_p2": "La carte de la pollution montre la qualité de l’air avec l’indice européen, à partir des données Copernicus CAMS. Elle devient plus précise quand vous zoomez.",
     "soon2_when": "Plus tard cette année", "soon2_t": "Ask Liquid avec Apple Private Cloud Compute",
     "soon2_p1": "Avec une connexion internet, Ask Liquid s’appuiera sur un modèle plus puissant : plus d’informations à la fois, des réponses meilleures et plus précises. Sans connexion, il continue de fonctionner avec le modèle de votre iPhone.",
     "soon2_p2": "Selon Apple, ce service est conçu pour protéger la vie privée : les données de votre demande ne sont ni stockées ni conservées une fois la réponse donnée.",
-    "soon_fine": "Ces fonctions sont en cours de développement.",
-    "soon_read": "Lire l’annonce",
     "soon_fig1": "La carte des vigilances dans l’onglet Cartes.", "soon_fig2": "La carte de la pollution : l’indice européen de qualité de l’air.", "soon_fig3": "Ask Liquid : sur votre iPhone, ou avec le cloud sécurisé d’Apple quand vous êtes connecté.",
 
     # --- vie privée
@@ -220,16 +218,14 @@ T = {
     "news_error": "The articles can’t load right now. Please try again in a moment.",
     "news_noscript": "The news needs JavaScript here. You can also read it on the News page.",
 
-    "soon_title": "In the works",
-    "soon_lead": "Two new things are coming. Not at the same time: here is the plan.",
-    "soon1_when": "Soon", "soon1_t": "Pollution and warnings maps",
+    "soon_title": "What’s new",
+    "soon_lead": "The pollution and warnings maps are already in the app. Ask Liquid gets more precise later this year.",
+    "soon1_when": "Already in the app", "soon1_t": "Pollution and warnings maps",
     "soon1_p1": "The MeteoAlarm warnings map shows the official weather alerts area by area, across Europe, from green to red.",
     "soon1_p2": "The pollution map shows air quality with the European index, from Copernicus CAMS data. It gets more precise as you zoom in.",
     "soon2_when": "Later this year", "soon2_t": "Ask Liquid with Apple Private Cloud Compute",
     "soon2_p1": "With an internet connection, Ask Liquid will rely on a more powerful model: more information at once, better and more precise answers. Without a connection, it keeps working with the model on your iPhone.",
     "soon2_p2": "According to Apple, this service is designed to protect privacy: the data in your request is neither stored nor retained once the answer is given.",
-    "soon_fine": "These features are in development.",
-    "soon_read": "Read the announcement",
     "soon_fig1": "The warnings map in the Maps tab.", "soon_fig2": "The pollution map: the European air quality index.", "soon_fig3": "Ask Liquid: on your iPhone, or with Apple’s secure cloud when you are online.",
 
     "priv_title": "Your weather, your business.",

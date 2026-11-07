@@ -116,17 +116,18 @@
     ' }',
 
     // --- Lune, avec sa vraie phase
-    ' vec2 md=(uv-uMoon)*vec2(asp,1.);float mr=.060;float mdl=length(md);vec2 q=md/mr;',
+    ' vec2 md=(uv-uMoon)*vec2(asp,1.);float mr=.075;float mdl=length(md);vec2 q=md/mr;',
     ' float inDisc=smoothstep(1.,.985,length(q));',
     ' float z=sqrt(max(1.-dot(q,q),0.));vec3 nrm=vec3(q,z);',
     ' float ang=uPhase*6.2831853;vec3 L=normalize(vec3(sin(ang),0.,-cos(ang)));',
     ' float lam=dot(nrm,L);float litm=smoothstep(-.03,.10,lam);',
-    ' float mare=fbm(q*2.2+vec2(5.,2.));float tex=mix(.70,1.,smoothstep(.38,.62,mare));',
-    ' float ls=litm*(.35+.65*smoothstep(-.03,.5,lam));',
-    ' vec3 mc=mix(vec3(.05,.065,.12),vec3(.96,.94,.88)*tex,ls);',
-    ' float mv=clamp(night*1.4,0.,1.)*(1.-dens*.92)*(1.-over*.85);',
+    ' float mare=fbm(q*2.2+vec2(5.,2.));float tex=mix(.80,1.,smoothstep(.38,.62,mare));',
+    ' float ls=litm*(.64+.36*smoothstep(-.03,.45,lam));',
+    ' vec3 mc=mix(vec3(.05,.065,.12),vec3(1.06,1.02,.94)*tex,ls);',
+    ' float mv=clamp(night*1.4,0.,1.)*(1.-dens*.30)*(1.-over*.55);',
     ' col=mix(col,mc,inDisc*mv*mix(.30,1.,ls));',
     ' col+=vec3(.55,.65,.95)*exp(-mdl*9.)*.16*mv*(.3+.7*ls);',
+    ' col+=vec3(.50,.60,.95)*exp(-mdl*3.4)*.06*mv*ls;',
 
     // --- pluie et neige : gouttes et flocons sont dessinés par fx.js (comme dans l'appli) ; ici, seulement l'air qui s'alourdit
     ' col*=1.-uRain*.16;',
@@ -214,7 +215,7 @@
       .forEach(function (n) { U[n] = gl.getUniformLocation(prog, n); });
 
     var cur = copy(PRESETS.day), target = copy(PRESETS.day);
-    var phase = moonPhase();
+    var phase = 0.5;   // dans le ciel de nuit, c'est toujours la pleine Lune (la vraie phase du jour reste calculée par moonPhase())
     var time = 3.7, drift = 0, flash = 0, flashX = 0.5, flashAt = 0, nextFlash = 5 + Math.random() * 6, extFlash = false;
     var ptr = [0, 0], ptrT = [0, 0];
     var scale = opts.scale || (small ? 0.55 : 0.85), minScale = 0.34;
