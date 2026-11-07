@@ -434,7 +434,7 @@ def home(t):
 def news_page(t):
     lang = t["lang"]
     cfg = {k: t[k] for k in ["np_search", "np_all", "np_count_one", "np_count_many", "np_none", "np_back", "np_read", "np_source", "np_photo", "np_share", "np_copied",
-                              "np_more", "np_lang", "np_licence", "np_notfound", "np_notfound_p", "np_updated", "np_pd", "news_error", "np_title", "nav_news", "np_period", "np_p_week", "np_p_month", "np_p_quarter", "np_p_year", "np_type", "np_all_types", "np_newest", "np_oldest", "np_clear", "np_prev", "np_next", "np_pages", "np_page"]}
+                              "np_more", "np_lang", "np_licence", "np_notfound", "np_notfound_p", "np_updated", "np_pd", "news_error", "np_title", "nav_news", "np_period", "np_p_week", "np_p_month", "np_p_quarter", "np_p_year", "np_type", "np_all_types", "np_newest", "np_oldest", "np_clear", "np_reset", "np_prev", "np_next", "np_pages", "np_page"]}
     cfg.update({"lang": lang, "page": page_url("news", lang), "other": page_url("news", t["other_lang"])})
     body = f'''<main id="main" class="np">
 <div class="wrap">

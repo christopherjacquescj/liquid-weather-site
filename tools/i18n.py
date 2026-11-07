@@ -138,7 +138,7 @@ T = {
     "np_search": "Chercher un article", "np_all": "Tout", "np_count_one": "{n} article", "np_count_many": "{n} articles", "np_none": "Aucun article ne correspond.",
     "np_back": "Toutes les actualités", "np_read": "Lire l’article", "np_source": "Source", "np_photo": "Image", "np_share": "Partager", "np_copied": "Lien copié",
     "np_more": "À lire aussi", "np_lang": "Langue de l’article", "np_licence": "Licence", "np_notfound": "Cet article n’existe pas.", "np_notfound_p": "Il a peut-être été déplacé. Voici les dernières actualités.",
-    "np_updated": "Publié le", "np_pd": "domaine public", "np_period": "Période", "np_p_week": "7 jours", "np_p_month": "30 jours", "np_p_quarter": "3 mois", "np_p_year": "Cette année", "np_type": "Type", "np_all_types": "Tous les types", "np_newest": "Plus récents", "np_oldest": "Plus anciens", "np_clear": "Effacer la recherche", "np_prev": "Page précédente", "np_next": "Page suivante", "np_pages": "Pages", "np_page": "Page {n}",
+    "np_updated": "Publié le", "np_pd": "domaine public", "np_period": "Période", "np_p_week": "7 jours", "np_p_month": "30 jours", "np_p_quarter": "3 mois", "np_p_year": "Cette année", "np_type": "Type", "np_all_types": "Tous les types", "np_newest": "Plus récents", "np_oldest": "Plus anciens", "np_clear": "Effacer la recherche", "np_reset": "Effacer les filtres", "np_prev": "Page précédente", "np_next": "Page suivante", "np_pages": "Pages", "np_page": "Page {n}",
 
     # --- confidentialité
     "pv_title": "Politique de confidentialité — Liquid Weather",
@@ -272,7 +272,7 @@ T = {
     "np_search": "Search articles", "np_all": "All", "np_count_one": "{n} article", "np_count_many": "{n} articles", "np_none": "No article matches.",
     "np_back": "All news", "np_read": "Read the article", "np_source": "Source", "np_photo": "Image", "np_share": "Share", "np_copied": "Link copied",
     "np_more": "Keep reading", "np_lang": "Article language", "np_licence": "Licence", "np_notfound": "This article doesn’t exist.", "np_notfound_p": "It may have been moved. Here is the latest news.",
-    "np_updated": "Published", "np_pd": "public domain", "np_period": "Period", "np_p_week": "7 days", "np_p_month": "30 days", "np_p_quarter": "3 months", "np_p_year": "This year", "np_type": "Type", "np_all_types": "All types", "np_newest": "Newest", "np_oldest": "Oldest", "np_clear": "Clear search", "np_prev": "Previous page", "np_next": "Next page", "np_pages": "Pages", "np_page": "Page {n}",
+    "np_updated": "Published", "np_pd": "public domain", "np_period": "Period", "np_p_week": "7 days", "np_p_month": "30 days", "np_p_quarter": "3 months", "np_p_year": "This year", "np_type": "Type", "np_all_types": "All types", "np_newest": "Newest", "np_oldest": "Oldest", "np_clear": "Clear search", "np_reset": "Clear filters", "np_prev": "Previous page", "np_next": "Next page", "np_pages": "Pages", "np_page": "Page {n}",
 
     "pv_title": "Privacy policy — Liquid Weather",
     "pv_desc": "Liquid Weather privacy policy: no account, no ads, optional location.",

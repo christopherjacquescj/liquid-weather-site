@@ -158,8 +158,17 @@
     var plain = !!(period !== 'all' || cat || query.trim() || !newest || page > 0);
     list.textContent = '';
     slice.forEach(function (a, i) { list.appendChild(N.card(a, { lang: C.lang, page: C.page, kind: !plain && i === 0 ? 'lead' : '' })); });
-    if (!items.length) list.appendChild(el('p', 'rail-msg', C.np_none));
-    count.textContent = items.length ? (items.length === 1 ? C.np_count_one : C.np_count_many).replace('{n}', items.length) : '';
+    if (!items.length) {
+      var empty = el('div', 'np-empty'); empty.appendChild(el('p', 'rail-msg', C.np_none));
+      var reset = el('button', 'chip', C.np_reset); reset.type = 'button';
+      reset.addEventListener('click', function () {
+        query = ''; period = 'all'; cat = ''; page = 0;
+        if (qIn) qIn.value = ''; if (clearBtn) clearBtn.hidden = true;
+        refresh();
+      });
+      empty.appendChild(reset); list.appendChild(empty);
+    }
+    count.textContent = (items.length === 1 ? C.np_count_one : C.np_count_many).replace('{n}', items.length);
     pager.textContent = ''; pager.hidden = n < 2;
     if (n > 1) {
       var step = function (target, name, label) {
