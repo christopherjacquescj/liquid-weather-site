@@ -1,6 +1,6 @@
 /* Liquid Weather — le ciel vivant.
    Un seul programme (WebGL, aucune bibliothèque) dessine tout le ciel : dégradé, soleil, nuages,
-   étoiles, Lune (avec sa vraie phase), aurore, pluie, neige et éclairs.
+   étoiles, aurore et nuages (la Lune est une vraie photo posée par la page ; pluie, neige et éclairs viennent de fx.js).
    Il ne contacte aucun serveur. Sans WebGL, le site garde un dégradé CSS. */
 (function (root) {
   'use strict';
@@ -12,7 +12,7 @@
     'varying vec2 vUv;',
     'uniform vec2 uRes;uniform float uTime;uniform float uSun;uniform float uSunX;',
     'uniform float uCloud;uniform float uRain;uniform float uSnow;uniform float uDark;',
-    'uniform float uAurora;uniform float uFlash;uniform float uFlashX;uniform float uPhase;uniform vec2 uMoon;',
+    'uniform float uAurora;uniform float uFlash;uniform float uFlashX;',
     'uniform float uDrift;uniform vec2 uPtr;',
 
     'float hash21(vec2 p){p=fract(p*vec2(123.34,456.21));p+=dot(p,p+45.32);return fract(p.x*p.y);}',
@@ -115,20 +115,6 @@
     '  col+=ac*au*.55*uAurora*nv;',
     ' }',
 
-    // --- Lune, avec sa vraie phase
-    ' vec2 md=(uv-uMoon)*vec2(asp,1.);float mr=.075;float mdl=length(md);vec2 q=md/mr;',
-    ' float inDisc=smoothstep(1.,.985,length(q));',
-    ' float z=sqrt(max(1.-dot(q,q),0.));vec3 nrm=vec3(q,z);',
-    ' float ang=uPhase*6.2831853;vec3 L=normalize(vec3(sin(ang),0.,-cos(ang)));',
-    ' float lam=dot(nrm,L);float litm=smoothstep(-.03,.10,lam);',
-    ' float mare=fbm(q*2.2+vec2(5.,2.));float tex=mix(.80,1.,smoothstep(.38,.62,mare));',
-    ' float ls=litm*(.64+.36*smoothstep(-.03,.45,lam));',
-    ' vec3 mc=mix(vec3(.05,.065,.12),vec3(1.06,1.02,.94)*tex,ls);',
-    ' float mv=clamp(night*1.4,0.,1.)*(1.-dens*.30)*(1.-over*.55);',
-    ' col=mix(col,mc,inDisc*mv*mix(.30,1.,ls));',
-    ' col+=vec3(.55,.65,.95)*exp(-mdl*9.)*.16*mv*(.3+.7*ls);',
-    ' col+=vec3(.50,.60,.95)*exp(-mdl*3.4)*.06*mv*ls;',
-
     // --- pluie et neige : gouttes et flocons sont dessinés par fx.js (comme dans l'appli) ; ici, seulement l'air qui s'alourdit
     ' col*=1.-uRain*.16;',
     ' col=mix(col,vec3(dot(col,vec3(.34)))+vec3(.03,.04,.06),uRain*.22*(1.-uv.y*.6));',
@@ -211,11 +197,10 @@
     gl.vertexAttribPointer(loc, 2, gl.FLOAT, false, 0, 0);
 
     var U = {};
-    ['uRes', 'uTime', 'uSun', 'uSunX', 'uCloud', 'uRain', 'uSnow', 'uDark', 'uAurora', 'uFlash', 'uFlashX', 'uPhase', 'uMoon', 'uDrift', 'uPtr']
+    ['uRes', 'uTime', 'uSun', 'uSunX', 'uCloud', 'uRain', 'uSnow', 'uDark', 'uAurora', 'uFlash', 'uFlashX', 'uDrift', 'uPtr']
       .forEach(function (n) { U[n] = gl.getUniformLocation(prog, n); });
 
     var cur = copy(PRESETS.day), target = copy(PRESETS.day);
-    var phase = 0.5;   // dans le ciel de nuit, c'est toujours la pleine Lune (la vraie phase du jour reste calculée par moonPhase())
     var time = 3.7, drift = 0, flash = 0, flashX = 0.5, flashAt = 0, nextFlash = 5 + Math.random() * 6, extFlash = false;
     var ptr = [0, 0], ptrT = [0, 0];
     var scale = opts.scale || (small ? 0.55 : 0.85), minScale = 0.34;
@@ -230,21 +215,14 @@
       if (cw !== W || ch !== H) { W = canvas.width = cw; H = canvas.height = ch; gl.viewport(0, 0, W, H); }
     }
 
-    function moonPos() {
-      var asp = W / H;
-      return asp < 0.9 ? [0.70, 0.80] : [0.80, 0.74];
-    }
-
     function render() {
       size();
-      var m = moonPos();
       gl.uniform2f(U.uRes, W, H);
       gl.uniform1f(U.uTime, time);
       gl.uniform1f(U.uSun, cur.sun); gl.uniform1f(U.uSunX, cur.sunX);
       gl.uniform1f(U.uCloud, cur.cloud); gl.uniform1f(U.uRain, cur.rain); gl.uniform1f(U.uSnow, cur.snow);
       gl.uniform1f(U.uDark, cur.dark); gl.uniform1f(U.uAurora, cur.aurora);
-      gl.uniform1f(U.uFlash, flash); gl.uniform1f(U.uFlashX, flashX); gl.uniform1f(U.uPhase, phase);
-      gl.uniform2f(U.uMoon, m[0], m[1]);
+      gl.uniform1f(U.uFlash, flash); gl.uniform1f(U.uFlashX, flashX);
       gl.uniform1f(U.uDrift, drift); gl.uniform2f(U.uPtr, ptr[0], ptr[1]);
       gl.drawArrays(gl.TRIANGLES, 0, 3);
     }
@@ -324,7 +302,6 @@
       setDrift: function (d) { drift = d; },
       /* l'éclair dessiné par fx.js éclaire aussi les nuages : intensité, et position horizontale (0 à 1) */
       setFlash: function (v, x) { extFlash = true; flash = v; if (x != null) flashX = x; },
-      setPhase: function (p) { phase = p; wake(); },
       render: function (t) { if (t != null) time = t; render(); },
       pause: function () { paused = true; },
       play: function () { if (!reduced) { paused = false; wake(); } },

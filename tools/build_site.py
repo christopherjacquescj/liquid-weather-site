@@ -222,7 +222,7 @@ def shell(t, page, title, desc, body, scripts, ld=None, noindex=False, bodyclass
         head(t, page, title, desc, ld, noindex),
         f'<body class="page-{page} {bodyclass}">',
         f'<a class="skip" href="#main">{t["skip"]}</a>',
-        '<div class="sky" aria-hidden="true"><canvas id="sky"></canvas><canvas id="fx"></canvas></div><div class="sky-scrim" aria-hidden="true"></div>',
+        '<div class="sky" aria-hidden="true"><canvas id="sky"></canvas><canvas id="fx"></canvas><div class="moon" id="moon"><img src="%s" alt="" width="640" height="640" decoding="async"></div></div><div class="sky-scrim" aria-hidden="true"></div>' % ver("assets/moon-full.webp"),
         nav(t, page), body, footer(t), dock(t) if with_dock else "",
         sc, "</body></html>\n"])
 

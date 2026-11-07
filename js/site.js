@@ -62,9 +62,18 @@
     var day = smooth(clamp((s.sun + 0.02) / 0.52, 0, 1));
     return 0.12 + 0.26 * day + 0.08 * s.cloud * day;
   }
+  var moonEl = $('#moon'), lastMoon = -1;
+  function moonVisibility(s) {
+    var t = clamp((s.sun - 0.02) / -0.34, 0, 1), night = t * t * (3 - 2 * t);
+    return night * (1 - clamp(s.cloud * 0.8 + s.dark * 0.5, 0, 1) * 0.85);
+  }
   function apply() {
     var s = mode === 'auto' ? scrollState() : P[mode];
     if (!s) return;
+    if (moonEl) {
+      var mv = moonVisibility(s);
+      if (Math.abs(mv - lastMoon) > 0.004) { lastMoon = mv; moonEl.style.opacity = mv.toFixed(3); }
+    }
     if (fx) fx.set(s, reduce ? { instant: true } : undefined);
     if (sky) sky.set(s, reduce ? { instant: true } : undefined);
     else if (window.LWSky) {
