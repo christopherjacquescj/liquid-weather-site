@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="fr" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#050a22">
+<meta name="color-scheme" content="dark">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Actualités météo — Liquid Weather</title>
+<meta name="description" content="Les actualités météo de Liquid Weather : saisons, climat, vigilance, cyclones. Des explications simples, en 7 langues.">
+<link rel="canonical" href="https://christopherjacquescj.github.io/liquid-weather-site/actualites.html">
+<link rel="alternate" hreflang="fr" href="https://christopherjacquescj.github.io/liquid-weather-site/actualites.html">
+<link rel="alternate" hreflang="en" href="https://christopherjacquescj.github.io/liquid-weather-site/actualites-en.html">
+<link rel="alternate" hreflang="x-default" href="https://christopherjacquescj.github.io/liquid-weather-site/actualites.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Liquid Weather">
+<meta property="og:title" content="Actualités météo — Liquid Weather">
+<meta property="og:description" content="Les actualités météo de Liquid Weather : saisons, climat, vigilance, cyclones. Des explications simples, en 7 langues.">
+<meta property="og:image" content="https://christopherjacquescj.github.io/liquid-weather-site/assets/og.jpg">
+<meta property="og:url" content="https://christopherjacquescj.github.io/liquid-weather-site/actualites.html">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://christopherjacquescj.github.io/liquid-weather-site/assets/og.jpg">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preload" href="assets/fonts/bricolage-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/site.css?v=db6a078c">
+<script>document.documentElement.className='js'</script>
+</head>
+<body class="page-news page-text">
+<a class="skip" href="#main">Aller au contenu</a>
+<div class="sky" aria-hidden="true"><canvas id="sky"></canvas></div><div class="sky-scrim" aria-hidden="true"></div>
+<header class="nav" id="top">
+<div class="nav-in glass">
+<a class="brand" href="index.html" aria-label="Liquid Weather"><img src="assets/icon.png" width="34" height="34" alt=""><span>Liquid Weather</span></a>
+<nav class="links" id="menu" aria-label="Navigation principale">
+<a href="index.html#app">L’app</a>
+<a href="actualites.html" aria-current="page">Actualités</a>
+<a href="privacy.html">Confidentialité</a>
+<a href="support.html">Assistance</a>
+<a class="lang" href="actualites-en.html" lang="en" hreflang="en">English</a>
+</nav>
+<div class="nav-cta">
+<a class="btn btn-coffee" href="https://buymeacoffee.com/liquidweatherapp" target="_blank" rel="noopener" aria-label="Offrez-moi un café (Buy Me a Coffee, nouvel onglet)"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" ><path d="M4 8h13v5a6 6 0 0 1-6 6H10a6 6 0 0 1-6-6z"/><path d="M17 10h1.5a2.5 2.5 0 0 1 0 5H17"/><path d="M8 2.5v2M12 2.5v2"/></svg><span class="long">Offrez-moi un café</span><span class="short" aria-hidden="true">Café</span></a>
+<a class="btn btn-store" href="https://apps.apple.com/us/app/liquid-weather/id6807434223" target="_blank" rel="noopener" aria-label="Télécharger Liquid Weather sur l’App Store (nouvel onglet)"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor"><path d="M16.5 3c.1 1.2-.4 2.4-1.1 3.2-.8.9-1.9 1.5-3 1.4-.1-1.2.4-2.4 1.1-3.1.8-.9 2-1.4 3-1.5zM20 17.2c-.5 1.2-.8 1.7-1.5 2.7-1 1.4-2.3 3.1-4 3.1-1.5 0-1.9-1-3.9-1s-2.5 1-4 1c-1.7 0-2.9-1.6-3.9-3C.9 16.200.6 11.700 2.100 9.300 3.200 7.600 5 6.600 6.700 6.600c1.700 0 2.800 1 4.200 1 1.400 0 2.200-1 4.200-1 1.500 0 3.100.8 4.200 2.200-3.700 2-3.100 7.300.7 8.400z"/></svg><span>App Store</span></a>
+<button class="burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Menu"><span></span></button>
+</div>
+</div>
+</header>
+<main id="main" class="np">
+<div class="wrap">
+<div id="np-list-view">
+<header class="np-head"><h1>Actualités</h1><p class="lead">Ce que fait le ciel, expliqué simplement. Chaque article est disponible en 7 langues.</p></header>
+<div class="np-tools"><div class="np-filters" id="np-filters" role="group" aria-label="Tout"></div>
+<label class="np-search"><span class="sr">Chercher un article</span><input id="np-q" type="search" placeholder="Chercher un article" autocomplete="off"></label></div>
+<p class="np-count" id="np-count" aria-live="polite"></p>
+<div id="np-list" class="np-list"><p class="rail-msg">Chargement des articles…</p></div>
+</div>
+<article id="np-reader" class="reader" hidden></article>
+<noscript><p class="rail-msg">Les actualités s’affichent avec JavaScript. Vous pouvez aussi les lire sur la page Actualités.</p></noscript>
+</div>
+<script type="application/json" id="lw-news-cfg">{"np_search":"Chercher un article","np_all":"Tout","np_count_one":"{n} article","np_count_many":"{n} articles","np_none":"Aucun article ne correspond.","np_back":"Toutes les actualités","np_read":"Lire l’article","np_source":"Source","np_photo":"Image","np_share":"Partager","np_copied":"Lien copié","np_more":"À lire aussi","np_lang":"Langue de l’article","np_licence":"Licence","np_notfound":"Cet article n’existe pas.","np_notfound_p":"Il a peut-être été déplacé. Voici les dernières actualités.","np_updated":"Publié le","np_pd":"domaine public","news_error":"Les articles ne se chargent pas pour le moment. Réessayez dans un instant.","np_title":"Actualités météo — Liquid Weather","nav_news":"Actualités","lang":"fr","page":"actualites.html","other":"actualites-en.html"}</script>
+</main>
+<footer class="foot">
+<div class="wrap foot-grid">
+<div class="foot-brand"><a class="brand" href="index.html"><img src="assets/icon.png" width="40" height="40" alt=""><span>Liquid Weather</span></a><p>La météo en verre liquide.</p></div>
+<nav aria-label="Liens"><h2>Liens</h2><ul>
+<li><a href="index.html">Accueil</a></li>
+<li><a href="actualites.html">Actualités</a></li>
+<li><a href="privacy.html">Confidentialité</a></li>
+<li><a href="support.html">Assistance</a></li>
+<li><a href="index-en.html" lang="en" hreflang="en">English</a></li>
+<li><a href="https://apps.apple.com/us/app/liquid-weather/id6807434223" target="_blank" rel="noopener">App Store</a></li>
+<li><a href="https://buymeacoffee.com/liquidweatherapp" target="_blank" rel="noopener">Offrez-moi un café</a></li></ul></nav>
+<div><h2>Contact</h2><ul><li><a href="mailto:supportliquidweatherapp@gmail.com">supportliquidweatherapp@gmail.com</a></li><li>Site : <a href="https://christopherjacquescj.github.io/liquid-weather-site/">christopherjacquescj.github.io/liquid-weather-site</a></li></ul></div>
+</div>
+<p class="wrap legal">© 2026 Liquid Weather. Données : Open-Meteo, Météo-France (Licence Ouverte 2.0), DWD, NOAA, ECMWF, EUMETSAT, MeteoAlarm, Copernicus. Ces organismes ne soutiennent ni n’approuvent Liquid Weather. Les écrans présentés sont de vraies captures de l’app (données du jour de la capture).</p>
+</footer>
+<div class="dock glass" role="group" aria-label="Choisir le ciel" data-hint="Changez le ciel"><span class="dock-label">Le ciel</span><button type="button" data-sky-mode="auto" aria-pressed="true" aria-label="Auto"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" ><path d="M20 12a8 8 0 0 1-13.7 5.6"/><path d="M4 12a8 8 0 0 1 13.7-5.6"/><path d="M18 3v4h-4M6 21v-4h4"/></svg><span>Auto</span></button><button type="button" data-sky-mode="clear" aria-pressed="false" aria-label="Soleil"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" ><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.2M12 19.300v2.200M2.500 12h2.200M19.300 12h2.200M5.300 5.300l1.500 1.500M17.200 17.200l1.500 1.500M5.300 18.700l1.500-1.500M17.200 6.800l1.500-1.500"/></svg><span>Soleil</span></button><button type="button" data-sky-mode="cloudy" aria-pressed="false" aria-label="Nuageux"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" ><path d="M7 18a4 4 0 0 1-.5-7.97A5.5 5.5 0 0 1 17 9.5a4.25 4.25 0 0 1 .5 8.5z"/></svg><span>Nuageux</span></button><button type="button" data-sky-mode="rain" aria-pressed="false" aria-label="Pluie"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" ><path d="M7 15a4 4 0 0 1-.5-7.970A5.500 5.500 0 0 1 17 6.500a4.250 4.250 0 0 1 .5 8.500"/><path d="M8 18l-1 2.500M12.500 18l-1 2.500M17 18l-1 2.500"/></svg><span>Pluie</span></button><button type="button" data-sky-mode="storm" aria-pressed="false" aria-label="Orage"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" ><path d="M7 15a4 4 0 0 1-.5-7.970A5.500 5.500 0 0 1 17 6.500a4.250 4.250 0 0 1 .5 8.500"/><path d="m12.500 12-2.500 4h3.500l-2 4.500"/></svg><span>Orage</span></button><button type="button" data-sky-mode="snow" aria-pressed="false" aria-label="Neige"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" ><path d="M12 3v18M4.200 7.500l15.600 9M19.800 7.500l-15.600 9"/><path d="m9.500 4.500 2.500 2 2.500-2M9.500 19.500l2.500-2 2.500 2"/></svg><span>Neige</span></button><button type="button" data-sky-mode="night" aria-pressed="false" aria-label="Nuit"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" ><path d="M20 14.500A8.500 8.500 0 0 1 9.500 4a8.500 8.500 0 1 0 10.500 10.500z"/></svg><span>Nuit</span></button><button type="button" class="dock-pause" aria-pressed="false" data-label-pause="Mettre le ciel en pause" data-label-play="Relancer le ciel animé" aria-label="Mettre le ciel en pause"><span class="i-pause"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" ><path d="M9 5v14M15 5v14"/></svg></span><span class="i-play"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" ><path d="M8 5.500v13l10.500-6.500z"/></svg></span></button></div>
+<script src="js/sky.js?v=afb8b83e" defer></script>
+<script src="js/site.js?v=e3901f4c" defer></script>
+<script src="js/news.js?v=03c7f466" defer></script>
+
+</body></html>

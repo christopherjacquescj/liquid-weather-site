@@ -1,115 +1,237 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#04091a">
+<meta name="theme-color" content="#050a22">
 <meta name="color-scheme" content="dark">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <title>Liquid Weather — Weather in liquid glass for iPhone, iPad and Apple Watch</title>
-<meta name="description" content="Liquid Weather brings AROME, ICON, ARPEGE, GFS and ECMWF together: hourly forecasts, animated HD weather maps, model comparison, official alerts, the Moon and an AI assistant. Free, no ads.">
+<meta name="description" content="Liquid Weather brings together AROME, ICON, ARPEGE, GFS and ECMWF: hourly forecasts, animated HD weather maps, model comparison, official warnings, the Moon and an AI assistant. Free, no ads.">
 <link rel="canonical" href="https://christopherjacquescj.github.io/liquid-weather-site/index-en.html">
+<link rel="alternate" hreflang="fr" href="https://christopherjacquescj.github.io/liquid-weather-site/">
 <link rel="alternate" hreflang="en" href="https://christopherjacquescj.github.io/liquid-weather-site/index-en.html">
-<link rel="alternate" hreflang="fr" href="https://christopherjacquescj.github.io/liquid-weather-site/index.html">
+<link rel="alternate" hreflang="x-default" href="https://christopherjacquescj.github.io/liquid-weather-site/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Liquid Weather">
 <meta property="og:title" content="Liquid Weather — Weather in liquid glass for iPhone, iPad and Apple Watch">
-<meta property="og:description" content="Liquid Weather brings AROME, ICON, ARPEGE, GFS and ECMWF together: hourly forecasts, animated HD weather maps, model comparison, official alerts, the Moon and an AI assistant. Free, no ads.">
-<meta property="og:image" content="https://christopherjacquescj.github.io/liquid-weather-site/assets/icon.png">
+<meta property="og:description" content="Liquid Weather brings together AROME, ICON, ARPEGE, GFS and ECMWF: hourly forecasts, animated HD weather maps, model comparison, official warnings, the Moon and an AI assistant. Free, no ads.">
+<meta property="og:image" content="https://christopherjacquescj.github.io/liquid-weather-site/assets/og.jpg">
 <meta property="og:url" content="https://christopherjacquescj.github.io/liquid-weather-site/index-en.html">
-<meta name="twitter:card" content="summary">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://christopherjacquescj.github.io/liquid-weather-site/assets/og.jpg">
 <link rel="icon" type="image/png" href="assets/favicon.png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-<link rel="stylesheet" href="style.css">
-<noscript><style>.reveal{opacity:1;transform:none;filter:none}</style></noscript>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"MobileApplication","name":"Liquid Weather","operatingSystem":"iOS","applicationCategory":"WeatherApplication","description":"Liquid Weather brings AROME, ICON, ARPEGE, GFS and ECMWF together: hourly forecasts, animated HD weather maps, model comparison, official alerts, the Moon and an AI assistant. Free, no ads.","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"inLanguage":["fr","en","es","de","it","pt","ar"]}</script>
+<link rel="preload" href="assets/fonts/bricolage-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/site.css?v=db6a078c">
+<script>document.documentElement.className='js'</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"MobileApplication","name":"Liquid Weather","operatingSystem":"iOS","applicationCategory":"WeatherApplication","description":"Liquid Weather brings together AROME, ICON, ARPEGE, GFS and ECMWF: hourly forecasts, animated HD weather maps, model comparison, official warnings, the Moon and an AI assistant. Free, no ads.","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"inLanguage":["fr","en","es","de","it","pt","ar"],"url":"https://christopherjacquescj.github.io/liquid-weather-site/"}</script>
 </head>
-<body>
-<div class="sky"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div><canvas id="stars" aria-hidden="true"></canvas></div><div class="grain"></div><svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
-<symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.500" fill="#ffd25a"/><g stroke="#ffd25a" stroke-width="1.800" stroke-linecap="round"><path d="M12 2v2.500M12 19.500V22M2 12h2.500M19.500 12H22M4.900 4.900l1.800 1.800M17.300 17.300l1.800 1.800M4.900 19.100l1.800-1.800M17.300 6.700l1.800-1.800"/></g></symbol>
-<symbol id="i-cloud" viewBox="0 0 24 24"><path d="M7 18a4.500 4.500 0 0 1-.6-8.960A6 6 0 0 1 17.900 10 4 4 0 0 1 17.500 18z" fill="#fff"/></symbol>
-<symbol id="i-sc" viewBox="0 0 24 24"><circle cx="16" cy="8" r="3.400" fill="#ffd25a"/><path d="M6.500 19a4 4 0 0 1-.4-7.980A5.300 5.300 0 0 1 16.300 12.600 3.200 3.200 0 0 1 16 19z" fill="#fff"/></symbol>
-<symbol id="i-rain" viewBox="0 0 24 24"><path d="M7 15a4.200 4.200 0 0 1-.5-8.370A5.600 5.600 0 0 1 17.100 7.800 3.600 3.600 0 0 1 17 15z" fill="#e8f2ff"/><g stroke="#8fd3ff" stroke-width="1.800" stroke-linecap="round"><path d="M8 18l-1 3M12.500 18l-1 3M17 18l-1 3"/></g></symbol>
-</defs></svg><header class="nav"><div class="wrap bar">
-<a class="brand" href="index-en.html"><img src="assets/icon.png" width="40" height="40" alt="">Liquid Weather</a>
-<button class="burger" aria-label="Menu" aria-expanded="false"><span></span></button>
-<nav class="links">
-<a href="index-en.html" aria-current="page">Home</a>
-<a href="#features">Features</a>
+<body class="page-home ">
+<a class="skip" href="#main">Skip to content</a>
+<div class="sky" aria-hidden="true"><canvas id="sky"></canvas></div><div class="sky-scrim" aria-hidden="true"></div>
+<header class="nav" id="top">
+<div class="nav-in glass">
+<a class="brand" href="index-en.html" aria-label="Liquid Weather"><img src="assets/icon.png" width="34" height="34" alt=""><span>Liquid Weather</span></a>
+<nav class="links" id="menu" aria-label="Main navigation">
+<a href="#app">The app</a>
+<a href="actualites-en.html">News</a>
 <a href="privacy-en.html">Privacy</a>
 <a href="support-en.html">Support</a>
 <a class="lang" href="index.html" lang="fr" hreflang="fr">Français</a>
 </nav>
-<a class="btn nav-dl" href="https://apps.apple.com/us/app/liquid-weather/id6807434223" target="_blank" rel="noopener" aria-label="Download on the App Store"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.5 3c.1 1.2-.4 2.4-1.1 3.2-.8.9-1.9 1.5-3 1.4-.1-1.2.4-2.4 1.1-3.1.8-.9 2-1.4 3-1.5zM20 17.2c-.5 1.2-.8 1.7-1.5 2.7-1 1.4-2.3 3.1-4 3.1-1.5 0-1.9-1-3.9-1s-2.5 1-4 1c-1.7 0-2.9-1.6-3.9-3C.9 16.200.6 11.700 2.100 9.300 3.200 7.600 5 6.600 6.700 6.600c1.700 0 2.800 1 4.200 1 1.400 0 2.200-1 4.200-1 1.500 0 3.100.8 4.200 2.200-3.700 2-3.100 7.300.7 8.400z"/></svg><span>App Store</span></a></div></header>
-<main>
-<section class="hero"><div class="wrap hero-grid">
-<div>
-<p class="eyebrow reveal">Weather for iPhone, iPad and Apple Watch</p>
-<h1 class="reveal" style="--d:.05s">See the <span class="grad">sky</span> coming.</h1>
-<p class="lead reveal" style="--d:.12s">Liquid Weather fuses the world’s best weather models — AROME, ICON, ARPEGE, GFS, ECMWF — into a fluid liquid-glass interface of rare precision.</p>
-<div class="cta reveal" style="--d:.2s">
-<a class="btn" href="#explorer">Discover<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-<a class="btn ghost" href="support-en.html">Get in touch</a>
-<a class="btn" href="https://apps.apple.com/us/app/liquid-weather/id6807434223" target="_blank" rel="noopener" data-appstore><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.5 3c.1 1.2-.4 2.4-1.1 3.2-.8.9-1.9 1.5-3 1.4-.1-1.2.4-2.4 1.1-3.1.8-.9 2-1.4 3-1.5zM20 17.2c-.5 1.2-.8 1.7-1.5 2.7-1 1.4-2.3 3.1-4 3.1-1.5 0-1.9-1-3.9-1s-2.5 1-4 1c-1.7 0-2.9-1.6-3.9-3C.9 16.200.6 11.700 2.100 9.300 3.200 7.600 5 6.600 6.700 6.600c1.700 0 2.800 1 4.200 1 1.400 0 2.200-1 4.200-1 1.500 0 3.100.8 4.200 2.200-3.700 2-3.100 7.300.7 8.400z"/></svg>Download on the App Store</a>
-<span class="pill" data-soon><span class="dot"></span>Free iOS app</span>
+<div class="nav-cta">
+<a class="btn btn-coffee" href="https://buymeacoffee.com/liquidweatherapp" target="_blank" rel="noopener" aria-label="Buy me a coffee (Buy Me a Coffee, new tab)"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" ><path d="M4 8h13v5a6 6 0 0 1-6 6H10a6 6 0 0 1-6-6z"/><path d="M17 10h1.5a2.5 2.5 0 0 1 0 5H17"/><path d="M8 2.5v2M12 2.5v2"/></svg><span class="long">Buy me a coffee</span><span class="short" aria-hidden="true">Coffee</span></a>
+<a class="btn btn-store" href="https://apps.apple.com/us/app/liquid-weather/id6807434223" target="_blank" rel="noopener" aria-label="Download Liquid Weather on the App Store (new tab)"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor"><path d="M16.5 3c.1 1.2-.4 2.4-1.1 3.2-.8.9-1.9 1.5-3 1.4-.1-1.2.4-2.4 1.1-3.1.8-.9 2-1.4 3-1.5zM20 17.2c-.5 1.2-.8 1.7-1.5 2.7-1 1.4-2.3 3.1-4 3.1-1.5 0-1.9-1-3.9-1s-2.5 1-4 1c-1.7 0-2.9-1.6-3.9-3C.9 16.200.6 11.700 2.100 9.300 3.200 7.600 5 6.600 6.700 6.600c1.700 0 2.800 1 4.200 1 1.400 0 2.200-1 4.200-1 1.500 0 3.100.8 4.200 2.200-3.700 2-3.100 7.300.7 8.400z"/></svg><span>App Store</span></a>
+<button class="burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Menu"><span></span></button>
 </div>
-<div class="stats reveal" style="--d:.28s"><div class="stat"><b>7</b><span>languages</span></div><div class="stat"><b>0</b><span>ads</span></div><div class="stat"><b>0</b><span>subscriptions</span></div><div class="stat"><b>10 d</b><span>hour by hour</span></div></div>
 </div>
-<div class="trio reveal" style="--d:.15s"><div class="tilt"><div class="float-a"><div class="dev dev-iphone" style="--w:clamp(230px,24vw,320px)"><div class="scr"><img src="assets/hero.webp" alt="Liquid Weather" style="width:100%;height:100%;object-fit:cover;object-position:top"></div><div class="island"></div><div class="glare"></div></div></div></div></div>
-</div></section>
+</header>
+<main id="main">
+<section class="tour" id="app" aria-label="App tour">
+<span class="sky-mark" data-sky="dawn" style="top:6%" aria-hidden="true"></span><span class="sky-mark" data-sky="day" style="top:74%" aria-hidden="true"></span>
+<div class="tour-stage">
+<div class="tour-copy">
+<article class="chap chap-hero" data-chap="0">
+<h1 class="h-hero">See the sky coming.</h1>
+<p class="lead">Liquid Weather brings together the world’s best weather models in a liquid-glass interface. Free, no ads, no subscription, in 7 languages, with 10 days of hour-by-hour forecasts.</p>
+<div class="cta">
+<a class="btn btn-store btn-lg" href="https://apps.apple.com/us/app/liquid-weather/id6807434223" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor"><path d="M16.5 3c.1 1.2-.4 2.4-1.1 3.2-.8.9-1.9 1.5-3 1.4-.1-1.2.4-2.4 1.1-3.1.8-.9 2-1.4 3-1.5zM20 17.2c-.5 1.2-.8 1.7-1.5 2.7-1 1.4-2.3 3.1-4 3.1-1.5 0-1.9-1-3.9-1s-2.5 1-4 1c-1.7 0-2.9-1.6-3.9-3C.9 16.200.6 11.700 2.100 9.300 3.200 7.600 5 6.600 6.700 6.600c1.700 0 2.800 1 4.200 1 1.400 0 2.200-1 4.200-1 1.500 0 3.100.8 4.200 2.200-3.700 2-3.100 7.300.7 8.400z"/></svg><span>Download on the App Store</span></a>
+<a class="btn btn-glass btn-lg" href="#c-home" data-go="1">Discover the app</a>
+</div>
+<p class="fine">Free app for iPhone, iPad and Apple Watch.</p>
+</article>
+<article class="chap panel" data-chap="1" data-tab="home" id="c-home" aria-labelledby="c-home-t">
+<p class="tabpill"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" ><path d="M3.500 11 12 4l8.500 7"/><path d="M5.500 9.500V20h13V9.500"/><path d="M10 20v-5.500h4V20"/></svg><span>Home</span></p>
+<h2 id="c-home-t" class="h-chap">Your sky at a glance</h2>
+<p class="chap-text">A living sky card: clouds, rain, snow, storms, the Moon. Then everything that matters, top to bottom.</p>
+<ul class="ticks"><li>A summary written by the on-device AI from the real forecast</li><li>Sunrise and sunset, hour-by-hour forecast</li><li>Temperature, wind, humidity, visibility, cloud cover, difference from normals</li><li>Precipitation probability, air quality, weather risks, pressure, wind compass, pollen</li><li>Tap any card for its full detail</li></ul>
 
-<div class="strip" aria-label="Official sources"><div class="track"><span><b>Météo-France</b> · AROME</span><span><b>AROME HD 0.01°</b></span><span><b>ARPEGE</b></span><span><b>DWD</b> · ICON-D2</span><span><b>ICON-EU</b></span><span><b>NOAA</b> · GFS</span><span><b>ECMWF</b></span><span><b>EUMETSAT</b></span><span><b>Copernicus EFFIS</b></span><span><b>MeteoAlarm</b></span><span><b>Open-Meteo</b></span><span><b>Météo-France</b> · AROME</span><span><b>AROME HD 0.01°</b></span><span><b>ARPEGE</b></span><span><b>DWD</b> · ICON-D2</span><span><b>ICON-EU</b></span><span><b>NOAA</b> · GFS</span><span><b>ECMWF</b></span><span><b>EUMETSAT</b></span><span><b>Copernicus EFFIS</b></span><span><b>MeteoAlarm</b></span><span><b>Open-Meteo</b></span></div></div>
-
-<section class="block" id="explorer-section"><div class="wrap">
-<div class="head reveal"><p class="eyebrow">Explore the app</p><h2>The app, <span class="grad">life-size.</span></h2><p>These aren’t mock-ups: they are real screenshots of Liquid Weather. Scroll the screen, tap the tab bar, switch modes — just like on your iPhone.</p></div>
-<div class="explorer" id="explorer"><div class="ex-grid"><div class="ex-tabs" role="tablist"></div><div><div class="ex-stage"></div><p class="ex-hint">Scroll the screen with your mouse or finger · tap the tab bar · the app is shown in French (7 languages available)</p></div></div></div>
-</div></section>
-
-<section class="block" id="features"><div class="wrap">
-<div class="head reveal"><p class="eyebrow">Features</p><h2>Everything you need. <span class="grad">Nothing you don’t.</span></h2><p>One app to understand the weather now, the weather coming, and how far to trust it.</p></div>
-<div class="bento"><article class="glass tile s4 reveal" style="--d:0.00s;--c1:#6fe0ff;--c2:#3d7bff;--c:#3d7bff"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Expert forecasts</h3><p>Hourly and up to 10 days: temperature, feels-like, wind, gusts, humidity, pressure, UV, precipitation. Tap any value to dive into the detail.</p></article><article class="glass tile s4 reveal" style="--d:0.07s;--c1:#ffb84a;--c2:#ff6fa8;--c:#ff6fa8"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg></div><h3>Alerts and risks</h3><p>Official MeteoAlarm warnings for your area, useful notifications and risk indicators you can read at a glance.</p></article><article class="glass tile s4 reveal" style="--d:0.14s;--c1:#45e0b0;--c2:#19a4c9;--c:#19a4c9"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20 9 9l4 6 2-3 6 8z"/></svg></div><h3>From sky to summit</h3><div class="tags"><span>Mountain and snow</span><span>Sea</span><span>UV index</span><span>Air quality</span><span>Pollen</span><span>Sun</span><span>Pressure</span><span>Seasonal outlook</span><span>Wildfire risk (EFFIS)</span><span>Lightning (satellite)</span></div></article><article class="glass tile s4 reveal" style="--d:0.21s;--c1:#b58cff;--c2:#6f6bff;--c:#6f6bff"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.3 3 14.7 0 18M12 3c-3 3.3-3 14.7 0 18"/></svg></div><h3>In your language</h3><div class="tags"><span>Français</span><span>English</span><span>Español</span><span>Deutsch</span><span>Italiano</span><span>Português</span><span>العربية</span></div></article><article class="glass tile s4 reveal" style="--d:0.28s;--c1:#6fe0ff;--c2:#8b6bff;--c:#8b6bff"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 11V5.5a1.5 1.5 0 0 1 3 0V11m0-1.5a1.5 1.5 0 0 1 3 0V12m0-1a1.5 1.5 0 0 1 3 0v4a6 6 0 0 1-6 6h-1a6 6 0 0 1-5-2.7L4 14.5a1.5 1.5 0 0 1 2.4-1.8L9 15.5"/></svg></div><h3>Fluid under your finger</h3><p>A liquid-glass interface made for iOS: everything responds, everything animates, nothing clutters.</p></article><article class="glass tile s4 reveal" style="--d:0.35s;--c1:#ff9a6f;--c2:#ff5f9e;--c:#ff5f9e"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="3" width="10" height="18" rx="3"/><path d="M11 18h2"/></svg></div><h3>Wherever you are</h3><p>iPhone, iPad, Apple Watch. Home and Lock Screen widgets, complications, a risk dashboard on iPad.</p></article></div>
-</div></section>
-
-<section class="block" id="hood"><div class="wrap">
-<div class="glass hood reveal">
-<div><p class="eyebrow">Under the hood</p><h2 style="font-size:clamp(32px,4.4vw,56px)">Straight <span class="grad">from the source.</span></h2><p style="margin-top:20px;font-size:18px">The maps read the open files from Météo-France, DWD and NOAA and decode them on your device. No Liquid Weather server sits between you and the official data.</p></div>
-<div class="pipe"><div><i>1</i>Météo-France · DWD · NOAA</div><div class="arrow" aria-hidden="true">↓</div><div><i>2</i>Open GRIB2 files</div><div class="arrow" aria-hidden="true">↓</div><div><i>3</i>Decoded on your iPhone</div><div class="arrow" aria-hidden="true">↓</div><div><i>4</i>Your map, instantly</div></div>
-</div></section>
-
-<section class="block" id="privacy"><div class="wrap">
-<div class="head reveal"><p class="eyebrow">Privacy</p><h2>Your weather, <span class="grad">your business.</span></h2></div>
-<div class="bento"><article class="glass tile s4 reveal" style="--d:0.00s;--c1:#6fe0ff;--c2:#8b6bff;--c:#8b6bff;min-height:0"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="3"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></div><h3>No account</h3><p>No sign-up, no login: open the app and go.</p></article><article class="glass tile s4 reveal" style="--d:0.08s;--c1:#6fe0ff;--c2:#8b6bff;--c:#8b6bff;min-height:0"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/><path d="M4 4l16 16"/></svg></div><h3>No ads, no tracking</h3><p>No advertising, and no advertising tracking system of its own.</p></article><article class="glass tile s4 reveal" style="--d:0.16s;--c1:#6fe0ff;--c2:#8b6bff;--c:#8b6bff;min-height:0"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.800 12 21 12 21z"/><circle cx="12" cy="9.500" r="2.500"/></svg></div><h3>Optional location</h3><p>Allow it for local weather, or simply pick a city. You stay in control.</p></article></div>
-<p class="reveal" style="margin-top:28px"><a class="btn ghost" href="privacy-en.html">Read the privacy policy<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></p>
-</div></section>
-
-<section class="block" id="faq"><div class="wrap">
-<div class="head reveal"><p class="eyebrow">FAQ</p><h2>Questions, answered.</h2></div>
-<div class="faq reveal"><details><summary>Is Liquid Weather free?</summary><p>Yes. The app is free, with no ads and no subscription.</p></details><details><summary>Where does the data come from?</summary><p>Forecasts come from Open-Meteo. The maps read open data directly from Météo-France (AROME, ARPEGE), DWD (ICON) and NOAA (GFS). The Moon is computed on the device; lightning comes from the EUMETSAT satellite; warnings from MeteoAlarm; wildfire risk from Copernicus EFFIS.</p></details><details><summary>Are the maps radar?</summary><p>No, and the app says so plainly: they are model forecasts, never radar observations. Only the lightning layer is a satellite observation.</p></details><details><summary>Which devices are supported?</summary><p>iPhone, iPad and Apple Watch. Summaries and the AI assistant work on devices that support Apple Intelligence.</p></details><details><summary>Do I have to enable location?</summary><p>No. It is optional: you can pick a city by hand and change the permission any time in iOS Settings.</p></details><details><summary>How do I contact you?</summary><p>By email at supportliquidweatherapp@gmail.com, or from the Support page. We read everything.</p></details></div>
-</div></section>
-
-<section class="block"><div class="wrap">
-<div class="glass final reveal">
-<img class="icon" src="assets/icon.png" width="96" height="96" alt="Liquid Weather">
-<h2>Ready to see the sky differently?</h2><p>A question, an idea, an issue? Write to us — we read everything.</p>
-<div class="cta"><a class="btn" href="mailto:supportliquidweatherapp@gmail.com?subject=Liquid%20Weather"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/></svg>Email support</a><a class="btn ghost" href="privacy-en.html">Privacy</a><a class="btn" href="https://apps.apple.com/us/app/liquid-weather/id6807434223" target="_blank" rel="noopener" data-appstore><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.5 3c.1 1.2-.4 2.4-1.1 3.2-.8.9-1.9 1.5-3 1.4-.1-1.2.4-2.4 1.1-3.1.8-.9 2-1.4 3-1.5zM20 17.2c-.5 1.2-.8 1.7-1.5 2.7-1 1.4-2.3 3.1-4 3.1-1.5 0-1.9-1-3.9-1s-2.5 1-4 1c-1.7 0-2.9-1.6-3.9-3C.9 16.200.6 11.700 2.100 9.300 3.200 7.600 5 6.600 6.700 6.600c1.700 0 2.800 1 4.200 1 1.400 0 2.200-1 4.200-1 1.500 0 3.100.8 4.200 2.200-3.700 2-3.100 7.300.7 8.400z"/></svg>Download on the App Store</a><a class="btn ghost" href="https://buymeacoffee.com/liquidweatherapp" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h13v5a6 6 0 0 1-6 6H10a6 6 0 0 1-6-6z"/><path d="M17 10h1.5a2.5 2.5 0 0 1 0 5H17"/><path d="M8 2.5v2M12 2.5v2"/></svg>Buy me a coffee</a></div>
-</div></div></section>
+</article><article class="chap panel" data-chap="2" data-tab="forecast" id="c-forecast" aria-labelledby="c-forecast-t">
+<p class="tabpill"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" ><rect x="3.500" y="5" width="17" height="15.500" rx="3"/><path d="M3.500 10h17M8 3v4M16 3v4"/></svg><span>Forecast</span></p>
+<h2 id="c-forecast-t" class="h-chap">Up to 10 days, hour by hour</h2>
+<p class="chap-text">Every variable has its own chart: temperature, precipitation, wind, UV, pressure… with a scrubber to read the exact value.</p>
+<ul class="ticks"><li>Forecasts up to 10 days and an hour-by-hour view</li><li>Charts you can drag, with instant readouts</li><li>Two display modes: essentials or full detail</li></ul>
+<div class="chips" role="group" aria-label="View" data-chips="forecast"><button type="button" aria-pressed="true">Températures</button><button type="button" aria-pressed="false">Précipitations</button></div>
+</article><article class="chap panel" data-chap="3" data-tab="compare" id="c-compare" aria-labelledby="c-compare-t">
+<p class="tabpill"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" ><rect x="4" y="4" width="7" height="7" rx="2"/><rect x="13" y="4" width="7" height="7" rx="2"/><rect x="4" y="13" width="7" height="7" rx="2"/><rect x="13" y="13" width="7" height="7" rx="2"/></svg><span>Compare</span></p>
+<h2 id="c-compare-t" class="h-chap">Five models, one glance</h2>
+<p class="chap-text">AROME, ICON, ARPEGE, GFS and ECMWF side by side: agreement, disagreement, and how the forecast changes from one run to the next.</p>
+<ul class="ticks"><li>Every model on the same chart</li><li>A model ranking and an agreement index</li><li>Previous-run analysis: does the forecast change?</li></ul>
+<div class="chips" role="group" aria-label="View" data-chips="compare"><button type="button" aria-pressed="true">Résumé</button><button type="button" aria-pressed="false">Quelques Nuages</button><button type="button" aria-pressed="false">Thermomètre</button></div>
+</article><article class="chap panel" data-chap="4" data-tab="maps" id="c-maps" aria-labelledby="c-maps-t">
+<p class="tabpill"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" ><path d="m3.500 6.500 5.500-2 6 2.500 5.500-2v13l-5.500 2-6-2.500-5.500 2z"/><path d="M9 4.500v13M15 7v13"/></svg><span>Maps</span></p>
+<h2 id="c-maps-t" class="h-chap">The sky in motion</h2>
+<p class="chap-text">Temperature, rain, wind, clouds, snow, storms, animated hour by hour. The finest model is picked from your zoom: AROME HD over France.</p>
+<ul class="ticks"><li>Layers: temperature, rain, wind, gusts, clouds, snow…</li><li>Time slider and smooth animation</li><li>Official data decoded on-device, no server</li></ul>
+<div class="chips" role="group" aria-label="Map layers" data-chips="maps"><button type="button" aria-pressed="true">Température</button><button type="button" aria-pressed="false">Précipitations</button><button type="button" aria-pressed="false">Vent</button><button type="button" aria-pressed="false">Nuages</button><button type="button" aria-pressed="false">Cumul neige</button></div>
+</article><article class="chap panel" data-chap="5" data-tab="moon" id="c-moon" aria-labelledby="c-moon-t">
+<p class="tabpill"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" ><path d="M19.500 14A8 8 0 0 1 10 4.500 8 8 0 1 0 19.500 14z"/><path d="M17 3.500v3M15.500 5h3"/></svg><span>Lunaria</span></p>
+<h2 id="c-moon-t" class="h-chap">The Moon, calculated</h2>
+<p class="chap-text">Real phases, moonrise and moonset, eclipses: everything comes from ephemerides, with a real Moon that changes phase.</p>
+<ul class="ticks"><li>Today’s phase and illumination</li><li>Moonrise, moonset and culmination</li><li>Lunar calendar</li></ul>
+<p class="moon-live" data-moon-names="New Moon|Waxing crescent|First quarter|Waxing gibbous|Full Moon|Waning gibbous|Last quarter|Waning crescent" data-moon-tpl="In the sky right now: {name}, about {pct}% lit." hidden></p>
+</article>
+</div>
+<div class="tour-phone">
+<div class="phone" id="phone">
+<div class="phone-body"><div class="screen" id="screen" role="img" aria-label="Liquid Weather screen">
+<div class="layer is-on" data-tab="home"><div class="page"><img src="assets/home.webp" width="660" height="4438" alt="" decoding="async" fetchpriority="high"></div>
+<img class="ov top" src="assets/home-top.webp" width="660" height="170" alt=""><img class="ov bot" src="assets/home-bot.webp" width="660" height="154" alt=""></div>
+</div></div>
+</div>
+<p class="phone-note">Real screenshots of the app, shown in French (7 languages available). Data as of the capture day.</p>
+</div>
+<ol class="tour-dots" aria-label="Tour chapters">
+<li><a href="#app" data-go="0" aria-label="See the sky coming."><span></span></a></li>
+<li><a href="#c-home" data-go="1" aria-label="Home"><span></span></a></li><li><a href="#c-forecast" data-go="2" aria-label="Forecast"><span></span></a></li><li><a href="#c-compare" data-go="3" aria-label="Compare"><span></span></a></li><li><a href="#c-maps" data-go="4" aria-label="Maps"><span></span></a></li><li><a href="#c-moon" data-go="5" aria-label="Lunaria"><span></span></a></li>
+</ol>
+</div>
+<script type="application/json" id="tour-data">{"screen":[660,1434],"hots":{"home":[5.682,91.736,19.318,5.649],"forecast":[23.0,91.736,19.318,5.649],"compare":[40.341,91.736,19.318,5.649],"maps":[57.682,91.736,19.318,5.649],"moon":[75.0,91.736,19.318,5.649]},"tabs":[{"id":"home","ratio":6.7242,"layers":[{"img":"assets/home.webp"}],"top":"assets/home-top.webp","bot":"assets/home-bot.webp"},{"id":"forecast","ratio":7.25,"layers":[{"img":"assets/forecast-s0.webp","label":"Températures"},{"img":"assets/forecast-s1.webp","label":"Précipitations"}],"top":"assets/forecast-top.webp","bot":"assets/forecast-bot.webp"},{"id":"compare","ratio":7.4636,"layers":[{"img":"assets/compare-s0.webp","label":"Résumé"},{"img":"assets/compare-s1.webp","label":"Quelques Nuages"},{"img":"assets/compare-s2.webp","label":"Thermomètre"}],"top":"assets/compare-top.webp","bot":"assets/compare-bot.webp"},{"id":"maps","layers":[{"img":"assets/map-l0.webp","label":"Température"},{"img":"assets/map-l1.webp","label":"Précipitations"},{"img":"assets/map-l2.webp","label":"Vent"},{"img":"assets/map-l3.webp","label":"Nuages"},{"img":"assets/map-l4.webp","label":"Cumul neige"}],"times":["assets/map-t0.webp","assets/map-t1.webp","assets/map-t2.webp","assets/map-t3.webp","assets/map-t4.webp","assets/map-t5.webp","assets/map-t6.webp","assets/map-t7.webp"]},{"id":"moon","ratio":6.8667,"layers":[{"img":"assets/moon.webp"}],"top":"assets/moon-top.webp","bot":"assets/moon-bot.webp"}]}</script>
+</section>
+<section class="models sec" id="models" aria-labelledby="models-t">
+<span class="sky-mark" data-sky="rain" style="top:16%" aria-hidden="true"></span><span class="sky-mark" data-sky="clear" style="top:86%" aria-hidden="true"></span>
+<div class="wrap models-grid">
+<div class="models-copy">
+<h2 id="models-t" class="h-sec">Weather models don’t always agree.</h2>
+<p class="lead">Each weather centre computes its own forecast. For tomorrow they look alike. For eight days from now, much less. Liquid Weather puts them on the same chart, tells you whether they agree, and shows you whether the forecast changes from one run to the next.</p>
+<ul class="legend" aria-label="Modèles"><li data-model="0"><i style="--c:#ffd166"></i><b>AROME</b><span>Météo-France</span></li><li data-model="1"><i style="--c:#ff8fab"></i><b>ARPEGE</b><span>Météo-France</span></li><li data-model="2"><i style="--c:#6fe3c4"></i><b>ICON</b><span>DWD, Germany</span></li><li data-model="3"><i style="--c:#8fb8ff"></i><b>GFS</b><span>NOAA, United States</span></li><li data-model="4"><i style="--c:#c9a8ff"></i><b>ECMWF</b><span>European centre</span></li></ul>
+</div>
+<figure class="chart glass" id="chart" data-colors="#ffd166,#ff8fab,#6fe3c4,#8fb8ff,#c9a8ff" data-in="in {n} days" data-in1="in 1 day" data-now="Now" data-agree="Low|Fair|Good|Very good">
+<svg class="chart-svg" viewBox="0 0 800 420" role="img" aria-label="Illustration: five forecast curves that drift apart over time" preserveAspectRatio="xMidYMid meet"></svg>
+<div class="chart-axis" aria-hidden="true"><span>Now</span><span>+3 d</span><span>+6 d</span><span>+10 d</span></div>
+<div class="chart-ui">
+<div class="ctl"><label for="horizon">How far ahead?</label><output id="horizon-out" for="horizon">Now</output>
+<input id="horizon" type="range" min="0" max="100" value="6" step="1"></div>
+<div class="meter" aria-live="polite"><span class="meter-label">Model agreement</span><span class="meter-bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span><b class="meter-val">Very good</b></div>
+</div>
+<figcaption>Illustration: these curves are an example, not a forecast.</figcaption>
+</figure>
+</div>
+</section>
+<section class="feat sec" id="features" aria-labelledby="feat-t">
+<span class="sky-mark" data-sky="golden" style="top:46%" aria-hidden="true"></span>
+<div class="wrap">
+<header class="sec-head"><h2 id="feat-t" class="h-sec">Everything you need. Nothing you don’t.</h2><p class="lead">One app to understand the weather now, the weather coming, and how far to trust it.</p></header>
+<ul class="toc">
+<li class="toc-row"><h3>Expert forecasts</h3><div class="toc-body"><p>Hourly and up to 10 days: temperature, feels-like, wind, gusts, humidity, pressure, UV, precipitation. Tap any value to dive into the detail.</p></div></li>
+<li class="toc-row"><h3>Alerts and risks</h3><div class="toc-body"><p>Official MeteoAlarm warnings for your area, useful notifications and risk indicators you can read at a glance.</p><div class="levels" aria-hidden="true"><span class="lv lv0">Green</span><span class="lv lv1">Yellow</span><span class="lv lv2">Orange</span><span class="lv lv3">Red</span></div></div></li>
+<li class="toc-row"><h3>From sky to summit</h3><div class="toc-body"><ul class="tags"><li>Mountain and snow</li><li>Sea</li><li>UV index</li><li>Air quality</li><li>Pollen</li><li>Sun</li><li>Pressure</li><li>Seasonal outlook</li><li>Wildfire risk (EFFIS)</li><li>Lightning (satellite)</li></ul></div></li>
+<li class="toc-row"><h3>In your language</h3><div class="toc-body"><ul class="langs"><li lang="fr">Français</li><li lang="en">English</li><li lang="es">Español</li><li lang="de">Deutsch</li><li lang="it">Italiano</li><li lang="pt">Português</li><li lang="ar" dir="rtl">العربية</li></ul><p>The whole app is available in 7 languages.</p></div></li>
+<li class="toc-row"><h3>Fluid under your finger</h3><div class="toc-body"><p>A liquid-glass interface made for iOS: everything responds, everything animates, nothing clutters.</p></div></li>
+<li class="toc-row"><h3>Wherever you are</h3><div class="toc-body"><p>iPhone, iPad, Apple Watch. Home and Lock Screen widgets, complications, a risk dashboard on iPad.</p><ul class="tags"><li>iPhone</li><li>iPad</li><li>Apple Watch</li><li>Widgets</li><li>Complications</li></ul></div></li>
+</ul>
+</div>
+</section>
+<section class="newsec sec" id="news" aria-labelledby="news-t">
+<span class="sky-mark" data-sky="dusk" style="top:40%" aria-hidden="true"></span>
+<div class="wrap">
+<header class="sec-head sec-head-row"><div><h2 id="news-t" class="h-sec">Weather news</h2><p class="lead">What the sky is doing, explained simply.</p></div>
+<a class="btn btn-glass" href="actualites-en.html">All news</a></header>
+<div class="rail" id="news-rail" data-lang="en" data-page="actualites-en.html" data-error="The articles can’t load right now. Please try again in a moment."><p class="rail-msg">Loading articles…</p></div>
+<noscript><p class="rail-msg">The news needs JavaScript here. You can also read it on the News page.</p></noscript>
+</div>
+</section>
+<section class="soon sec" id="soon" aria-labelledby="soon-t">
+<span class="sky-mark" data-sky="night" style="top:50%" aria-hidden="true"></span>
+<div class="wrap">
+<header class="sec-head"><h2 id="soon-t" class="h-sec">In the works</h2><p class="lead">Two new things are coming. Not at the same time: here is the plan.</p></header>
+<div class="soon-grid">
+<article class="soon-card soon-a glass">
+<p class="when">Soon</p>
+<h3>Pollution and warnings maps</h3>
+<div class="soon-text"><p>The MeteoAlarm warnings map shows the official weather alerts area by area, across Europe, from green to red.</p><p>The pollution map shows air quality with the European index, from Copernicus CAMS data. It gets more precise as you zoom in.</p></div>
+<div class="soon-shots">
+<figure><img src="actualites/2026-10-27-cartes-pollution-vigilance-apple-pcc/images/fig1.jpg" width="900" height="1605" loading="lazy" decoding="async" alt="The warnings map in the Maps tab."><figcaption>The warnings map in the Maps tab.</figcaption></figure>
+<figure><img src="actualites/2026-10-27-cartes-pollution-vigilance-apple-pcc/images/fig2.jpg" width="900" height="1635" loading="lazy" decoding="async" alt="The pollution map: the European air quality index."><figcaption>The pollution map: the European air quality index.</figcaption></figure>
+</div>
+</article>
+<article class="soon-card soon-b glass">
+<p class="when">Later this year</p>
+<h3>Ask Liquid with Apple Private Cloud Compute</h3>
+<div class="soon-text"><p>With an internet connection, Ask Liquid will rely on a more powerful model: more information at once, better and more precise answers. Without a connection, it keeps working with the model on your iPhone.</p><p>According to Apple, this service is designed to protect privacy: the data in your request is neither stored nor retained once the answer is given.</p></div>
+</article>
+</div>
+<p class="fine soon-fine">These features are in development. <a href="actualites-en.html?a=2026-10-27-cartes-pollution-vigilance-apple-pcc">Read the announcement</a></p>
+</div>
+</section>
+<section class="privsec sec" id="privacy" aria-labelledby="priv-t">
+<div class="wrap">
+<h2 id="priv-t" class="h-sec">Your weather, your business.</h2>
+<div class="priv-cols">
+<div><h3>No account</h3><p>No sign-up, no login: open the app and go.</p></div>
+<div><h3>No ads, no tracking</h3><p>No advertising, and no advertising tracking system of its own.</p></div>
+<div><h3>Optional location</h3><p>Allow it for local weather, or simply pick a city. You stay in control.</p></div>
+</div>
+<p class="priv-link"><a class="btn btn-glass" href="privacy-en.html">Read the privacy policy</a></p>
+<div class="hood">
+<div class="hood-copy"><h3 class="h-sub">Straight from the source.</h3><p>The maps read the open files from Météo-France, DWD and NOAA and decode them on your device. No Liquid Weather server sits between you and the official data.</p></div>
+<ol class="pipe" aria-label="From the official file to your map, with no Liquid Weather server"><li>Météo-France, DWD, NOAA</li><li>Open GRIB2 files</li><li>Decoded on your iPhone</li><li>Your map, instantly</li></ol>
+</div>
+</div>
+</section>
+<section class="faq sec" id="faq" aria-labelledby="faq-t">
+<div class="wrap faq-wrap"><h2 id="faq-t" class="h-sec">Questions, answered.</h2><div class="faq-list"><details><summary>Is Liquid Weather free?</summary><p>Yes. The app is free, with no ads and no subscription.</p></details><details><summary>Where does the data come from?</summary><p>Forecasts come from Open-Meteo. The maps read open data directly from Météo-France (AROME, ARPEGE), DWD (ICON) and NOAA (GFS). The Moon is computed on the device; lightning comes from the EUMETSAT satellite; warnings from MeteoAlarm; wildfire risk from Copernicus EFFIS.</p></details><details><summary>Are the maps radar?</summary><p>No, and the app says so plainly: they are model forecasts, never radar observations. Only the lightning layer is a satellite observation.</p></details><details><summary>Which devices are supported?</summary><p>iPhone, iPad and Apple Watch. Summaries and the AI assistant work on devices that support Apple Intelligence.</p></details><details><summary>Do I have to enable location?</summary><p>No. It is optional: you can pick a city by hand and change the permission any time in iOS Settings.</p></details><details><summary>How do I contact you?</summary><p>By email at <a href="mailto:supportliquidweatherapp@gmail.com">supportliquidweatherapp@gmail.com</a>, or from the Support page. We read everything.</p></details></div></div>
+</section>
+<section class="finale sec" id="soutenir" aria-labelledby="cta-t">
+<span class="sky-mark" data-sky="aurora" style="top:36%" aria-hidden="true"></span>
+<div class="wrap">
+<div class="finale-cta"><h2 id="cta-t" class="h-sec">Ready to see the sky differently?</h2>
+<a class="btn btn-store btn-lg" href="https://apps.apple.com/us/app/liquid-weather/id6807434223" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor"><path d="M16.5 3c.1 1.2-.4 2.4-1.1 3.2-.8.9-1.9 1.5-3 1.4-.1-1.2.4-2.4 1.1-3.1.8-.9 2-1.4 3-1.5zM20 17.2c-.5 1.2-.8 1.7-1.5 2.7-1 1.4-2.3 3.1-4 3.1-1.5 0-1.9-1-3.9-1s-2.5 1-4 1c-1.7 0-2.9-1.6-3.9-3C.9 16.200.6 11.700 2.100 9.300 3.200 7.600 5 6.600 6.700 6.600c1.700 0 2.800 1 4.200 1 1.400 0 2.200-1 4.200-1 1.500 0 3.100.8 4.200 2.200-3.700 2-3.100 7.300.7 8.400z"/></svg><span>Download on the App Store</span></a></div>
+<div class="coffee glass">
+<div class="cup" aria-hidden="true"><svg viewBox="0 0 120 120"><g class="steam"><path d="M44 40c-6-8 6-12 0-22"/><path d="M60 40c-6-8 6-12 0-22"/><path d="M76 40c-6-8 6-12 0-22"/></g><path class="cup-body" d="M24 52h64v26a28 28 0 0 1-28 28h-8a28 28 0 0 1-28-28z"/><path class="cup-handle" d="M88 58h6a12 12 0 0 1 0 24h-6"/><path class="cup-saucer" d="M18 112h76"/></svg></div>
+<div class="coffee-copy"><h3>Liquid Weather is free, with no ads and no subscription.</h3><p>If you like it, you can buy me a coffee. It helps me keep making the app better.</p>
+<p class="coffee-cta"><a class="btn btn-coffee btn-lg" href="https://buymeacoffee.com/liquidweatherapp" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" ><path d="M4 8h13v5a6 6 0 0 1-6 6H10a6 6 0 0 1-6-6z"/><path d="M17 10h1.5a2.5 2.5 0 0 1 0 5H17"/><path d="M8 2.5v2M12 2.5v2"/></svg><span>Buy me a coffee</span></a></p>
+<p class="fine">The link opens Buy Me a Coffee.</p></div>
+</div>
+<div class="contact">
+<div><h3>A question, an idea, an issue?</h3><p>Write to us. We read everything.</p></div>
+<div class="contact-actions"><a class="btn btn-glass btn-lg" href="mailto:supportliquidweatherapp@gmail.com?subject=Liquid%20Weather%20%E2%80%94%20Support"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" ><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/></svg><span>Email support</span></a>
+<p class="mail"><a href="mailto:supportliquidweatherapp@gmail.com">supportliquidweatherapp@gmail.com</a></p>
+<p class="fine"><a href="support-en.html">Support page</a></p></div>
+</div>
+</div>
+</section>
 </main>
-<footer><div class="wrap">
-<div class="foot">
-<div><a class="brand" href="index-en.html"><img src="assets/icon.png" width="40" height="40" alt="">Liquid Weather</a>
-<p>Weather in liquid glass.</p></div>
-<div><h5>Links</h5><ul>
+<footer class="foot">
+<div class="wrap foot-grid">
+<div class="foot-brand"><a class="brand" href="index-en.html"><img src="assets/icon.png" width="40" height="40" alt=""><span>Liquid Weather</span></a><p>Weather in liquid glass.</p></div>
+<nav aria-label="Links"><h2>Links</h2><ul>
 <li><a href="index-en.html">Home</a></li>
+<li><a href="actualites-en.html">News</a></li>
 <li><a href="privacy-en.html">Privacy</a></li>
 <li><a href="support-en.html">Support</a></li>
-<li><a href="index.html" lang="fr">Français</a></li>
+<li><a href="index.html" lang="fr" hreflang="fr">Français</a></li>
 <li><a href="https://apps.apple.com/us/app/liquid-weather/id6807434223" target="_blank" rel="noopener">App Store</a></li>
-<li><a href="https://buymeacoffee.com/liquidweatherapp" target="_blank" rel="noopener">Buy me a coffee ☕</a></li></ul></div>
-<div><h5>Contact</h5><ul>
-<li><a href="mailto:supportliquidweatherapp@gmail.com">supportliquidweatherapp@gmail.com</a></li>
-<li><a href="https://christopherjacquescj.github.io/liquid-weather-site/">Website · christopherjacquescj.github.io/liquid-weather-site</a></li></ul></div>
+<li><a href="https://buymeacoffee.com/liquidweatherapp" target="_blank" rel="noopener">Buy me a coffee</a></li></ul></nav>
+<div><h2>Contact</h2><ul><li><a href="mailto:supportliquidweatherapp@gmail.com">supportliquidweatherapp@gmail.com</a></li><li>Website : <a href="https://christopherjacquescj.github.io/liquid-weather-site/">christopherjacquescj.github.io/liquid-weather-site</a></li></ul></div>
 </div>
-<p class="legal">© 2026 Liquid Weather. Data: Open-Meteo, Météo-France (Licence Ouverte 2.0), DWD, NOAA, ECMWF, EUMETSAT, MeteoAlarm, Copernicus. These organisations do not sponsor or endorse Liquid Weather. The screens shown are real screenshots of the app (data as of the capture day).</p>
-</div></footer>
-<script>window.LW_DATA={"tabs": [{"slug": "home", "label": "Home", "tag": "Your sky at a glance", "text": "A living sky card — clouds, rain, snow, storms, the Moon — then everything that matters, top to bottom.", "bullets": ["A summary written by the on-device AI from the real forecast", "Sunrise and sunset, hour-by-hour forecast", "Temperature, wind, humidity, visibility, cloud cover, difference from normals", "Precipitation probability, air quality, weather risks, pressure, wind compass, pollen", "Tap any card for its full detail"], "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"M3 11l9-8 9 8v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z\"/></svg>", "ratio": 6.724242424242425, "tabIdent": "house.fill", "topImg": "assets/home-top.webp", "botImg": "assets/home-bot.webp", "hots": [{"id": "house.fill", "r": [5.682, 91.736, 19.318, 5.649]}, {"id": "calendar", "r": [23.0, 91.736, 19.318, 5.649]}, {"id": "square.grid.2x2", "r": [40.341, 91.736, 19.318, 5.649]}, {"id": "map", "r": [57.682, 91.736, 19.318, 5.649]}, {"id": "moon.stars.fill", "r": [75.0, 91.736, 19.318, 5.649]}], "states": [{"img": "assets/home.webp", "label": ""}]}, {"slug": "forecast", "label": "Forecast", "tag": "Up to 10 days, hour by hour", "text": "Every variable has its own chart: temperature, precipitation, wind, UV, pressure… with a scrubber to read the exact value.", "bullets": ["Forecasts up to 10 days and an hour-by-hour view", "Charts you can drag, with instant readouts", "Two display modes: essentials or full detail"], "icon": "<svg viewBox=\"0 0 24 24\"><rect x=\"3\" y=\"5\" width=\"18\" height=\"16\" rx=\"3\"/><path d=\"M8 3v4M16 3v4M3 10h18\"/></svg>", "ratio": 7.25, "tabIdent": "calendar", "topImg": "assets/forecast-top.webp", "botImg": "assets/forecast-bot.webp", "hots": [{"id": "house.fill", "r": [5.682, 91.736, 19.318, 5.649]}, {"id": "calendar", "r": [23.0, 91.736, 19.318, 5.649]}, {"id": "square.grid.2x2", "r": [40.341, 91.736, 19.318, 5.649]}, {"id": "map", "r": [57.682, 91.736, 19.318, 5.649]}, {"id": "moon.stars.fill", "r": [75.0, 91.736, 19.318, 5.649]}], "states": [{"img": "assets/forecast-s0.webp", "label": "Températures"}, {"img": "assets/forecast-s1.webp", "label": "Précipitations"}]}, {"slug": "compare", "label": "Compare", "tag": "Five models, one glance", "text": "AROME, ICON, ARPEGE, GFS and ECMWF side by side: agreement, disagreement, and how each run evolves.", "bullets": ["Every model on the same chart", "A model ranking and an agreement index", "Previous-run analysis: does the forecast change?"], "icon": "<svg viewBox=\"0 0 24 24\"><rect x=\"3\" y=\"3\" width=\"7.500\" height=\"7.500\" rx=\"2\"/><rect x=\"13.500\" y=\"3\" width=\"7.500\" height=\"7.500\" rx=\"2\"/><rect x=\"3\" y=\"13.500\" width=\"7.500\" height=\"7.500\" rx=\"2\"/><rect x=\"13.500\" y=\"13.500\" width=\"7.500\" height=\"7.500\" rx=\"2\"/></svg>", "ratio": 7.463636363636364, "tabIdent": "square.grid.2x2", "topImg": "assets/compare-top.webp", "botImg": "assets/compare-bot.webp", "hots": [{"id": "house.fill", "r": [5.682, 91.736, 19.318, 5.649]}, {"id": "calendar", "r": [23.0, 91.736, 19.318, 5.649]}, {"id": "square.grid.2x2", "r": [40.341, 91.736, 19.318, 5.649]}, {"id": "map", "r": [57.682, 91.736, 19.318, 5.649]}, {"id": "moon.stars.fill", "r": [75.0, 91.736, 19.318, 5.649]}], "states": [{"img": "assets/compare-s0.webp", "label": "Résumé"}, {"img": "assets/compare-s1.webp", "label": "Quelques Nuages"}, {"img": "assets/compare-s2.webp", "label": "Thermomètre"}]}, {"slug": "maps", "label": "Maps", "tag": "The sky in motion", "text": "Temperature, rain, wind, clouds, snow, storms — animated hour by hour. The finest model is picked from your zoom: AROME HD over France.", "bullets": ["Layers: temperature, rain, wind, gusts, clouds, snow…", "Time slider and smooth animation", "Official data decoded on-device, no server"], "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"M9 4 3 6v14l6-2 6 2 6-2V4l-6 2z\"/><path d=\"M9 4v14M15 6v14\"/></svg>", "map": {"layers": [{"label": "Température", "img": "assets/map-l0.webp"}, {"label": "Précipitations", "img": "assets/map-l1.webp"}, {"label": "Vent", "img": "assets/map-l2.webp"}, {"label": "Nuages", "img": "assets/map-l3.webp"}, {"label": "Cumul neige", "img": "assets/map-l4.webp"}], "times": [{"label": "Température · 1/8", "img": "assets/map-t0.webp"}, {"label": "Température · 2/8", "img": "assets/map-t1.webp"}, {"label": "Température · 3/8", "img": "assets/map-t2.webp"}, {"label": "Température · 4/8", "img": "assets/map-t3.webp"}, {"label": "Température · 5/8", "img": "assets/map-t4.webp"}, {"label": "Température · 6/8", "img": "assets/map-t5.webp"}, {"label": "Température · 7/8", "img": "assets/map-t6.webp"}, {"label": "Température · 8/8", "img": "assets/map-t7.webp"}], "sliderLabel": "Forecast hour"}, "tabIdent": "map", "hots": []}, {"slug": "moon", "label": "Lunaria", "tag": "The Moon, calculated", "text": "Real phases, moonrise and moonset, eclipses: everything comes from ephemerides, with a real Moon that changes phase.", "bullets": ["Today’s phase and illumination", "Moonrise, moonset and culmination", "Lunar calendar"], "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"M20 14.500A8.500 8.500 0 0 1 9.500 4 8.500 8.500 0 1 0 20 14.500z\"/></svg>", "ratio": 6.866666666666666, "tabIdent": "moon.stars.fill", "topImg": "assets/moon-top.webp", "botImg": "assets/moon-bot.webp", "hots": [{"id": "house.fill", "r": [5.682, 91.736, 19.318, 5.649]}, {"id": "calendar", "r": [23.0, 91.736, 19.318, 5.649]}, {"id": "square.grid.2x2", "r": [40.341, 91.736, 19.318, 5.649]}, {"id": "map", "r": [57.682, 91.736, 19.318, 5.649]}, {"id": "moon.stars.fill", "r": [75.0, 91.736, 19.318, 5.649]}], "states": [{"img": "assets/moon.webp", "label": ""}]}]};</script>
-<script src="site.js" defer></script>
+<p class="wrap legal">© 2026 Liquid Weather. Data: Open-Meteo, Météo-France (Licence Ouverte 2.0), DWD, NOAA, ECMWF, EUMETSAT, MeteoAlarm, Copernicus. These organisations do not sponsor or endorse Liquid Weather. The screens shown are real screenshots of the app (data as of the capture day).</p>
+</footer>
+<div class="dock glass" role="group" aria-label="Choose the sky" data-hint="Change the sky"><span class="dock-label">The sky</span><button type="button" data-sky-mode="auto" aria-pressed="true" aria-label="Auto"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" ><path d="M20 12a8 8 0 0 1-13.7 5.6"/><path d="M4 12a8 8 0 0 1 13.7-5.6"/><path d="M18 3v4h-4M6 21v-4h4"/></svg><span>Auto</span></button><button type="button" data-sky-mode="clear" aria-pressed="false" aria-label="Sun"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" ><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.2M12 19.300v2.200M2.500 12h2.200M19.300 12h2.200M5.300 5.300l1.500 1.500M17.200 17.200l1.500 1.500M5.300 18.700l1.500-1.500M17.200 6.800l1.500-1.500"/></svg><span>Sun</span></button><button type="button" data-sky-mode="cloudy" aria-pressed="false" aria-label="Cloudy"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" ><path d="M7 18a4 4 0 0 1-.5-7.97A5.5 5.5 0 0 1 17 9.5a4.25 4.25 0 0 1 .5 8.5z"/></svg><span>Cloudy</span></button><button type="button" data-sky-mode="rain" aria-pressed="false" aria-label="Rain"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" ><path d="M7 15a4 4 0 0 1-.5-7.970A5.500 5.500 0 0 1 17 6.500a4.250 4.250 0 0 1 .5 8.500"/><path d="M8 18l-1 2.500M12.500 18l-1 2.500M17 18l-1 2.500"/></svg><span>Rain</span></button><button type="button" data-sky-mode="storm" aria-pressed="false" aria-label="Storm"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" ><path d="M7 15a4 4 0 0 1-.5-7.970A5.500 5.500 0 0 1 17 6.500a4.250 4.250 0 0 1 .5 8.500"/><path d="m12.500 12-2.500 4h3.500l-2 4.500"/></svg><span>Storm</span></button><button type="button" data-sky-mode="snow" aria-pressed="false" aria-label="Snow"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" ><path d="M12 3v18M4.200 7.500l15.600 9M19.800 7.500l-15.600 9"/><path d="m9.500 4.500 2.500 2 2.500-2M9.500 19.500l2.500-2 2.500 2"/></svg><span>Snow</span></button><button type="button" data-sky-mode="night" aria-pressed="false" aria-label="Night"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" ><path d="M20 14.500A8.500 8.500 0 0 1 9.500 4a8.500 8.500 0 1 0 10.500 10.500z"/></svg><span>Night</span></button><button type="button" class="dock-pause" aria-pressed="false" data-label-pause="Pause the animated sky" data-label-play="Play the animated sky" aria-label="Pause the animated sky"><span class="i-pause"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" ><path d="M9 5v14M15 5v14"/></svg></span><span class="i-play"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" ><path d="M8 5.500v13l10.500-6.500z"/></svg></span></button></div>
+<script src="js/sky.js?v=afb8b83e" defer></script>
+<script src="js/site.js?v=e3901f4c" defer></script>
+<script src="js/home.js?v=40af2b5b" defer></script>
+
 </body></html>
