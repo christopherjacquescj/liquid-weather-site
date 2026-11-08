@@ -274,7 +274,7 @@ def devices(t):
              f'<li><span class="cp cp-rect">{cl}<i></i><i></i></span><b>{comp[2]}</b></li>'
              f'<li><span class="cp cp-corner">{cl}</span><b>{comp[3]}</b></li></ul>')
     return f"""<section class="devsec sec" id="appareils" aria-labelledby="dev-t">
-{sky_mark('aurora', 4, 'aurora', 96)}
+{sky_mark('aurora', 4, 'aurora', 46)}
 <div class="wrap">
 <header class="sec-head"><h2 id="dev-t" class="h-sec">{t['dev_title']}</h2><p class="lead">{t['dev_lead']}</p></header>
 
@@ -353,7 +353,7 @@ def home(t):
     hero_devs = f'<div class="devs"><p class="devs-on">{t["hero_on"]}</p><ul aria-label="{esc(t["dev_aria"])}">{dev_chips}</ul></div>'
 
     tour = f'''<section class="tour" id="app" aria-label="{esc(t['tour_aria'])}">
-{sky_mark('now', 0, 'now', 14, 'clear', 28, 'clear', 62, 'aurora', 80, 'aurora', 100)}
+{sky_mark('now', 0, 'now', 14, 'fair', 28, 'fair', 62, 'aurora', 80, 'aurora', 100)}
 <div class="tour-stage">
 <div class="tour-copy">
 <article class="chap chap-hero" data-chap="0">
@@ -388,7 +388,7 @@ def home(t):
     legend = "".join(f'<li data-model="{i}"><i style="--c:{c}"></i><b>{t["m_" + k]}</b><span>{t["m_" + k + "_by"]}</span></li>' for i, (k, c) in enumerate(agents))
     axis = t["models_axis"].split("|")
     models = f'''<section class="models sec" id="models" aria-labelledby="models-t">
-{sky_mark('storm', 20, 'storm', 80)}
+{sky_mark('storm', 26, 'storm', 82)}
 <div class="wrap models-grid">
 <div class="models-copy">
 <h2 id="models-t" class="h-sec">{t['models_title']}</h2>

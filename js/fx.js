@@ -381,7 +381,7 @@
     }
 
     function approach(dt) {
-      var k = 1 - Math.exp(-dt * (reduced ? 40 : 2.4)), moving = false;
+      var k = 1 - Math.exp(-dt * (reduced ? 40 : 3.4)), moving = false;
       ['rain', 'snow', 'dark'].forEach(function (key) {
         var d = target[key] - cur[key];
         if (Math.abs(d) > 0.0005) { cur[key] += d * k; moving = true; } else cur[key] = target[key];

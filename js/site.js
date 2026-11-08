@@ -76,8 +76,34 @@
     var t = clamp((s.sun - 0.02) / -0.34, 0, 1), night = t * t * (3 - 2 * t);
     return night * (1 - clamp(s.cloud * 0.8 + s.dark * 0.5 + (s.fog || 0) * 0.8, 0, 1) * 0.85);
   }
+  /* Un temps (orage, neige, nuages…) reste affiché au moins 2,6 s une fois atteint, même si le visiteur défile vite :
+     sinon un coup de molette un peu rapide le fait passer sans qu'on le voie. L'orage lance son premier éclair tout de suite. */
+  var HOLD = 2600, hold = null, holdTimer = 0;
+  function plateau(y) {   // nom du temps si le centre de l'écran est sur un palier (deux repères du même nom qui se suivent)
+    for (var i = 0; i < marks.length - 1; i++) {
+      if (y >= marks[i].y && y <= marks[i + 1].y && marks[i].name === marks[i + 1].name) return marks[i].name;
+    }
+    return '';
+  }
+  function pick() {
+    if (!marks.length || reduce) return scrollState();
+    var z = plateau(window.pageYOffset + window.innerHeight * 0.5), t = Date.now();
+    if (z && z !== 'now') {
+      if (!hold || hold.name !== z) {
+        hold = { name: z, at: t };
+        if (z === 'storm' && fx && fx.strike) fx.strike();
+      }
+      return scrollState();
+    }
+    if (hold && P[hold.name] && t - hold.at < HOLD) {
+      clearTimeout(holdTimer); holdTimer = setTimeout(apply, HOLD - (t - hold.at) + 40);
+      return P[hold.name];
+    }
+    hold = null;
+    return scrollState();
+  }
   function apply() {
-    var s = scrollState();
+    var s = pick();
     if (!s) return;
     if (moonEl) {
       var mv = moonVisibility(s);

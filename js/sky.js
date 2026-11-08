@@ -156,13 +156,14 @@
     dawn:    { sun: 0.05, sunX: 0.74, cloud: 0.34, rain: 0, snow: 0, dark: 0, aurora: 0 },
     day:     { sun: 0.58, sunX: 0.80, cloud: 0.30, rain: 0, snow: 0, dark: 0, aurora: 0 },
     clear:   { sun: 0.60, sunX: 0.78, cloud: 0.10, rain: 0, snow: 0, dark: 0, aurora: 0 },
+    fair:    { sun: 0.62, sunX: 0.78, cloud: 0.54, rain: 0, snow: 0, dark: 0, aurora: 0, cirrus: 0.45 },
     cloudy:  { sun: 0.42, sunX: 0.70, cloud: 0.92, rain: 0, snow: 0, dark: 0.12, aurora: 0 },
     rain:    { sun: 0.28, sunX: 0.60, cloud: 1.00, rain: 0.85, snow: 0, dark: 0.40, aurora: 0 },
     drizzle: { sun: 0.30, sunX: 0.55, cloud: 0.90, rain: 0.42, snow: 0, dark: 0.18, aurora: 0 },
     storm:   { sun: 0.20, sunX: 0.50, cloud: 1.00, rain: 1.00, snow: 0, dark: 0.85, aurora: 0 },
     snow:    { sun: 0.32, sunX: 0.65, cloud: 1.00, rain: 0, snow: 0.90, dark: 0.04, aurora: 0 },
     fog:     { sun: 0.34, sunX: 0.56, cloud: 0.50, rain: 0, snow: 0, dark: 0.02, aurora: 0, fog: 1 },
-    cirrus:  { sun: 0.36, sunX: 0.72, cloud: 0.56, rain: 0, snow: 0, dark: 0, aurora: 0, cirrus: 1 },
+    cirrus:  { sun: 0.42, sunX: 0.70, cloud: 0.72, rain: 0, snow: 0, dark: 0, aurora: 0, cirrus: 1 },
     golden:  { sun: 0.13, sunX: 0.30, cloud: 0.42, rain: 0, snow: 0, dark: 0, aurora: 0, cirrus: 0.55 },
     dusk:    { sun: -0.04, sunX: 0.22, cloud: 0.38, rain: 0, snow: 0, dark: 0, aurora: 0 },
     night:   { sun: -0.46, sunX: 0.30, cloud: 0.22, rain: 0, snow: 0, dark: 0, aurora: 0 },
@@ -283,7 +284,7 @@
       var step = 1000 / fpsCap;
       if (last && now - last < step - 1) { loop(); return; }
       last = now;
-      var moving = approach(dt, reduced ? 40 : 2.4);
+      var moving = approach(dt, reduced ? 40 : 3.4);
       ptr[0] += (ptrT[0] - ptr[0]) * Math.min(1, dt * 3); ptr[1] += (ptrT[1] - ptr[1]) * Math.min(1, dt * 3);
       if (!paused) { time += dt; drift += dt * (0.35 + cur.dark * 0.9 + cur.rain * 0.4); lightning(dt); }
       var t0 = root.performance.now();
