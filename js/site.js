@@ -71,7 +71,7 @@
     var day = smooth(clamp((s.sun + 0.02) / 0.52, 0, 1));
     return 0.12 + 0.26 * day + 0.08 * s.cloud * day + 0.1 * (s.fog || 0) * day + 0.06 * s.snow * day + 0.05 * (s.cirrus || 0) * day;
   }
-  var moonEl = $('#moon'), lastMoon = -1, tourEl = $('.tour');
+  var moonEl = $('#moon'), lastMoon = -1, tourEl = $('.tour'), wasScrolled = false;
   function moonVisibility(s) {
     var t = clamp((s.sun - 0.02) / -0.34, 0, 1), night = t * t * (3 - 2 * t);
     return night * (1 - clamp(s.cloud * 0.8 + s.dark * 0.5 + (s.fog || 0) * 0.8, 0, 1) * 0.85);
@@ -117,6 +117,8 @@
       var g = window.LWSky.gradient(s), el = $('.sky');
       if (el) el.style.background = 'linear-gradient(180deg,' + g.top + ',' + g.bottom + ')';
     }
+    var scrolled = window.pageYOffset > 24;
+    if (scrolled !== wasScrolled) { wasScrolled = scrolled; root.classList.toggle('is-scrolled', scrolled); }
     var sc = scrimFor(s);
     if (Math.abs(sc - lastScrim) > 0.005) { lastScrim = sc; root.style.setProperty('--scrim', sc.toFixed(3)); }
   }

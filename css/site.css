@@ -92,18 +92,37 @@ button,input{font:inherit;color:inherit}
 .btn-glass:hover{background:rgba(255,255,255,.22)}
 .cta{display:flex;flex-wrap:wrap;gap:.8rem}
 
-/* ---------- barre du haut (le café reste toujours visible, à gauche du bouton App Store) ---------- */
-.nav{position:fixed;z-index:50;top:max(10px,env(safe-area-inset-top));left:0;right:0;padding-inline:max(12px,var(--gut));pointer-events:none}
-.nav-in{pointer-events:auto;margin-inline:auto;width:min(1180px,100%);display:flex;align-items:center;gap:1rem;padding:8px 8px 8px 14px;border-radius:999px;background:var(--glass-strong)}
-.brand{display:inline-flex;flex:none;align-items:center;gap:.65rem;text-decoration:none;font-weight:640;font-size:1.06rem;letter-spacing:-.02em;white-space:nowrap}
-.brand img{border-radius:9px;box-shadow:0 2px 10px rgba(0,0,0,.35)}
-.links{display:flex;align-items:center;gap:.2rem;margin-left:auto}
-.links a{display:inline-flex;align-items:center;min-height:40px;padding:0 .85rem;border-radius:999px;text-decoration:none;font-weight:540;font-size:.95rem;color:var(--ink-2);transition:background .2s,color .2s}
-.links a:hover,.links a[aria-current]{background:rgba(255,255,255,.14);color:#fff}
+/* ---------- barre du haut : du verre liquide (le café reste toujours visible, à gauche du bouton App Store) ----------
+   La vitre (flou, reflets, arête lumineuse) est dessinée par ::before et ::after et non par .nav-in lui-même :
+   le menu des petits écrans, lui aussi en verre, voit ainsi la vraie page derrière lui. */
+@property --nav-a{syntax:'<number>';inherits:true;initial-value:.34}
+.nav{position:fixed;z-index:50;top:max(12px,env(safe-area-inset-top));left:0;right:0;padding-inline:max(12px,var(--gut));pointer-events:none}
+.nav-in{--nav-a:.34;position:relative;isolation:isolate;pointer-events:auto;margin-inline:auto;width:min(1180px,100%);display:flex;align-items:center;gap:1rem;padding:7px 7px 7px 13px;border-radius:999px;transition:--nav-a .45s ease}
+.is-scrolled .nav-in{--nav-a:.52}   /* dès qu'on défile, la vitre se teinte davantage : le texte reste lisible au-dessus du contenu */
+.nav-in::before,.nav-in::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none}
+.nav-in::before{z-index:-2;
+  background:radial-gradient(130% 240% at 8% -70%,rgba(255,255,255,.36),transparent 55%),radial-gradient(90% 200% at 96% 170%,rgba(255,255,255,.15),transparent 55%),
+    linear-gradient(180deg,rgba(255,255,255,.15),rgba(255,255,255,.03) 52%,rgba(255,255,255,.08)),rgba(10,22,60,var(--nav-a));
+  -webkit-backdrop-filter:blur(26px) saturate(1.9) brightness(1.05);backdrop-filter:blur(26px) saturate(1.9) brightness(1.05);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.5),inset 0 -1px 0 rgba(255,255,255,.12),inset 0 0 26px rgba(255,255,255,.07),0 22px 46px -22px rgba(2,8,34,.72),0 2px 8px rgba(2,8,34,.16)}
+.nav-in::after{z-index:-1;padding:1px;   /* le contour de la vitre : très clair en haut à gauche et en bas à droite, presque invisible ailleurs */
+  background:linear-gradient(135deg,rgba(255,255,255,.9),rgba(255,255,255,.1) 26%,rgba(255,255,255,.05) 64%,rgba(255,255,255,.6));
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;
+  mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);mask-composite:exclude}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){.nav-in::before{background:rgba(9,18,50,.88)}}
+.brand{display:inline-flex;flex:none;align-items:center;gap:.65rem;text-decoration:none;font-weight:640;font-size:1.06rem;letter-spacing:-.02em;white-space:nowrap;text-shadow:0 1px 12px rgba(2,8,34,.45)}
+.brand img{border-radius:9px;box-shadow:0 0 0 1px rgba(255,255,255,.28),0 4px 14px rgba(2,8,34,.4)}
+.links{display:flex;align-items:center;gap:.15rem;margin-left:auto}
+.links a{display:inline-flex;align-items:center;min-height:40px;padding:0 .9rem;border-radius:999px;text-decoration:none;font-weight:560;font-size:.95rem;color:rgba(255,255,255,.93);text-shadow:0 1px 10px rgba(2,8,34,.4);transition:background .25s,color .25s,box-shadow .25s}
+.links a:hover,.links a:focus-visible,.links a[aria-current]{background:rgba(255,255,255,.17);box-shadow:inset 0 1px 0 rgba(255,255,255,.42),inset 0 0 0 1px rgba(255,255,255,.12);color:#fff}
 .nav-cta{display:flex;align-items:center;gap:8px;flex:none}
 .nav-cta .btn{min-height:42px}
+.nav-cta .btn-coffee{background:linear-gradient(180deg,#ffdc82,#ffbd3a);box-shadow:inset 0 1px 0 rgba(255,255,255,.8),inset 0 -1px 0 rgba(150,80,0,.25),0 8px 22px -8px rgba(255,170,30,.7)}
+.nav-cta .btn-coffee:hover{background:linear-gradient(180deg,#ffe49a,#ffc653)}
+.nav-cta .btn-store{background:linear-gradient(180deg,#fff,#e8efff);box-shadow:inset 0 1px 0 #fff,inset 0 -1px 0 rgba(10,26,68,.14),0 8px 22px -10px rgba(2,8,34,.65)}
+.nav-cta .btn-store:hover{background:linear-gradient(180deg,#fff,#f3f7ff)}
 .nav-cta .btn-coffee .short{display:none}
-.burger{display:none;width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,255,255,.28);background:rgba(255,255,255,.12);cursor:pointer;position:relative}
+.burger{display:none;width:42px;height:42px;border-radius:50%;border:0;background:rgba(255,255,255,.15);box-shadow:inset 0 1px 0 rgba(255,255,255,.5),inset 0 0 0 1px rgba(255,255,255,.18);cursor:pointer;position:relative}
 .burger span,.burger span::before,.burger span::after{position:absolute;left:12px;width:16px;height:2px;border-radius:2px;background:#fff;content:"";transition:transform .25s,opacity .2s}
 .burger span{top:19px}.burger span::before{left:0;top:-5px}.burger span::after{left:0;top:5px}
 .burger[aria-expanded=true] span{background:transparent}
@@ -111,9 +130,11 @@ button,input{font:inherit;color:inherit}
 .burger[aria-expanded=true] span::after{transform:translateY(-5px) rotate(-45deg)}
 
 /* ---------- pause du ciel animé : tout ce qui bouge doit pouvoir s'arrêter (le seul bouton qui reste du sélecteur de ciel) ---------- */
-.sky-pause{position:fixed;z-index:50;right:max(12px,env(safe-area-inset-right));bottom:max(12px,env(safe-area-inset-bottom));display:grid;place-items:center;width:44px;height:44px;padding:0;border-radius:50%;
-  background:var(--glass-strong);color:#fff;cursor:pointer;opacity:.8;transition:opacity .2s,background .2s}
-.sky-pause:hover,.sky-pause:focus-visible{opacity:1;background:rgba(255,255,255,.2)}
+.sky-pause{position:fixed;z-index:50;right:max(12px,env(safe-area-inset-right));bottom:max(12px,env(safe-area-inset-bottom));display:grid;place-items:center;width:44px;height:44px;padding:0;border:0;border-radius:50%;
+  background:linear-gradient(180deg,rgba(255,255,255,.22),rgba(255,255,255,.05)),rgba(10,22,60,.42);-webkit-backdrop-filter:blur(20px) saturate(1.8);backdrop-filter:blur(20px) saturate(1.8);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.5),inset 0 0 0 1px rgba(255,255,255,.2),0 14px 30px -14px rgba(2,8,34,.7);
+  color:#fff;cursor:pointer;opacity:.88;transition:opacity .2s,background .2s}
+.sky-pause:hover,.sky-pause:focus-visible{opacity:1;background:linear-gradient(180deg,rgba(255,255,255,.34),rgba(255,255,255,.1)),rgba(10,22,60,.42)}
 .sky-pause svg{width:20px;height:20px}
 .sky-pause .i-play,.sky-pause[aria-pressed=true] .i-pause{display:none}
 .sky-pause[aria-pressed=true] .i-play{display:grid}
@@ -149,7 +170,7 @@ button,input{font:inherit;color:inherit}
   background:linear-gradient(128deg,#fbfbfc 0%,#c4c7cc 14%,#8d9097 30%,#dcdee2 47%,#a3a6ad 62%,#eceef0 80%,#b3b6bc 100%);
   box-shadow:0 0 0 1px rgba(0,0,0,.45),inset 0 0 0 1px rgba(255,255,255,.7),inset 0 0 calc(var(--w) * .012) rgba(30,34,44,.35),0 50px 90px -28px rgba(2,8,34,.75),0 0 110px -14px rgba(120,170,255,.22);
   transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transform-style:preserve-3d;will-change:transform}
-.glass{padding:var(--bez);border-radius:calc(var(--w) * .169);background:#000;box-shadow:0 0 0 calc(var(--w) * .0022) #101115,inset 0 0 0 1px rgba(255,255,255,.08)}
+.phone-glass{padding:var(--bez);border-radius:calc(var(--w) * .169);background:#000;box-shadow:0 0 0 calc(var(--w) * .0022) #101115,inset 0 0 0 1px rgba(255,255,255,.08)}
 .screen{position:relative;width:100%;aspect-ratio:660/1434;border-radius:calc(var(--w) * .1428);overflow:hidden;background:#05070f}
 /* Dynamic Island de l'iPhone 18 Pro : plus petit que celui de l'iPhone 17 Pro (c'est le matériel, pas l'appli) */
 .island{position:absolute;z-index:6;left:50%;top:calc(var(--w) * .0276);width:calc(var(--w) * .189);height:calc(var(--w) * .0783);transform:translateX(-50%);border-radius:999px;background:#000;pointer-events:none}
@@ -529,8 +550,10 @@ input[type=range]::-moz-range-thumb{width:26px;height:26px;border-radius:50%;bac
   .dev-copy{max-width:none}
 }
 @media (max-width:860px){
-  .links{position:fixed;left:12px;right:12px;top:calc(max(10px,env(safe-area-inset-top)) + 64px);flex-direction:column;align-items:stretch;gap:2px;padding:10px;border-radius:24px;margin:0;
-    background:var(--glass-strong);-webkit-backdrop-filter:blur(24px) saturate(1.5);backdrop-filter:blur(24px) saturate(1.5);border:1px solid var(--edge);
+  .links{position:absolute;left:0;right:0;top:calc(100% + 10px);flex-direction:column;align-items:stretch;gap:2px;padding:10px;border-radius:28px;margin:0;
+    background:radial-gradient(120% 90% at 10% -20%,rgba(255,255,255,.26),transparent 60%),linear-gradient(180deg,rgba(255,255,255,.12),rgba(255,255,255,.03)),rgba(10,22,60,.56);
+    -webkit-backdrop-filter:blur(28px) saturate(1.9);backdrop-filter:blur(28px) saturate(1.9);
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.5),inset 0 0 0 1px rgba(255,255,255,.16),0 28px 60px -22px rgba(2,8,34,.8);
     opacity:0;visibility:hidden;transform:translateY(-10px);transition:opacity .25s,transform .25s,visibility 0s .25s}
   .links.open{opacity:1;visibility:visible;transform:none;transition:opacity .25s,transform .25s}
   .links a{min-height:48px;font-size:1.05rem;padding:0 1rem}
@@ -607,6 +630,15 @@ input[type=range]::-moz-range-thumb{width:26px;height:26px;border-radius:50%;bac
   .chap{position:static;opacity:1;visibility:visible;transform:none;margin-bottom:2rem;grid-area:auto}
   .tour-copy{display:block;padding:0;height:auto}
   .tour-dots{display:none}
+}
+
+/* ---------- transparence réduite (réglage d'accessibilité) : le verre devient une vitre sombre opaque ---------- */
+@media (prefers-reduced-transparency:reduce){
+  .nav-in::before{background:rgba(9,18,50,.94);-webkit-backdrop-filter:none;backdrop-filter:none}
+  .glass,.sky-pause{background:rgba(9,18,50,.94);-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+@media (prefers-reduced-transparency:reduce) and (max-width:860px){
+  .links{background:rgba(9,18,50,.97);-webkit-backdrop-filter:none;backdrop-filter:none}
 }
 
 /* ---------- mouvement réduit, sans JavaScript ---------- */
