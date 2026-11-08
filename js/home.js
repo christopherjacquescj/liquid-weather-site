@@ -90,10 +90,19 @@
     // 4) le défilement pilote le téléphone
     var tourTop = 0, tourH = 0, vh = 0, sw = 0, sh = 0, idx = -1, frame = 0;
     var px = 0, py = 0, tx = 0, ty = 0, raf = 0, wasActive = '';
+    /* petit écran : le téléphone prend la place que laisse le chapitre actif (voir le CSS, --copy-h) */
+    function setCopyH() {
+      var c = chaps[idx < 0 ? 0 : idx]; if (!c) return;
+      var h = c.offsetHeight, safe = parseFloat(getComputedStyle(stage).getPropertyValue('--safe-b')) || 0;
+      stage.style.setProperty('--copy-h', h + 'px');
+      /* vraiment trop peu de place pour un téléphone lisible : on le cache, le texte garde toute la hauteur */
+      stage.classList.toggle('no-room', window.innerHeight - h - 156 - safe < 235);
+    }
     function measure() {
       var r = tour.getBoundingClientRect();
       tourTop = r.top + window.pageYOffset; tourH = r.height; vh = window.innerHeight;
       sw = screen.clientWidth; sh = screen.clientHeight;
+      setCopyH();
     }
     var stacked = function () { return getComputedStyle(stage).position !== 'sticky'; };
     function render() {
@@ -104,6 +113,7 @@
       if (i !== idx) {
         idx = i;
         chaps.forEach(function (c, k) { c.classList.toggle('is-on', k === i); });
+        setCopyH();
         dots.forEach(function (d, k) { d.setAttribute('aria-current', k === i ? 'true' : 'false'); });
         var id = chapTab[i];
         if (id !== wasActive) {
