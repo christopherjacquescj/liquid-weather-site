@@ -253,17 +253,15 @@ def sky_mark(state, top, *more):
 
 
 # ---------------------------------------------------------------- appareils : iPad et Apple Watch
-RISK_COLORS = ["#389AFF", "#B366FF", "#FF7838", "#33D6B3", "#6B73FF", "#DBE0FF", "#80EDFF", "#FF5926"]  # les couleurs des 8 risques de l'app
+IPAD_SHOTS = ["ipad-horaire", "ipad-tableau", "ipad-risques", "ipad-methode"]   # vraies captures d'un iPad (app en français), 1440 × 1080
 
 
 def devices(t):
-    """Schémas (pas des captures) : on n'invente aucune interface, on montre ce que dit le code de l'app."""
-    tabs = t["ipad_tabs"].split("|")
-    tab_icons = ["house", "calendar", "clock", "grid", "alert", "map", "moonstars"]
-    tb = "".join('<span class="tb%s">%s<span>%s</span></span>' % (" new" if i in (2, 4) else "", ICON[ic], esc(n))
-                 for i, (ic, n) in enumerate(zip(tab_icons, tabs)))
-    cols = "".join("<li>%s</li>" % esc(c) for c in t["ipad_cols"].split("|"))
-    risks = "".join('<li style="--c:%s">%s</li>' % (c, esc(n)) for c, n in zip(RISK_COLORS, t["ipad_risks"].split("|")))
+    """iPad : de vraies captures d'écran (l'app est en français). Apple Watch : un schéma, annoncé comme tel — on n'invente aucune interface."""
+    shots = "".join('<img class="shot%s" src="%s" width="1440" height="1080" alt="%s" loading="lazy" decoding="async" draggable="false">'
+                    % (" on" if i == 0 else "", ver("assets/%s.webp" % n), esc(alt)) for i, (n, alt) in enumerate(zip(IPAD_SHOTS, t["ipad_alt"])))
+    ipad_chips = "".join('<button type="button" aria-pressed="%s">%s</button>' % ("true" if i == 0 else "false", esc(n))
+                         for i, n in enumerate(t["ipad_s"].split("|")))
     ipad_b = "".join("<li>%s</li>" % b for b in t["ipad_b"])
     watch_b = "".join("<li>%s</li>" % b for b in t["watch_b"])
     comp = t["comp"].split("|")
@@ -285,15 +283,10 @@ def devices(t):
 <p class="chap-text">{t['ipad_p']}</p>
 <ul class="ticks">{ipad_b}</ul>
 </div>
-<figure class="dev-fig">
-<div class="ipad" role="img" aria-label="{esc(t['ipad_aria'])}"><div class="ipad-glass"><div class="ipad-screen" aria-hidden="true">
-<div class="tabs7">{tb}</div>
-<div class="ipad-tiles">
-<div class="tile"><h4>{ICON['clock']}<span>{t['ipad_t1']}</span></h4><p>{t['ipad_t1_p']}</p><ul class="cols">{cols}</ul></div>
-<div class="tile"><h4>{ICON['alert']}<span>{t['ipad_t2']}</span></h4><p>{t['ipad_t2_p']}</p><ul class="rk">{risks}</ul></div>
-</div>
-</div></div></div>
-<figcaption class="fine"><i class="key" aria-hidden="true"></i>{t['ipad_new']}</figcaption>
+<figure class="dev-fig dev-fig-ipad">
+<div class="ipad"><div class="ipad-glass"><div class="ipad-screen">{shots}</div></div></div>
+<div class="chips ipad-chips" role="group" aria-label="{esc(t['ipad_aria'])}">{ipad_chips}</div>
+<figcaption class="fine">{t['ipad_new']}</figcaption>
 </figure>
 </div>
 

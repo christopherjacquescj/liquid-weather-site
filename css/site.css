@@ -95,7 +95,7 @@ button,input{font:inherit;color:inherit}
 /* ---------- barre du haut (le café reste toujours visible, à gauche du bouton App Store) ---------- */
 .nav{position:fixed;z-index:50;top:max(10px,env(safe-area-inset-top));left:0;right:0;padding-inline:max(12px,var(--gut));pointer-events:none}
 .nav-in{pointer-events:auto;margin-inline:auto;width:min(1180px,100%);display:flex;align-items:center;gap:1rem;padding:8px 8px 8px 14px;border-radius:999px;background:var(--glass-strong)}
-.brand{display:inline-flex;align-items:center;gap:.65rem;text-decoration:none;font-weight:640;font-size:1.06rem;letter-spacing:-.02em;white-space:nowrap}
+.brand{display:inline-flex;flex:none;align-items:center;gap:.65rem;text-decoration:none;font-weight:640;font-size:1.06rem;letter-spacing:-.02em;white-space:nowrap}
 .brand img{border-radius:9px;box-shadow:0 2px 10px rgba(0,0,0,.35)}
 .links{display:flex;align-items:center;gap:.2rem;margin-left:auto}
 .links a{display:inline-flex;align-items:center;min-height:40px;padding:0 .85rem;border-radius:999px;text-decoration:none;font-weight:540;font-size:.95rem;color:var(--ink-2);transition:background .2s,color .2s}
@@ -258,7 +258,7 @@ input[type=range]::-moz-range-thumb{width:26px;height:26px;border-radius:50%;bac
 .devs a:active{transform:scale(.97)}
 .devs svg{width:24px;height:24px;flex:none}
 
-/* ---------- iPad et Apple Watch : des schémas, pas des captures ---------- */
+/* ---------- iPad (de vraies captures) et Apple Watch (un schéma) ---------- */
 .dev-row{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(1.8rem,5vw,5rem);align-items:center}
 .dev-row+.dev-row{margin-top:clamp(4rem,9vw,8rem)}
 .dev-row.rev .dev-fig{order:-1}
@@ -269,34 +269,25 @@ input[type=range]::-moz-range-thumb{width:26px;height:26px;border-radius:50%;bac
 .ticks b{font-weight:640;color:#fff}
 .dev-fig{container-type:inline-size;display:grid;justify-items:center;gap:1.3rem;margin:0}
 .dev-fig figcaption{display:flex;align-items:center;gap:.55rem;text-align:center}
-.key{display:inline-block;width:14px;height:14px;border-radius:50%;background:rgba(255,194,71,.28);box-shadow:inset 0 0 0 1.5px rgba(255,194,71,.9)}
 .dev-foot{display:flex;flex-wrap:wrap;align-items:center;gap:1rem 1.8rem;margin-top:clamp(3.2rem,7vw,5.6rem)}
 .dev-foot .fine{max-width:34rem}
 
-/* l'iPad (13 pouces, à l'horizontale), mêmes proportions que le vrai : 281,6 × 215,5 mm */
+/* l'iPad (13 pouces, à l'horizontale), mêmes proportions que le vrai : 281,6 × 215,5 mm. L'écran affiche de vraies captures. */
 .ipad{--W:min(100cqw,660px);position:relative;display:grid;width:var(--W);aspect-ratio:281.6/215.5;padding:calc(var(--W) * .0065);border-radius:calc(var(--W) * .052);
   background:linear-gradient(128deg,#fbfbfc 0%,#c4c7cc 14%,#8d9097 30%,#dcdee2 47%,#a3a6ad 62%,#eceef0 80%,#b3b6bc 100%);
   box-shadow:0 0 0 1px rgba(0,0,0,.45),inset 0 0 0 1px rgba(255,255,255,.7),0 50px 90px -30px rgba(2,8,34,.75),0 0 110px -16px rgba(255,160,120,.22)}
 .ipad-glass{position:relative;display:grid;padding:calc(var(--W) * .027);border-radius:calc(var(--W) * .0455);background:#000;box-shadow:0 0 0 calc(var(--W) * .002) #101115}
 .ipad-glass::before{content:"";position:absolute;left:50%;top:calc(var(--W) * .0102);width:calc(var(--W) * .0075);aspect-ratio:1;transform:translateX(-50%);border-radius:50%;
   background:radial-gradient(circle at 36% 32%,rgba(150,170,230,.45) 0 12%,#0b1224 40%,#02040a 100%)}
-.ipad-screen{position:relative;display:grid;grid-template-rows:auto 1fr;gap:calc(var(--W) * .035);min-height:0;padding:calc(var(--W) * .03);border-radius:calc(var(--W) * .0195);overflow:hidden;
-  background:radial-gradient(90% 70% at 12% 0%,rgba(84,104,240,.55),transparent 62%),radial-gradient(80% 70% at 100% 100%,rgba(255,126,96,.4),transparent 66%),linear-gradient(180deg,#0c1850,#150f44)}
-.tabs7{justify-self:center;display:flex;gap:calc(var(--W) * .003);padding:calc(var(--W) * .0065);border-radius:999px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);box-shadow:inset 0 1px 0 rgba(255,255,255,.22)}
-.tb{display:inline-flex;align-items:center;gap:calc(var(--W) * .006);padding:calc(var(--W) * .0105) calc(var(--W) * .0135);border-radius:999px;font-weight:600;font-size:max(9.5px,calc(var(--W) * .0165));line-height:1;color:rgba(255,255,255,.9);white-space:nowrap}
-.tb svg{width:max(12px,calc(var(--W) * .0225));height:auto;aspect-ratio:1;flex:none}
-.tb.new{background:rgba(255,194,71,.24);box-shadow:inset 0 0 0 1px rgba(255,194,71,.85);color:#ffe3a3}
-.ipad-tiles{display:grid;grid-template-columns:1fr 1fr;gap:calc(var(--W) * .028);min-height:0}
-.tile{display:grid;grid-template-rows:auto auto 1fr;gap:calc(var(--W) * .014);align-content:start;padding:calc(var(--W) * .032);border-radius:calc(var(--W) * .034);background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.2);box-shadow:inset 0 1px 0 rgba(255,255,255,.18)}
-.tile h4{display:flex;align-items:center;gap:.5em;margin:0;font-size:max(15px,calc(var(--W) * .046));font-weight:620;letter-spacing:-.015em;line-height:1.1;color:#ffe3a3}
-.tile h4 svg{width:1.2em;height:1.2em;flex:none}
-.tile p{font-size:max(11.5px,calc(var(--W) * .0235));line-height:1.35;color:var(--ink-2)}
-.cols,.rk{display:flex;flex-wrap:wrap;align-content:flex-start;gap:calc(var(--W) * .008);margin-top:calc(var(--W) * .008)}
-.cols li{padding:calc(var(--W) * .006) calc(var(--W) * .0135);border-radius:999px;background:rgba(255,255,255,.12);font-size:max(9.5px,calc(var(--W) * .0188));line-height:1.3;color:var(--ink-2)}
-.rk{display:grid;grid-template-columns:1fr 1fr;gap:calc(var(--W) * .014) calc(var(--W) * .014)}
-.rk li{display:flex;align-items:center;gap:calc(var(--W) * .012);font-size:max(10px,calc(var(--W) * .0215));line-height:1.3;color:#fff}
-.rk li::before{content:"";flex:none;width:calc(var(--W) * .02);min-width:8px;aspect-ratio:1;border-radius:50%;background:var(--c);box-shadow:0 0 calc(var(--W) * .01) var(--c)}
-@container (max-width:480px){.tb:not(.new)>span{display:none}.tb{padding-inline:calc(var(--W) * .02)}.cols,.rk{display:none}.tile{grid-template-rows:auto auto}}
+.ipad-screen{position:relative;min-height:0;border-radius:calc(var(--W) * .0195);overflow:hidden;background:#070b24}
+/* les captures sont empilées ; la nouvelle apparaît en fondu par-dessus l'ancienne (elle reste visible dessous : pas de trou sombre au milieu du fondu) */
+.ipad-screen .shot{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;z-index:0;transition:opacity .5s ease;-webkit-user-select:none;user-select:none}
+.ipad-screen .shot.prev{opacity:1;z-index:1;transition:none}
+.ipad-screen .shot.on{opacity:1;z-index:2}
+/* quatre puces en 2 × 2 : la rangée du haut pour Horaire, celle du bas pour Risques (jamais de ligne seule qui déborde) */
+.ipad-chips{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;width:min(100%,430px);margin-top:0}
+.ipad-chips button{padding:.4rem .7rem;line-height:1.15;text-align:center}
+.dev-fig-ipad figcaption{max-width:34rem}
 
 /* l'Apple Watch (46 mm) : la page Lunaria, avec la vraie Lune */
 .watch{--W:min(100cqw,250px);position:relative;width:var(--W);margin:calc(var(--W) * .52) 0 calc(var(--W) * .5)}
@@ -612,6 +603,15 @@ input[type=range]::-moz-range-thumb{width:26px;height:26px;border-radius:50%;bac
   .soon-shots figure{max-width:260px}
   .finale-cta .btn{width:100%}
 }
+@media (max-width:380px){   /* petits téléphones (360 px…) : le logo, le café, App Store et le menu tiennent tous sur la barre */
+  .nav{padding-inline:10px}
+  .nav-in{gap:.35rem;padding:6px 6px 6px 9px}
+  .nav-cta{gap:6px}
+  .nav-cta .btn{padding:0 .68rem;gap:.4rem;font-size:.93rem}
+  .nav-cta .btn svg{width:20px;height:20px}
+  .burger{width:40px;height:40px}
+}
+@media (max-width:330px){.brand{display:none}}   /* tout petit écran : on garde le café, App Store et le menu */
 @media (max-height:560px) and (min-width:861px){
   .tour{height:auto}
   .tour-stage{position:static;height:auto;padding-block:6rem 3rem}

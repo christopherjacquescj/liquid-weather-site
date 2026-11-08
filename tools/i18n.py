@@ -51,19 +51,21 @@ T = {
     "ipad_p": "Sur iPad, l’app passe de 5 à 7 onglets et profite de toute la largeur de l’écran.",
     "ipad_b": [
         "<b>Horaire</b> : un tableau heure par heure avec 15 données (température, ressenti, pluie, vent, rafales, pression, UV…), et des courbes. Vous choisissez le modèle.",
-        "<b>Risques</b> : huit risques (pluie, orages, chaleur, vent, froid, neige, verglas, incendie), chacun noté de 0 à 6 pour les 7 prochains jours.",
+        "<b>Risques</b> : huit risques (pluie, orages, chaleur, vent, froid, neige, verglas, incendie), chacun noté de 0 à 6 pour les 7 prochains jours. L’app explique comment chaque note est calculée.",
         "<b>Comparer</b> : tous les modèles côte à côte, sur de plus grands graphiques.",
         "Une mise en page faite pour le grand écran : prévisions en plusieurs zones, fiches de détail plus larges.",
         "Des widgets extra-larges pour l’écran d’accueil.",
     ],
-    "ipad_aria": "Schéma d’un iPad : sept onglets, dont deux réservés à l’iPad, Horaire et Risques.",
-    "ipad_tabs": "Accueil|Prévisions|Horaire|Comparer|Risques|Cartes|Lunaria",
-    "ipad_t1": "Horaire", "ipad_t1_p": "15 données par heure, en tableau et en courbes",
-    "ipad_t2": "Risques", "ipad_t2_p": "8 risques, notés de 0 à 6, sur 7 jours",
-    # libellés tels qu'ils sont dans l'app (tableau horaire : 15 colonnes ; risques : 8)
-    "ipad_cols": "Temps|Temp.|Ressenti|Précip.|Proba.|Pluie|Neige|Humidité|Rosée|Vent|Rafales|Direction|Pression|Nuages|UV",
-    "ipad_risks": "Pluie|Orages|Chaleur|Vent|Froid|Neige|Verglas|Incendie",
-    "ipad_new": "Onglets réservés à l’iPad",
+    # de vraies captures d'un iPad (app en français) : onglets Horaire (courbes, tableau) et Risques (grille, échelles)
+    "ipad_aria": "Choisir l’écran de l’iPad à afficher",
+    "ipad_s": "Horaire : courbes|Horaire : tableau|Risques sur 7 jours|Échelles de 0 à 6",
+    "ipad_alt": [
+        "Onglet Horaire de l’app sur iPad : la courbe de température et le graphique des précipitations sur 10 jours, avec la liste des modèles météo au-dessus.",
+        "Onglet Horaire en tableau : une ligne toutes les 3 heures, avec la température, le ressenti, la pluie, l’humidité, le vent, les rafales et la pression.",
+        "Onglet Risques sur iPad : une grille de huit risques (pluie, orages, chaleur, vent, froid, neige, verglas, incendie), notés de 0 à 6, pour 7 jours.",
+        "Explication des risques sur iPad : l’échelle de 0 à 6 de chacun des huit risques.",
+    ],
+    "ipad_new": "Vraies captures d’écran, app en français (7 langues disponibles). Les onglets Horaire et Risques n’existent que sur iPad.",
     "watch_t": "La météo et la Lune, au poignet.",
     "watch_p": "Trois pages à faire défiler, et un cadran qui montre la météo d’un coup d’œil.",
     "watch_b": [
@@ -76,7 +78,7 @@ T = {
     "watch_aria": "Schéma d’une Apple Watch qui affiche la page Lunaria : la Lune.",
     "comp_aria": "Les quatre formes de complication pour le cadran",
     "comp": "En ligne|Ronde|Rectangulaire|D’angle",
-    "dev_note": "Schémas simplifiés, ce ne sont pas des captures d’écran.",
+    "dev_note": "Le dessin de l’Apple Watch est un schéma simplifié, pas une capture d’écran.",
     "dev_fine": "Pour iOS 17, iPadOS 17 et watchOS 10, ou plus récents.",
 
     # --- modèles
@@ -228,18 +230,21 @@ T = {
     "ipad_p": "On iPad the app goes from 5 tabs to 7 and uses the full width of the screen.",
     "ipad_b": [
         "<b>Hourly</b>: an hour-by-hour table with 15 data points (temperature, feels-like, rain, wind, gusts, pressure, UV…), and charts. You pick the model.",
-        "<b>Risks</b>: eight risks (rain, storms, heat, wind, cold, snow, ice, fire), each scored 0 to 6 for the next 7 days.",
+        "<b>Risks</b>: eight risks (rain, storms, heat, wind, cold, snow, ice, fire), each scored 0 to 6 for the next 7 days. The app explains how each score is worked out.",
         "<b>Compare</b>: all the models side by side, on bigger charts.",
         "A layout made for the big screen: forecasts in several zones, wider detail sheets.",
         "Extra-large widgets for the Home Screen.",
     ],
-    "ipad_aria": "Diagram of an iPad: seven tabs, two of them only on iPad, Hourly and Risks.",
-    "ipad_tabs": "Home|Forecast|Hourly|Compare|Risks|Maps|Lunaria",
-    "ipad_t1": "Hourly", "ipad_t1_p": "15 data points per hour, in a table and in charts",
-    "ipad_t2": "Risks", "ipad_t2_p": "8 risks, scored 0 to 6, over 7 days",
-    "ipad_cols": "Weather|Temp.|Feels|Precip.|Chance|Rain|Snow|Humidity|Dew point|Wind|Gusts|Direction|Pressure|Clouds|UV",
-    "ipad_risks": "Rain|Storms|Heat|Wind|Cold|Snow|Ice|Fire",
-    "ipad_new": "Tabs only on iPad",
+    # real screenshots of an iPad (app in French): Hourly tab (charts, table) and Risks tab (grid, scales)
+    "ipad_aria": "Choose which iPad screen to show",
+    "ipad_s": "Hourly: charts|Hourly: table|Risks over 7 days|Scales from 0 to 6",
+    "ipad_alt": [
+        "The Hourly tab of the app on iPad (shown in French): the temperature curve and the precipitation chart over 10 days, with the list of weather models above.",
+        "The Hourly tab as a table: one row every 3 hours, with temperature, feels-like, rain, humidity, wind, gusts and pressure.",
+        "The Risks tab on iPad: a grid of eight risks (rain, storms, heat, wind, cold, snow, ice, fire), scored 0 to 6, for 7 days.",
+        "How the risks are explained on iPad: the 0 to 6 scale of each of the eight risks.",
+    ],
+    "ipad_new": "Real screenshots, with the app in French (7 languages available). The Hourly and Risks tabs exist only on iPad.",
     "watch_t": "The weather and the Moon, on your wrist.",
     "watch_p": "Three pages to swipe through, and a watch face that shows the weather at a glance.",
     "watch_b": [
@@ -252,7 +257,7 @@ T = {
     "watch_aria": "Diagram of an Apple Watch showing the Lunaria page: the Moon.",
     "comp_aria": "The four complication shapes for the watch face",
     "comp": "Inline|Circular|Rectangular|Corner",
-    "dev_note": "Simplified diagrams, not screenshots.",
+    "dev_note": "The Apple Watch drawing is a simplified diagram, not a screenshot.",
     "dev_fine": "For iOS 17, iPadOS 17 and watchOS 10, or later.",
 
     "models_title": "Weather models don’t always agree.",

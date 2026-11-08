@@ -231,6 +231,36 @@
     }
   })();
 
+  /* ================= l'iPad : de vraies captures, qui défilent doucement jusqu'au premier clic sur une puce ================= */
+  (function ipadInit() {
+    var fig = $('.dev-fig-ipad'); if (!fig) return;
+    var shots = $$('.shot', fig), btns = $$('.ipad-chips button', fig), frame = $('.ipad', fig);
+    if (shots.length < 2 || btns.length !== shots.length || !frame) return;
+    var cur = 0, fade = 0, timer = 0, stopped = reduce, inView = false, over = false;
+    shots.forEach(function (s, k) { if (k) s.setAttribute('aria-hidden', 'true'); });
+    function show(k) {
+      if (k === cur) return;
+      var prev = shots[cur]; cur = k;
+      shots.forEach(function (s, i) {
+        s.classList.remove('prev'); s.classList.toggle('on', i === k);
+        if (i === k) s.removeAttribute('aria-hidden'); else s.setAttribute('aria-hidden', 'true');
+      });
+      prev.classList.add('prev');                       // l'ancienne reste visible dessous pendant le fondu
+      clearTimeout(fade); fade = setTimeout(function () { prev.classList.remove('prev'); }, 650);
+      btns.forEach(function (b, i) { b.setAttribute('aria-pressed', String(i === k)); });
+    }
+    function run() {                                     // ne défile que si l'iPad est à l'écran et que la souris n'est pas dessus
+      clearInterval(timer); timer = 0;
+      if (!stopped && inView && !over && !doc.hidden) timer = setInterval(function () { show((cur + 1) % shots.length); }, 5200);
+    }
+    btns.forEach(function (b, k) { b.addEventListener('click', function () { stopped = true; run(); show(k); }); });
+    if (reduce || !window.IntersectionObserver) { stopped = true; return; }
+    new IntersectionObserver(function (es) { inView = es[0].isIntersecting; run(); }, { threshold: .6 }).observe(frame);
+    fig.addEventListener('mouseenter', function () { over = true; run(); });
+    fig.addEventListener('mouseleave', function () { over = false; run(); });
+    doc.addEventListener('visibilitychange', run);
+  })();
+
   /* ================= les actualités ================= */
   (function newsRail() {
     var rail = $('#news-rail'); if (!rail || !LW.news) return;
