@@ -67,6 +67,12 @@ ICON = {
     "grid": ico('<rect x="4" y="4" width="7" height="7" rx="2"/><rect x="13" y="4" width="7" height="7" rx="2"/><rect x="4" y="13" width="7" height="7" rx="2"/><rect x="13" y="13" width="7" height="7" rx="2"/>'),
     "map": ico('<path d="m3.500 6.500 5.500-2 6 2.500 5.500-2v13l-5.500 2-6-2.500-5.500 2z"/><path d="M9 4.500v13M15 7v13"/>'),
     "moonstars": ico('<path d="M19.500 14A8 8 0 0 1 10 4.500 8 8 0 1 0 19.500 14z"/><path d="M17 3.500v3M15.500 5h3"/>'),
+    "clock": ico('<circle cx="12" cy="12" r="8.500"/><path d="M12 7.200V12l3.200 2"/>'),
+    "alert": ico('<path d="M12 4 3.200 19.200h17.600z"/><path d="M12 10v4.200M12 16.900v.100"/>'),
+    # appareils (traits simples : l'iPhone n'a ici ni encoche ni Dynamic Island, seulement la barre d'accueil)
+    "iphone": ico('<rect x="6.800" y="2.500" width="10.400" height="19" rx="2.800"/><path d="M10.300 18.600h3.400"/>'),
+    "ipad": ico('<rect x="2.800" y="4.500" width="18.400" height="15" rx="2.600"/><path d="M10.500 17.100h3"/>'),
+    "watch": ico('<rect x="6.300" y="6.200" width="11.400" height="11.600" rx="3.400"/><path d="m9.200 6.200.6-3.400h4.400l.6 3.400M9.200 17.800l.6 3.400h4.400l.6-3.400"/><path d="M17.700 10.600H19v2.800h-1.300"/>'),
 }
 
 # ---------------------------------------------------------------- données de la visite (captures réelles)
@@ -198,14 +204,10 @@ def nav(t, page):
 </header>'''
 
 
-def dock(t):
-    modes = [("auto", "sky_auto"), ("clear", "sky_clear"), ("cloudy", "sky_cloudy"), ("rain", "sky_rain"), ("storm", "sky_storm"), ("snow", "sky_snow"), ("night", "sky_night")]
-    btns = "".join('<button type="button" data-sky-mode="%s" aria-pressed="%s" aria-label="%s">%s<span>%s</span></button>'
-                   % (m, "true" if m == "auto" else "false", esc(t[k]), ICON[m], t[k]) for m, k in modes)
-    return (f'<div class="dock glass" role="group" aria-label="{esc(t["dock_aria"])}" data-hint="{esc(t["dock_hint"])}">'
-            f'<span class="dock-label">{t["dock_label"]}</span>{btns}'
-            f'<button type="button" class="dock-pause" aria-pressed="false" data-label-pause="{esc(t["sky_pause"])}" data-label-play="{esc(t["sky_play"])}" aria-label="{esc(t["sky_pause"])}">'
-            f'<span class="i-pause">{ICON["pause"]}</span><span class="i-play">{ICON["play"]}</span></button></div>')
+def skyctl(t):
+    """Plus de choix du ciel : il suit la page. Reste un petit bouton pause (tout ce qui bouge doit pouvoir s'arrêter)."""
+    return (f'<button type="button" class="sky-pause glass" aria-pressed="false" data-label-pause="{esc(t["sky_pause"])}" data-label-play="{esc(t["sky_play"])}" aria-label="{esc(t["sky_pause"])}">'
+            f'<span class="i-pause">{ICON["pause"]}</span><span class="i-play">{ICON["play"]}</span></button>')
 
 
 def footer(t):
@@ -227,14 +229,14 @@ def footer(t):
 </footer>'''
 
 
-def shell(t, page, title, desc, body, scripts, ld=None, noindex=False, bodyclass="", with_dock=True):
+def shell(t, page, title, desc, body, scripts, ld=None, noindex=False, bodyclass="", with_pause=True):
     sc = "".join('<script src="%s" defer></script>\n' % ver(s) for s in scripts)
     return "\n".join([
         head(t, page, title, desc, ld, noindex),
         f'<body class="page-{page} {bodyclass}">',
         f'<a class="skip" href="#main">{t["skip"]}</a>',
-        '<div class="sky" aria-hidden="true"><canvas id="sky"></canvas><canvas id="fx"></canvas><div class="moon" id="moon"><img src="%s" alt="" width="640" height="640" decoding="async"></div></div><div class="sky-scrim" aria-hidden="true"></div>' % ver("assets/moon-full.webp"),
-        nav(t, page), body, footer(t), dock(t) if with_dock else "",
+        '<div class="sky" aria-hidden="true"><canvas id="sky"></canvas><div class="moon" id="moon"><img src="%s" alt="" width="640" height="640" decoding="async"></div></div><div class="sky-scrim" aria-hidden="true"></div><canvas id="fx" class="fx" aria-hidden="true"></canvas>' % ver("assets/moon-full.webp"),
+        nav(t, page), body, footer(t), skyctl(t) if with_pause else "",
         sc, "</body></html>\n"])
 
 
@@ -244,8 +246,77 @@ def write(name, content):
     print("écrit", name, len(content) // 1024, "Ko")
 
 
-def sky_mark(state, top):
-    return '<span class="sky-mark" data-sky="%s" style="top:%s%%" aria-hidden="true"></span>' % (state, top)
+def sky_mark(state, top, *more):
+    """Un repère de ciel : à cet endroit de la page, le ciel est dans cet état. Plusieurs paires (état, position) d'un coup possibles."""
+    pairs = [(state, top)] + [more[i:i + 2] for i in range(0, len(more), 2)]
+    return "".join('<span class="sky-mark" data-sky="%s" style="top:%s%%" aria-hidden="true"></span>' % (st, tp) for st, tp in pairs)
+
+
+# ---------------------------------------------------------------- appareils : iPad et Apple Watch
+RISK_COLORS = ["#389AFF", "#B366FF", "#FF7838", "#33D6B3", "#6B73FF", "#DBE0FF", "#80EDFF", "#FF5926"]  # les couleurs des 8 risques de l'app
+
+
+def devices(t):
+    """Schémas (pas des captures) : on n'invente aucune interface, on montre ce que dit le code de l'app."""
+    tabs = t["ipad_tabs"].split("|")
+    tab_icons = ["house", "calendar", "clock", "grid", "alert", "map", "moonstars"]
+    tb = "".join('<span class="tb%s">%s<span>%s</span></span>' % (" new" if i in (2, 4) else "", ICON[ic], esc(n))
+                 for i, (ic, n) in enumerate(zip(tab_icons, tabs)))
+    cols = "".join("<li>%s</li>" % esc(c) for c in t["ipad_cols"].split("|"))
+    risks = "".join('<li style="--c:%s">%s</li>' % (c, esc(n)) for c, n in zip(RISK_COLORS, t["ipad_risks"].split("|")))
+    ipad_b = "".join("<li>%s</li>" % b for b in t["ipad_b"])
+    watch_b = "".join("<li>%s</li>" % b for b in t["watch_b"])
+    comp = t["comp"].split("|")
+    cl = ICON["cloudy"]
+    comps = (f'<ul class="comps" aria-label="{esc(t["comp_aria"])}">'
+             f'<li><span class="cp cp-inline">{cl}<i></i></span><b>{comp[0]}</b></li>'
+             f'<li><span class="cp cp-circ">{cl}</span><b>{comp[1]}</b></li>'
+             f'<li><span class="cp cp-rect">{cl}<i></i><i></i></span><b>{comp[2]}</b></li>'
+             f'<li><span class="cp cp-corner">{cl}</span><b>{comp[3]}</b></li></ul>')
+    return f"""<section class="devsec sec" id="appareils" aria-labelledby="dev-t">
+{sky_mark('aurora', 4, 'aurora', 96)}
+<div class="wrap">
+<header class="sec-head"><h2 id="dev-t" class="h-sec">{t['dev_title']}</h2><p class="lead">{t['dev_lead']}</p></header>
+
+<div class="dev-row dev-ipad-row">
+<div class="dev-copy">
+<p class="tabpill">{ICON['ipad']}<span>{t['dev_ipad']}</span></p>
+<h3 class="h-chap">{t['ipad_t']}</h3>
+<p class="chap-text">{t['ipad_p']}</p>
+<ul class="ticks">{ipad_b}</ul>
+</div>
+<figure class="dev-fig">
+<div class="ipad" role="img" aria-label="{esc(t['ipad_aria'])}"><div class="ipad-glass"><div class="ipad-screen" aria-hidden="true">
+<div class="tabs7">{tb}</div>
+<div class="ipad-tiles">
+<div class="tile"><h4>{ICON['clock']}<span>{t['ipad_t1']}</span></h4><p>{t['ipad_t1_p']}</p><ul class="cols">{cols}</ul></div>
+<div class="tile"><h4>{ICON['alert']}<span>{t['ipad_t2']}</span></h4><p>{t['ipad_t2_p']}</p><ul class="rk">{risks}</ul></div>
+</div>
+</div></div></div>
+<figcaption class="fine"><i class="key" aria-hidden="true"></i>{t['ipad_new']}</figcaption>
+</figure>
+</div>
+
+<div class="dev-row dev-watch-row rev">
+<div class="dev-copy">
+<p class="tabpill">{ICON['watch']}<span>{t['dev_watch']}</span></p>
+<h3 class="h-chap">{t['watch_t']}</h3>
+<p class="chap-text">{t['watch_p']}</p>
+<ul class="ticks">{watch_b}</ul>
+</div>
+<figure class="dev-fig">
+<div class="watch" role="img" aria-label="{esc(t['watch_aria'])}"><i class="w-crown" aria-hidden="true"></i><i class="w-btn" aria-hidden="true"></i>
+<div class="watch-case"><div class="watch-glass"><div class="watch-screen" aria-hidden="true"><img src="assets/moon-full.webp" width="640" height="640" alt="" loading="lazy" decoding="async"><span class="w-dots"><i></i><i></i><i></i></span></div></div></div></div>
+{comps}
+</figure>
+</div>
+
+<div class="dev-foot">
+<a class="btn btn-store btn-lg" href="{APP_STORE}" target="_blank" rel="noopener">{ICON['apple']}<span>{t['store_long']}</span></a>
+<p class="fine">{t['dev_fine']}<br>{t['dev_note']}</p>
+</div>
+</div>
+</section>"""
 
 
 # ---------------------------------------------------------------- accueil
@@ -276,9 +347,13 @@ def home(t):
 </article>''')
         dots.append(f'<li><a href="#c-{cid}" data-go="{i}" aria-label="{esc(label)}"><span></span></a></li>')
     first = TOUR["tabs"][0]
+    # les trois appareils, juste sous le bouton App Store : chaque puce mène à la section « appareils »
+    dev_chips = "".join('<li><a href="#appareils">%s<span>%s</span></a></li>' % (ICON[i], t[k])
+                        for i, k in [("iphone", "dev_iphone"), ("ipad", "dev_ipad"), ("watch", "dev_watch")])
+    hero_devs = f'<div class="devs"><p class="devs-on">{t["hero_on"]}</p><ul aria-label="{esc(t["dev_aria"])}">{dev_chips}</ul></div>'
 
     tour = f'''<section class="tour" id="app" aria-label="{esc(t['tour_aria'])}">
-{sky_mark('dawn', 6)}{sky_mark('day', 74)}
+{sky_mark('now', 0, 'now', 14, 'clear', 28, 'clear', 62, 'aurora', 80, 'aurora', 100)}
 <div class="tour-stage">
 <div class="tour-copy">
 <article class="chap chap-hero" data-chap="0">
@@ -288,7 +363,7 @@ def home(t):
 <a class="btn btn-store btn-lg" href="{APP_STORE}" target="_blank" rel="noopener">{ICON['apple']}<span>{t['store_long']}</span></a>
 <a class="btn btn-glass btn-lg" href="#c-home" data-go="1">{t['hero_more']}</a>
 </div>
-<p class="fine">{t['hero_fine']}</p>
+{hero_devs}
 </article>
 {"".join(chap_html)}
 </div>
@@ -313,7 +388,7 @@ def home(t):
     legend = "".join(f'<li data-model="{i}"><i style="--c:{c}"></i><b>{t["m_" + k]}</b><span>{t["m_" + k + "_by"]}</span></li>' for i, (k, c) in enumerate(agents))
     axis = t["models_axis"].split("|")
     models = f'''<section class="models sec" id="models" aria-labelledby="models-t">
-{sky_mark('rain', 16)}{sky_mark('clear', 86)}
+{sky_mark('storm', 20, 'storm', 80)}
 <div class="wrap models-grid">
 <div class="models-copy">
 <h2 id="models-t" class="h-sec">{t['models_title']}</h2>
@@ -340,7 +415,7 @@ def home(t):
     langs = "".join('<li lang="%s"%s>%s</li>' % (c, ' dir="rtl"' if c == "ar" else "", n) for c, n in
                     [("fr", "Français"), ("en", "English"), ("es", "Español"), ("de", "Deutsch"), ("it", "Italiano"), ("pt", "Português"), ("ar", "العربية")])
     feat = f'''<section class="feat sec" id="features" aria-labelledby="feat-t">
-{sky_mark('golden', 46)}
+{sky_mark('snow', 20, 'snow', 80)}
 <div class="wrap">
 <header class="sec-head"><h2 id="feat-t" class="h-sec">{t['feat_title']}</h2><p class="lead">{t['feat_lead']}</p></header>
 <ul class="toc">
@@ -349,13 +424,13 @@ def home(t):
 <li class="toc-row"><h3>{t['f3_t']}</h3><div class="toc-body"><ul class="tags">{chips3}</ul></div></li>
 <li class="toc-row"><h3>{t['f4_t']}</h3><div class="toc-body"><ul class="langs">{langs}</ul><p>{t['f4_p']}</p></div></li>
 <li class="toc-row"><h3>{t['f5_t']}</h3><div class="toc-body"><p>{t['f5_p']}</p></div></li>
-<li class="toc-row"><h3>{t['f6_t']}</h3><div class="toc-body"><p>{t['f6_p']}</p><ul class="tags">{chips6}</ul></div></li>
+<li class="toc-row"><h3>{t['f6_t']}</h3><div class="toc-body"><p>{t['f6_p']}</p><ul class="tags">{chips6}</ul><p><a class="btn btn-glass" href="#appareils">{t['f6_link']}</a></p></div></li>
 </ul>
 </div>
 </section>'''
 
     news = f'''<section class="newsec sec" id="news" aria-labelledby="news-t">
-{sky_mark('dusk', 40)}
+{sky_mark('drizzle', 20, 'drizzle', 80)}
 <div class="wrap">
 <header class="sec-head sec-head-row"><div><h2 id="news-t" class="h-sec">{t['news_title']}</h2><p class="lead">{t['news_lead']}</p></div>
 <a class="btn btn-glass" href="{page_url('news', lang)}">{t['news_all']}</a></header>
@@ -366,7 +441,7 @@ def home(t):
 
     ann = "actualites/%s/images/" % ANNOUNCE
     soon = f'''<section class="soon sec" id="soon" aria-labelledby="soon-t">
-{sky_mark('night', 50)}
+{sky_mark('fog', 20, 'fog', 80)}
 <div class="wrap">
 <header class="sec-head"><h2 id="soon-t" class="h-sec">{t['soon_title']}</h2><p class="lead">{t['soon_lead']}</p></header>
 <div class="soon-grid">
@@ -391,6 +466,7 @@ def home(t):
     steps = t["hood_steps"].split("|")
     pipe = "".join("<li>%s</li>" % esc(s) for s in steps)
     priv = f'''<section class="privsec sec" id="privacy" aria-labelledby="priv-t">
+{sky_mark('cirrus', 12, 'cirrus', 88)}
 <div class="wrap">
 <h2 id="priv-t" class="h-sec">{t['priv_title']}</h2>
 <div class="priv-cols">
@@ -408,12 +484,13 @@ def home(t):
 
     faq = "".join("<details><summary>%s</summary><p>%s</p></details>" % (esc(q), a.replace(MAIL, '<a href="mailto:%s">%s</a>' % (MAIL, MAIL))) for q, a in t["faq"])
     faqs = f'''<section class="faq sec" id="faq" aria-labelledby="faq-t">
+{sky_mark('golden', 20, 'golden', 80)}
 <div class="wrap faq-wrap"><h2 id="faq-t" class="h-sec">{t['faq_title']}</h2><div class="faq-list">{faq}</div></div>
 </section>'''
 
     mail = "mailto:%s?subject=%s" % (MAIL, t["mail_subject"].replace(" ", "%20").replace("—", "%E2%80%94"))
     finale = f'''<section class="finale sec" id="soutenir" aria-labelledby="cta-t">
-{sky_mark('aurora', 36)}
+{sky_mark('aurora', 22, 'aurora', 100)}
 <div class="wrap">
 <div class="finale-cta"><h2 id="cta-t" class="h-sec">{t['cta_title']}</h2>
 <a class="btn btn-store btn-lg" href="{APP_STORE}" target="_blank" rel="noopener">{ICON['apple']}<span>{t['store_long']}</span></a></div>
@@ -432,10 +509,10 @@ def home(t):
 </div>
 </section>'''
 
-    ld = {"@context": "https://schema.org", "@type": "MobileApplication", "name": "Liquid Weather", "operatingSystem": "iOS",
+    ld = {"@context": "https://schema.org", "@type": "MobileApplication", "name": "Liquid Weather", "operatingSystem": "iOS, iPadOS, watchOS",
           "applicationCategory": "WeatherApplication", "description": t["home_desc"], "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"},
           "inLanguage": ["fr", "en", "es", "de", "it", "pt", "ar"], "url": BASE}
-    body = f'<main id="main">\n{tour}\n{models}\n{feat}\n{news}\n{soon}\n{priv}\n{faqs}\n{finale}\n</main>'
+    body = f'<main id="main">\n{tour}\n{devices(t)}\n{models}\n{feat}\n{news}\n{soon}\n{priv}\n{faqs}\n{finale}\n</main>'
     page = shell(t, "home", t["home_title"], t["home_desc"], body, ["js/sky.js", "js/fx.js", "js/site.js", "js/home.js"], ld=ld, bodyclass="")
     write(page_url("home", lang), page)
 
@@ -501,7 +578,7 @@ def not_found():
 <p class="cta"><a class="btn btn-store btn-lg" href="{BASE}">{fr['nf_btn']}</a><a class="btn btn-glass btn-lg" href="{BASE}index-en.html" lang="en">{en['nf_btn']}</a></p>
 </div></main>'''
     # la page 404 est servie à n'importe quelle adresse : on utilise des liens absolus pour les fichiers
-    page = shell(fr, "404", fr["nf_title"], fr["nf_h1"], body, ["js/sky.js", "js/fx.js", "js/site.js"], noindex=True, bodyclass="page-nf", with_dock=False)
+    page = shell(fr, "404", fr["nf_title"], fr["nf_h1"], body, ["js/sky.js", "js/fx.js", "js/site.js"], noindex=True, bodyclass="page-nf", with_pause=False)
     page = page.replace('href="css/', 'href="%scss/' % BASE).replace('src="js/', 'src="%sjs/' % BASE).replace('src="assets/', 'src="%sassets/' % BASE)
     page = page.replace('href="assets/', 'href="%sassets/' % BASE)
     for key in ("index.html", "actualites.html", "privacy.html", "support.html", "index-en.html"):

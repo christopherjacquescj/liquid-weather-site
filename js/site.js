@@ -1,4 +1,4 @@
-/* Liquid Weather — le socle commun : menu, ciel (selon la section affichée ou le choix du visiteur), actualités. */
+/* Liquid Weather — le socle commun : menu, ciel (il suit la section affichée), actualités. */
 (function () {
   'use strict';
   var doc = document, root = doc.documentElement;
@@ -34,10 +34,19 @@
   }) : null;
   LW.fx = fx;
   var P = window.LWSky ? window.LWSky.PRESETS : {};
-  var KEYS = ['sun', 'sunX', 'cloud', 'rain', 'snow', 'dark', 'aurora'];
-  var PAGE_SKY = { news: 'dusk', privacy: 'night', support: 'golden', '404': 'storm' };
+  var KEYS = ['sun', 'sunX', 'cloud', 'rain', 'snow', 'dark', 'aurora', 'cirrus', 'fog'];
+  var PAGE_SKY = { news: 'dusk', privacy: 'cirrus', support: 'golden', '404': 'storm' };
+
+  /* Le ciel du moment : calculé avec l'heure du visiteur (aucun réseau). Le Soleil se lève vers 6 h, culmine à midi, se couche vers 18 h. */
+  function nowSky() {
+    var d = new Date(), h = d.getHours() + d.getMinutes() / 60, sun, sunX = 0.3, a = (h - 6) / 12;
+    if (a >= 0 && a <= 1) { sun = 0.62 * Math.sin(Math.PI * a); sunX = 0.8 - 0.56 * a; }
+    else { var n = h >= 18 ? (h - 18) / 12 : (h + 6) / 12; sun = -0.5 * Math.sin(Math.PI * n); }
+    return { sun: sun, sunX: sunX, cloud: 0.28, rain: 0, snow: 0, dark: 0, aurora: 0, cirrus: 0.2, fog: 0 };
+  }
+  if (P) P.now = nowSky();
   var page = (doc.body.className.match(/page-(\w+)/) || [])[1];
-  var marks = [], mode = 'auto', lastScrim = -1;
+  var marks = [], lastScrim = -1;
 
   function collectMarks() {
     marks = $$('.sky-mark').map(function (el) {
@@ -45,7 +54,7 @@
     }).sort(function (a, b) { return a.y - b.y; });
   }
   function smooth(t) { return t * t * (3 - 2 * t); }
-  function blend(a, b, t) { var o = {}; KEYS.forEach(function (k) { o[k] = a[k] + (b[k] - a[k]) * t; }); return o; }
+  function blend(a, b, t) { var o = {}; KEYS.forEach(function (k) { var x = a[k] || 0, y = b[k] || 0; o[k] = x + (y - x) * t; }); return o; }
   function scrollState() {
     if (!marks.length) return P[PAGE_SKY[page] || 'day'];
     var y = window.pageYOffset + window.innerHeight * 0.5, i;
@@ -60,20 +69,22 @@
   }
   function scrimFor(s) {
     var day = smooth(clamp((s.sun + 0.02) / 0.52, 0, 1));
-    return 0.12 + 0.26 * day + 0.08 * s.cloud * day;
+    return 0.12 + 0.26 * day + 0.08 * s.cloud * day + 0.1 * (s.fog || 0) * day + 0.06 * s.snow * day + 0.05 * (s.cirrus || 0) * day;
   }
-  var moonEl = $('#moon'), lastMoon = -1;
+  var moonEl = $('#moon'), lastMoon = -1, tourEl = $('.tour');
   function moonVisibility(s) {
     var t = clamp((s.sun - 0.02) / -0.34, 0, 1), night = t * t * (3 - 2 * t);
-    return night * (1 - clamp(s.cloud * 0.8 + s.dark * 0.5, 0, 1) * 0.85);
+    return night * (1 - clamp(s.cloud * 0.8 + s.dark * 0.5 + (s.fog || 0) * 0.8, 0, 1) * 0.85);
   }
   function apply() {
-    var s = mode === 'auto' ? scrollState() : P[mode];
+    var s = scrollState();
     if (!s) return;
     if (moonEl) {
       var mv = moonVisibility(s);
       if (Math.abs(mv - lastMoon) > 0.004) { lastMoon = mv; moonEl.style.opacity = mv.toFixed(3); }
     }
+    /* pendant la visite, la Lune se pose entre le texte et le téléphone (sinon elle passerait derrière lui) */
+    if (tourEl) { var tr = tourEl.getBoundingClientRect(), mid = window.innerHeight / 2; root.classList.toggle('in-tour', tr.top < mid && tr.bottom > mid); }
     if (fx) fx.set(s, reduce ? { instant: true } : undefined);
     if (sky) sky.set(s, reduce ? { instant: true } : undefined);
     else if (window.LWSky) {
@@ -92,42 +103,17 @@
   window.addEventListener('load', function () { collectMarks(); apply(); });
   if (window.ResizeObserver) new ResizeObserver(function () { collectMarks(); apply(); }).observe(doc.body);
 
-  /* ---------- le sélecteur de ciel ---------- */
-  var dock = $('.dock');
-  if (dock) {
-    var modeBtns = $$('[data-sky-mode]', dock);
-    modeBtns.forEach(function (b) {
-      b.addEventListener('click', function () {
-        mode = b.getAttribute('data-sky-mode');
-        modeBtns.forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); });
-        root.setAttribute('data-sky-mode', mode);
-        apply(); hideHint();
-      });
+  /* ---------- pause du ciel animé ---------- */
+  var pause = $('.sky-pause');
+  if (pause) {
+    if ((!sky && !fx) || reduce) pause.hidden = true;
+    pause.addEventListener('click', function () {
+      var on = pause.getAttribute('aria-pressed') !== 'true';
+      pause.setAttribute('aria-pressed', String(on));
+      pause.setAttribute('aria-label', pause.getAttribute(on ? 'data-label-play' : 'data-label-pause'));
+      if (sky) { if (on) sky.pause(); else sky.play(); }
+      if (fx) { if (on) fx.pause(); else fx.play(); }
     });
-    var pause = $('.dock-pause', dock);
-    if (pause) {
-      if ((!sky && !fx) || reduce) pause.hidden = true;
-      pause.addEventListener('click', function () {
-        var on = pause.getAttribute('aria-pressed') !== 'true';
-        pause.setAttribute('aria-pressed', String(on));
-        pause.setAttribute('aria-label', pause.getAttribute(on ? 'data-label-play' : 'data-label-pause'));
-        if (sky) { if (on) sky.pause(); else sky.play(); }
-        if (fx) { if (on) fx.pause(); else fx.play(); }
-      });
-    }
-    var hint = null;
-    var hideHint = function () { if (hint) { hint.classList.remove('show'); var h = hint; hint = null; setTimeout(function () { h.remove(); }, 400); } };
-    try {
-      if (!sessionStorage.getItem('lw-dock-hint')) {
-        sessionStorage.setItem('lw-dock-hint', '1');
-        setTimeout(function () {
-          hint = doc.createElement('div'); hint.className = 'dock-hint'; hint.setAttribute('aria-hidden', 'true');
-          hint.textContent = dock.getAttribute('data-hint') || '';
-          dock.appendChild(hint); requestAnimationFrame(function () { hint && hint.classList.add('show'); });
-          setTimeout(hideHint, 5200);
-        }, 3500);
-      }
-    } catch (e) { /* stockage indisponible : on s'en passe */ }
   }
 
   /* ---------- la Lune du moment (calculée ici, sans réseau) ---------- */

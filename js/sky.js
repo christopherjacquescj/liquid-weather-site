@@ -13,6 +13,7 @@
     'uniform vec2 uRes;uniform float uTime;uniform float uSun;uniform float uSunX;',
     'uniform float uCloud;uniform float uRain;uniform float uSnow;uniform float uDark;',
     'uniform float uAurora;uniform float uFlash;uniform float uFlashX;',
+    'uniform float uCirrus;uniform float uFog;',
     'uniform float uDrift;uniform vec2 uPtr;',
 
     'float hash21(vec2 p){p=fract(p*vec2(123.34,456.21));p+=dot(p,p+45.32);return fract(p.x*p.y);}',
@@ -42,7 +43,7 @@
     // --- soleil
     ' vec2 sunPos=vec2(uSunX,mix(.03,.80,clamp((s+.08)/.95,0.,1.)));',
     ' vec2 sd=(uv-sunPos)*vec2(asp,1.);float sr=length(sd);',
-    ' float sunVis=smoothstep(-.14,-.02,s)*(1.-over*.82);',
+    ' float sunVis=smoothstep(-.14,-.02,s)*(1.-over*.82)*(1.-uFog*.85);',
     ' vec3 sunCol=mix(vec3(1.,.50,.22),vec3(1.,.96,.86),smoothstep(0.,.5,s));',
     ' float halo=exp(-sr*3.2)*.34+exp(-sr*9.)*.5;',
     ' sky+=sunCol*halo*sunVis*(.5+.5*(1.-night));',
@@ -60,7 +61,7 @@
     ' vec2 cp=vec2((uv.x-.5)*asp,uv.y*.85)*dp*1.5+vec2(uDrift*.05+uPtr.x*.03,uDrift*.012+uPtr.y*.02);',
     ' float f=fbm(cp);',
     ' float cover=mix(mix(.66,.30,uCloud),.10,deck);float soft=mix(.22-.10*uCloud,.32,deck);',
-    ' float dens=smoothstep(cover,cover+soft,f);',
+    ' float dens=smoothstep(cover,cover+soft,f);dens*=1.-uFog*.8;',
     ' vec2 toSun=normalize(sunPos-uv+vec2(1e-4));',
     ' float f2=fbm(cp+vec2(toSun.x*asp,toSun.y)*.12);',
     ' float light=clamp(.58+(f-f2)*7.,0.,1.);light=mix(light,.4,uCloud*.35);',
@@ -80,16 +81,25 @@
     ' col+=sunCol*halo*.22*sunVis*dens*(1.-uDark);',
 
     // --- disque du soleil, vu à travers les trous
-    ' float disc=smoothstep(.034,.030,sr);',
-    ' col=mix(col,vec3(1.,.97,.9),disc*sunVis*(1.-dens)*(1.-over));',
+    // un cœur très clair avec un bord doux, puis l'éblouissement autour : le Soleil ne doit pas ressembler à une pièce posée sur le ciel
+    ' float disc=smoothstep(.040,.022,sr);',
+    ' float sv=smoothstep(-.14,-.02,s)*(1.-uFog*.85);',
+    ' col=mix(col,vec3(1.,.97,.9),disc*sv*(1.-dens*.9)*(1.-over*.55));',
+    ' col+=sunCol*(exp(-sr*24.)*.30+exp(-sr*80.)*.55)*sv*(1.-dens*.75)*(1.-over*.5);',
 
-    // --- cirrus
-    ' vec2 cq=vec2((uv.x-.5)*asp*.7+uDrift*.03,uv.y*3.2+uv.x*.6);',
-    ' float ci=smoothstep(.52,.9,fbm3(cq*vec2(1.,2.4)));',
-    ' col=mix(col,lit,ci*.22*(1.-dens)*(1.-uDark)*(1.-night*.7));',
+    // --- cirrus : filaments étirés, qui suivent une courbe douce ; plus nombreux et plus brillants quand uCirrus monte
+    ' vec2 cp0=vec2((uv.x-.5)*asp,uv.y);',
+    ' cp0.y+=.16*sin(cp0.x*1.5+.7)+.10*cp0.x;',
+    ' float cn=fbm3(vec2(cp0.x*.95+uDrift*.016,cp0.y*5.2));',
+    ' float cm=fbm3(vec2(cp0.x*2.6-uDrift*.03,cp0.y*13.)+cn*1.8);',
+    ' float clo=.54-.17*uCirrus;',
+    ' float ci=smoothstep(clo,clo+.26,cn)*smoothstep(.26-.10*uCirrus,.72,cm);',
+    ' ci*=smoothstep(.04,.55,uv.y);',
+    ' vec3 cirC=mix(lit,sunCol,(.45*exp(-sr*2.2)*day+.25*tw)*(.4+.6*uCirrus));',
+    ' col=mix(col,cirC,ci*(.20+.66*uCirrus)*(1.-dens*(.85-.35*uCirrus))*(1.-uDark)*(1.-night*.8)*(1.-uFog*.6));',
 
     // --- visibilité de nuit (étoiles, Lune, aurore) : cachées par les nuages
-    ' float nv=night*(1.-dens)*(1.-over*.85);',
+    ' float nv=night*(1.-dens)*(1.-over*.85)*(1.-uFog*.9);',
 
     // --- étoiles
     ' float cells=clamp(uRes.y/9.,60.,130.);',
@@ -115,6 +125,16 @@
     '  col+=ac*au*.55*uAurora*nv;',
     ' }',
 
+    // --- brouillard : nappes laiteuses qui dérivent, plus épaisses près de l'horizon
+    ' if(uFog>.01){',
+    '  float fn=fbm3(vec2((uv.x-.5)*asp*1.3+uDrift*.035,uv.y*2.2+uDrift*.008));',
+    '  float fn2=fbm3(vec2((uv.x-.5)*asp*2.6-uDrift*.05,uv.y*4.+3.7));',
+    '  float lowf=pow(1.-uv.y,.9);',
+    '  float fa=clamp(uFog*(.52+.50*lowf)*(.50+.85*fn)+uFog*.20*(fn2-.4),0.,.95);',
+    '  vec3 fc=mix(vec3(.10,.13,.22),vec3(.78,.82,.89),day);fc=mix(fc,vec3(.80,.68,.64),tw*.55);',
+    '  col=mix(col,fc,fa);',
+    ' }',
+
     // --- pluie et neige : gouttes et flocons sont dessinés par fx.js (comme dans l'appli) ; ici, seulement l'air qui s'alourdit
     ' col*=1.-uRain*.16;',
     ' col=mix(col,vec3(dot(col,vec3(.34)))+vec3(.03,.04,.06),uRain*.22*(1.-uv.y*.6));',
@@ -138,14 +158,18 @@
     clear:   { sun: 0.60, sunX: 0.78, cloud: 0.10, rain: 0, snow: 0, dark: 0, aurora: 0 },
     cloudy:  { sun: 0.42, sunX: 0.70, cloud: 0.92, rain: 0, snow: 0, dark: 0.12, aurora: 0 },
     rain:    { sun: 0.28, sunX: 0.60, cloud: 1.00, rain: 0.85, snow: 0, dark: 0.40, aurora: 0 },
+    drizzle: { sun: 0.30, sunX: 0.55, cloud: 0.90, rain: 0.42, snow: 0, dark: 0.18, aurora: 0 },
     storm:   { sun: 0.20, sunX: 0.50, cloud: 1.00, rain: 1.00, snow: 0, dark: 0.85, aurora: 0 },
     snow:    { sun: 0.32, sunX: 0.65, cloud: 1.00, rain: 0, snow: 0.90, dark: 0.04, aurora: 0 },
-    golden:  { sun: 0.13, sunX: 0.30, cloud: 0.42, rain: 0, snow: 0, dark: 0, aurora: 0 },
+    fog:     { sun: 0.34, sunX: 0.56, cloud: 0.50, rain: 0, snow: 0, dark: 0.02, aurora: 0, fog: 1 },
+    cirrus:  { sun: 0.36, sunX: 0.72, cloud: 0.56, rain: 0, snow: 0, dark: 0, aurora: 0, cirrus: 1 },
+    golden:  { sun: 0.13, sunX: 0.30, cloud: 0.42, rain: 0, snow: 0, dark: 0, aurora: 0, cirrus: 0.55 },
     dusk:    { sun: -0.04, sunX: 0.22, cloud: 0.38, rain: 0, snow: 0, dark: 0, aurora: 0 },
     night:   { sun: -0.46, sunX: 0.30, cloud: 0.22, rain: 0, snow: 0, dark: 0, aurora: 0 },
     aurora:  { sun: -0.50, sunX: 0.30, cloud: 0.10, rain: 0, snow: 0, dark: 0, aurora: 1 }
   };
-  var KEYS = ['sun', 'sunX', 'cloud', 'rain', 'snow', 'dark', 'aurora'];
+  var KEYS = ['sun', 'sunX', 'cloud', 'rain', 'snow', 'dark', 'aurora', 'cirrus', 'fog'];
+  Object.keys(PRESETS).forEach(function (n) { KEYS.forEach(function (k) { if (PRESETS[n][k] == null) PRESETS[n][k] = 0; }); });
 
   /* Phase de la Lune (0 = nouvelle, 0,5 = pleine), calcul simple et sans réseau. */
   function moonPhase(date) {
@@ -165,7 +189,7 @@
     return sh;
   }
 
-  function copy(o) { var r = {}; KEYS.forEach(function (k) { r[k] = o[k]; }); return r; }
+  function copy(o) { var r = {}; KEYS.forEach(function (k) { r[k] = o[k] || 0; }); return r; }
 
   /* mount(canvas, options) → { set, setDrift, render, pause, play, paused, state, destroy } ou null si WebGL est absent. */
   function mount(canvas, opts) {
@@ -197,7 +221,7 @@
     gl.vertexAttribPointer(loc, 2, gl.FLOAT, false, 0, 0);
 
     var U = {};
-    ['uRes', 'uTime', 'uSun', 'uSunX', 'uCloud', 'uRain', 'uSnow', 'uDark', 'uAurora', 'uFlash', 'uFlashX', 'uDrift', 'uPtr']
+    ['uRes', 'uTime', 'uSun', 'uSunX', 'uCloud', 'uRain', 'uSnow', 'uDark', 'uAurora', 'uFlash', 'uFlashX', 'uDrift', 'uPtr', 'uCirrus', 'uFog']
       .forEach(function (n) { U[n] = gl.getUniformLocation(prog, n); });
 
     var cur = copy(PRESETS.day), target = copy(PRESETS.day);
@@ -222,6 +246,7 @@
       gl.uniform1f(U.uSun, cur.sun); gl.uniform1f(U.uSunX, cur.sunX);
       gl.uniform1f(U.uCloud, cur.cloud); gl.uniform1f(U.uRain, cur.rain); gl.uniform1f(U.uSnow, cur.snow);
       gl.uniform1f(U.uDark, cur.dark); gl.uniform1f(U.uAurora, cur.aurora);
+      gl.uniform1f(U.uCirrus, cur.cirrus); gl.uniform1f(U.uFog, cur.fog);
       gl.uniform1f(U.uFlash, flash); gl.uniform1f(U.uFlashX, flashX);
       gl.uniform1f(U.uDrift, drift); gl.uniform2f(U.uPtr, ptr[0], ptr[1]);
       gl.drawArrays(gl.TRIANGLES, 0, 3);
@@ -295,7 +320,7 @@
       set: function (state, o) {
         var s = typeof state === 'string' ? PRESETS[state] : state;
         if (!s) return;
-        KEYS.forEach(function (k) { if (s[k] != null) target[k] = s[k]; });
+        KEYS.forEach(function (k) { target[k] = s[k] != null ? s[k] : 0; });
         if (o && o.instant) KEYS.forEach(function (k) { cur[k] = target[k]; });
         wake();
       },
@@ -319,7 +344,7 @@
     function pal(dt, nt, wt) { return [0, 1, 2].map(function (i) { return (dt[i] * day + nt[i] * night + wt[i] * tw) / n; }); }
     var top = pal([.05, .25, .70], [.01, .02, .085], [.11, .14, .42]);
     var bot = pal([.38, .66, .95], [.045, .075, .205], [1, .55, .33]);
-    var over = Math.min(1, st.cloud * .8 + st.dark * .5);
+    var over = Math.min(1, st.cloud * .8 + st.dark * .5 + (st.fog || 0) * .7);
     var grey = function (c) { var l = .3 * c[0] + .59 * c[1] + .11 * c[2]; return mix(c, [l * .9, l * .98, l * 1.08], over * .6).map(function (v) { return v * (1 - st.dark * .5); }); };
     function css(c) { return 'rgb(' + c.map(function (v) { return Math.round(Math.max(0, Math.min(1, v)) * 255); }).join(',') + ')'; }
     return { top: css(grey(top)), bottom: css(grey(bot)) };

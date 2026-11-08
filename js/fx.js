@@ -192,6 +192,8 @@
     var reduced = !!opts.reduced;
     var ctx = canvas.getContext && canvas.getContext('2d');
     if (!ctx) return null;
+    /* devant le contenu : la lueur plein écran de l'éclair est laissée au ciel (sinon elle teinterait le texte) et la pluie est plus discrète */
+    var front = !!opts.front || (canvas.classList && canvas.classList.contains('fx'));
     var small = Math.min(root.innerWidth || 1024, root.innerHeight || 768) < 700 || /Android|iPhone|iPad|Mobi/i.test(root.navigator.userAgent || '');
     var sprite = flakeSprite();
     var engine = new Engine();
@@ -263,7 +265,7 @@
       for (l = 0; l < 6; l++) {
         var alpha = Math.min(0.14 + l * 0.13, 0.85);
         for (w = 0; w < 3; w++) {
-          var a = (w === 2 ? alpha * 0.4 : alpha) * 0.5 * 2.1;   // 2,1 : le ciel du site est bien plus clair que le fond sombre de la carte de l'appli
+          var a = (w === 2 ? alpha * 0.4 : alpha) * 0.5 * (front ? 1.25 : 2.1);   // 2,1 : le ciel du site est bien plus clair que le fond sombre de la carte de l'appli ; devant le texte, on garde la lecture facile
           ctx.lineWidth = WIDTHS[w] * ws;
           ctx.strokeStyle = rgba(RAIN, a);
           strokeSegments(tails[l][w]); strokeSegments(heads[l][w]);
@@ -353,7 +355,7 @@
         var x = (f.x * W + t * wind * response + sway) % wrap;
         if (x < -W * 0.15) x += wrap;
         var r = baseRadius * f.size * (0.42 + 1.05 * f.depth);
-        ctx.globalAlpha = (0.30 + 0.62 * f.depth) * Math.min(density * 1.4, 1);
+        ctx.globalAlpha = (0.30 + 0.62 * f.depth) * Math.min(density * 1.4, 1) * (front ? 0.82 : 1);
         ctx.drawImage(sprite, x - r, y - r, r * 2, r * 2);
       }
       ctx.globalAlpha = 1;
@@ -371,7 +373,7 @@
         if (Math.abs(fe - lastFlash) > 0.002) { lastFlash = fe; opts.onFlash(fe, engine.origin[0]); }
       }
       ctx.globalCompositeOperation = 'lighter';
-      drawFlash(frame);
+      if (!front) drawFlash(frame);
       if (cur.rain > 0.01) drawRain(frame, cur.rain, t);
       drawBolt(frame);
       ctx.globalCompositeOperation = 'source-over';
