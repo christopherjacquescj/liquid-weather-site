@@ -264,13 +264,6 @@ def devices(t):
                          for i, n in enumerate(t["ipad_s"].split("|")))
     ipad_b = "".join("<li>%s</li>" % b for b in t["ipad_b"])
     watch_b = "".join("<li>%s</li>" % b for b in t["watch_b"])
-    comp = t["comp"].split("|")
-    cl = ICON["cloudy"]
-    comps = (f'<ul class="comps" aria-label="{esc(t["comp_aria"])}">'
-             f'<li><span class="cp cp-inline">{cl}<i></i></span><b>{comp[0]}</b></li>'
-             f'<li><span class="cp cp-circ">{cl}</span><b>{comp[1]}</b></li>'
-             f'<li><span class="cp cp-rect">{cl}<i></i><i></i></span><b>{comp[2]}</b></li>'
-             f'<li><span class="cp cp-corner">{cl}</span><b>{comp[3]}</b></li></ul>')
     return f"""<section class="devsec sec" id="appareils" aria-labelledby="dev-t">
 {sky_mark('aurora', 4, 'aurora', 46)}
 <div class="wrap">
@@ -300,7 +293,6 @@ def devices(t):
 <figure class="dev-fig">
 <div class="watch" role="img" aria-label="{esc(t['watch_aria'])}"><i class="w-crown" aria-hidden="true"></i><i class="w-btn" aria-hidden="true"></i>
 <div class="watch-case"><div class="watch-glass"><div class="watch-screen" aria-hidden="true"><img src="assets/moon-full.webp" width="640" height="640" alt="" loading="lazy" decoding="async"><span class="w-dots"><i></i><i></i><i></i></span></div></div></div></div>
-{comps}
 </figure>
 </div>
 

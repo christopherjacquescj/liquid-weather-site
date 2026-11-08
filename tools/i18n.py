@@ -76,8 +76,6 @@ T = {
         "La ville et les unités sont celles de l’iPhone. Les 7 langues de l’app sont là aussi.",
     ],
     "watch_aria": "Schéma d’une Apple Watch qui affiche la page Lunaria : la Lune.",
-    "comp_aria": "Les quatre formes de complication pour le cadran",
-    "comp": "En ligne|Ronde|Rectangulaire|D’angle",
     "dev_note": "Le dessin de l’Apple Watch est un schéma simplifié, pas une capture d’écran.",
     "dev_fine": "Pour iOS 17, iPadOS 17 et watchOS 10, ou plus récents.",
 
@@ -255,8 +253,6 @@ T = {
         "Your city and units come from your iPhone. All 7 app languages are there too.",
     ],
     "watch_aria": "Diagram of an Apple Watch showing the Lunaria page: the Moon.",
-    "comp_aria": "The four complication shapes for the watch face",
-    "comp": "Inline|Circular|Rectangular|Corner",
     "dev_note": "The Apple Watch drawing is a simplified diagram, not a screenshot.",
     "dev_fine": "For iOS 17, iPadOS 17 and watchOS 10, or later.",
 
