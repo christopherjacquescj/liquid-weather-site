@@ -2,6 +2,39 @@
   "version": 2,
   "articles": [
     {
+      "id": "2026-11-09-super-lune-24-novembre",
+      "date": "2026-11-09T22:50:00+01:00",
+      "folder": "2026-11-09-super-lune-24-novembre",
+      "cover": "images/cover.jpg",
+      "category": {
+        "fr": "Ciel",
+        "en": "Sky",
+        "es": "Cielo",
+        "de": "Himmel",
+        "it": "Cielo",
+        "pt": "Céu",
+        "ar": "السماء"
+      },
+      "title": {
+        "fr": "Super Lune du 24 novembre : quand et comment l'observer",
+        "en": "Supermoon on 24 November: when and how to watch it",
+        "es": "Superluna del 24 de noviembre: cuándo y cómo observarla",
+        "de": "Supermond am 24. November: wann und wie man ihn beobachtet",
+        "it": "Superluna del 24 novembre: quando e come osservarla",
+        "pt": "Superlua de 24 de novembro: quando e como observar",
+        "ar": "القمر العملاق في 24 نوفمبر: متى وكيف تشاهده"
+      },
+      "summary": {
+        "fr": "Mardi 24 novembre, la pleine Lune passera à environ 360 800 km de la Terre, soit plus près que d'habitude. Elle sera un peu plus grosse et plus lumineuse. Le meilleur moment pour l'observer est son lever, en fin d'après-midi.",
+        "en": "On Tuesday 24 November, the full Moon will pass about 360,800 km from Earth, closer than usual. It will look slightly bigger and brighter. The best time to watch is moonrise, in the late afternoon.",
+        "es": "El martes 24 de noviembre, la Luna llena pasará a unos 360 800 km de la Tierra, más cerca de lo habitual. Se verá un poco más grande y más brillante. El mejor momento para observarla es su salida, al final de la tarde.",
+        "de": "Am Dienstag, 24. November, steht der Vollmond rund 360 800 km von der Erde entfernt, näher als sonst. Er wirkt etwas größer und heller. Am besten beobachtet man ihn beim Aufgang am späten Nachmittag.",
+        "it": "Martedì 24 novembre la Luna piena passerà a circa 360 800 km dalla Terra, più vicino del solito. Apparirà un po' più grande e più luminosa. Il momento migliore per osservarla è il suo sorgere, nel tardo pomeriggio.",
+        "pt": "Na terça-feira, 24 de novembro, a Lua cheia passará a cerca de 360 800 km da Terra, mais perto do que o habitual. Parecerá um pouco maior e mais brilhante. O melhor momento para a observar é o nascer da Lua, ao fim da tarde.",
+        "ar": "يوم الثلاثاء 24 نوفمبر، سيمر القمر البدر على بعد نحو 360 800 كم من الأرض، أي أقرب من المعتاد. سيبدو أكبر قليلاً وأكثر سطوعاً. أفضل وقت لمشاهدته هو لحظة طلوعه في آخر النهار."
+      }
+    },
+    {
       "id": "2026-11-06-retour-de-la-douceur-semaine-prochaine",
       "date": "2026-11-06T07:45:00+01:00",
       "folder": "2026-11-06-retour-de-la-douceur-semaine-prochaine",
