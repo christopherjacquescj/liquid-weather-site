@@ -2,6 +2,39 @@
   "version": 2,
   "articles": [
     {
+      "id": "2026-11-19-neige-alpes-ouverture-stations",
+      "date": "2026-11-19T08:00:00+01:00",
+      "folder": "2026-11-19-neige-alpes-ouverture-stations",
+      "cover": "images/cover.jpg",
+      "category": {
+        "fr": "Saisons",
+        "en": "Seasons",
+        "es": "Estaciones",
+        "de": "Jahreszeiten",
+        "it": "Stagioni",
+        "pt": "Estações",
+        "ar": "الفصول"
+      },
+      "title": {
+        "fr": "Alpes : la neige s'installe en altitude avant l'ouverture des premières stations",
+        "en": "Alps: snow settles at altitude before the first ski resorts open",
+        "es": "Alpes: la nieve se instala en altura antes de la apertura de las primeras estaciones",
+        "de": "Alpen: Schnee in der Höhe vor der Öffnung der ersten Skigebiete",
+        "it": "Alpi: la neve si stabilisce in quota prima dell'apertura delle prime stazioni",
+        "pt": "Alpes: a neve instala-se em altitude antes da abertura das primeiras estâncias",
+        "ar": "جبال الألب: الثلوج تستقر في المرتفعات قبل افتتاح أولى محطات التزلج"
+      },
+      "summary": {
+        "fr": "Après un début de mois peu enneigé, plusieurs perturbations apportent d'importantes chutes de neige sur les Alpes. Jusqu'à un mètre est attendu au-dessus de 2 500 mètres d'ici le week-end.",
+        "en": "After a start to the month with little snow, several weather fronts are bringing heavy snowfall to the Alps. Up to one metre is expected above 2,500 metres by the weekend.",
+        "es": "Tras un inicio de mes con poca nieve, varias perturbaciones dejan nevadas importantes en los Alpes. Se espera hasta un metro por encima de 2500 metros de aquí al fin de semana.",
+        "de": "Nach einem schneearmen Monatsbeginn bringen mehrere Tiefausläufer kräftige Schneefälle in die Alpen. Bis zum Wochenende wird oberhalb von 2500 Metern bis zu ein Meter erwartet.",
+        "it": "Dopo un inizio di mese con poca neve, diverse perturbazioni portano nevicate abbondanti sulle Alpi. Fino a un metro è atteso sopra i 2500 metri entro il fine settimana.",
+        "pt": "Depois de um início de mês com pouca neve, várias perturbações trazem nevões importantes aos Alpes. Espera-se até um metro acima dos 2500 metros até ao fim de semana.",
+        "ar": "بعد بداية شهر قليلة الثلوج، تجلب عدة اضطرابات جوية تساقطات ثلجية مهمة على جبال الألب. يُتوقع حتى متر واحد فوق 2500 متر قبل نهاية الأسبوع."
+      }
+    },
+    {
       "id": "2026-11-09-super-lune-24-novembre",
       "date": "2026-11-09T22:50:00+01:00",
       "folder": "2026-11-09-super-lune-24-novembre",
