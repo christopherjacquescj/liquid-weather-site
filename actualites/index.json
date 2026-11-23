@@ -2,6 +2,39 @@
   "version": 2,
   "articles": [
     {
+      "id": "2026-11-23-air-polaire-europe-pays-par-pays",
+      "date": "2026-11-23T21:30:00+01:00",
+      "folder": "2026-11-23-air-polaire-europe-pays-par-pays",
+      "cover": "images/cover.jpg",
+      "category": {
+        "fr": "Saisons",
+        "en": "Seasons",
+        "es": "Estaciones",
+        "de": "Jahreszeiten",
+        "it": "Stagioni",
+        "pt": "Estações",
+        "ar": "الفصول"
+      },
+      "title": {
+        "fr": "L'air polaire s'installe sur l'Europe : le point pays par pays",
+        "en": "Polar air settles over Europe: country by country",
+        "es": "El aire polar se instala en Europa: la situación país por país",
+        "de": "Polarluft über Europa: die Lage Land für Land",
+        "it": "L'aria polare si stabilisce sull'Europa: il punto paese per paese",
+        "pt": "O ar polar instala-se na Europa: o ponto da situação país a país",
+        "ar": "الهواء القطبي يستقر فوق أوروبا: الوضع بلداً بلداً"
+      },
+      "summary": {
+        "fr": "Un air froid venu de Scandinavie gagne le centre et l'est de l'Europe. Gelées, neige et verglas sont attendus toute la semaine, de la France à l'Ukraine.",
+        "en": "Cold air from Scandinavia is spreading over central and eastern Europe. Frost, snow and ice are expected all week, from France to Ukraine.",
+        "es": "Un aire frío procedente de Escandinavia se extiende por el centro y el este de Europa. Se esperan heladas, nieve y hielo toda la semana, de Francia a Ucrania.",
+        "de": "Kalte Luft aus Skandinavien breitet sich über Mittel- und Osteuropa aus. Die ganze Woche über werden Frost, Schnee und Glätte erwartet, von Frankreich bis in die Ukraine.",
+        "it": "Aria fredda dalla Scandinavia si estende sull'Europa centrale e orientale. Gelate, neve e ghiaccio sono attesi per tutta la settimana, dalla Francia all'Ucraina.",
+        "pt": "Ar frio vindo da Escandinávia estende-se pelo centro e leste da Europa. Geadas, neve e gelo são esperados durante toda a semana, da França à Ucrânia.",
+        "ar": "هواء بارد قادم من إسكندنافيا ينتشر فوق وسط وشرق أوروبا. يُتوقع صقيع وثلوج وجليد طوال الأسبوع، من فرنسا إلى أوكرانيا."
+      }
+    },
+    {
       "id": "2026-11-19-neige-alpes-ouverture-stations",
       "date": "2026-11-19T07:40:00+01:00",
       "folder": "2026-11-19-neige-alpes-ouverture-stations",
